@@ -1,20 +1,16 @@
 machine:
   node:
-    version: 6.10.2
+    version: 8.9.4
 
 dependencies:
   pre:
     - sudo pip install -U awscli
-    - npm install -g bower
-  cache_directories:
-    - node_modules
-    - bower_components
-    - ~/nvm/v4.5.0/lib/node_modules/ember-cli
-    - ~/nvm/v4.5.0/bin/ember
+    - npm install -g yarn
   override:
-    - npm prune && npm install
-    - bower prune && bower install
-    - if [ ! -e ~/nvm/v4.5.0/bin/ember ]; then npm install -g ember-cli; else echo "ember-cli seems to be cached"; fi;
+    - yarn
+  cache_directories:
+    - ~/.cache/yarn
+    - ~/.cache/pip
 
 database:
   override:
@@ -23,16 +19,11 @@ database:
 test:
   override:
     - echo "Let's see if the app will build"
-    - ember build
+    - npx ember build
 
 deployment:
-  staging:
+  production:
     branch: master
     commands:
-      - ember build --environment=staging
-      - AWS_ACCESS_KEY_ID=${STAGING_AWS_ACCESS_KEY_ID} AWS_SECRET_ACCESS_KEY=${STAGING_AWS_SECRET_ACCESS_KEY} aws s3 sync ./dist s3://staging.transit.land/dispatcher/
-  production:
-    branch: production
-    commands:
-      - ember build --environment=production
-      - AWS_ACCESS_KEY_ID=${PROD_AWS_ACCESS_KEY_ID} AWS_SECRET_ACCESS_KEY=${PROD_AWS_SECRET_ACCESS_KEY} aws s3 sync ./dist s3://transit.land/dispatcher/
+      - npx ember build --environment=production
+      - aws s3 sync ./dist s3://transitland-www/dispatcher/

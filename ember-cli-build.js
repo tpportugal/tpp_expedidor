@@ -1,16 +1,17 @@
-/*jshint node:true*/
-/* global require, module */
+'use strict';
+
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
   var prependUrl;
+  // TODO: put assets on CloudFront CDN
   if (EmberApp.env() === 'staging') {
-    prependUrl = 'https://d2tkmr00hnrtoq.cloudfront.net/dispatcher/';
+    prependUrl = '/dispatcher/';
   } else if (EmberApp.env() === 'production') {
-    prependUrl = 'https://d11xhlzkgsq6oc.cloudfront.net/dispatcher/';
+    prependUrl = '/dispatcher/';
   }
 
-  var app = new EmberApp(defaults, {
+  let app = new EmberApp(defaults, {
     minifyJS: {
       enabled: ['staging', 'production'].indexOf(EmberApp.env()) >= 0
     },
@@ -35,8 +36,9 @@ module.exports = function(defaults) {
       'glyphicons': true
     },
     // https://github.com/martndemus/ember-cli-font-awesome#customize-with-sassscss
-    emberCliFontAwesome: {
-      useScss: true
+    'ember-font-awesome': {
+      useScss: true,
+      includeComponent: true
     }
   });
 
@@ -55,9 +57,9 @@ module.exports = function(defaults) {
 
   // import code and styles for JSON Editor
   // used by app/components/json-editor/component.js
-  app.import(app.bowerDirectory + '/jsoneditor/dist/jsoneditor.js');
-  app.import(app.bowerDirectory + '/jsoneditor/dist/jsoneditor.css');
-  app.import(app.bowerDirectory + '/jsoneditor/dist/img/jsoneditor-icons.svg', {
+  app.import('node_modules/jsoneditor/dist/jsoneditor.js');
+  app.import('node_modules/jsoneditor/dist/jsoneditor.css');
+  app.import('node_modules/jsoneditor/dist/img/jsoneditor-icons.svg', {
     destDir: 'assets/img'
   });
 

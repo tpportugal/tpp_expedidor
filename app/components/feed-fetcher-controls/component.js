@@ -1,8 +1,9 @@
 import Ember from 'ember';
+import { inject as service } from '@ember/service';
 
 export default Ember.Component.extend({
   tagName: 'span',
-  store: Ember.inject.service(),
+  store: service(),
   buttonText: 'Fetch',
   actions: {
     fetchFeeds: function() {

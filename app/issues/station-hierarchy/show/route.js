@@ -1,8 +1,10 @@
 import Ember from 'ember';
+import { inject as service } from '@ember/service';
+import Route from '@ember/routing/route';
 import IssuesRoute from 'dispatcher/mixins/issues-route';
 
-export default Ember.Route.extend(IssuesRoute, {
-  currentUser: Ember.inject.service(),
+export default Route.extend(IssuesRoute, {
+  currentUser: service(),
   model: function(params) {
     this.store.unloadAll('changeset');
     this.store.unloadAll('change_payload');

@@ -1,7 +1,9 @@
 import Ember from 'ember';
+import Route from '@ember/routing/route';
+import { inject as service } from '@ember/service';
 
-export default Ember.Route.extend({
-  currentUser: Ember.inject.service(),
+export default Route.extend({
+  currentUser: service(),
   queryParams: {
     zoom: {
       replace: true

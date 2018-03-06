@@ -1,7 +1,7 @@
-/* eslint node: true */
+'use strict';
 
 module.exports = function (environment) {
-  var ENV = {
+  let ENV = {
     modulePrefix: 'dispatcher',
     environment: environment,
     rootURL: '/',
@@ -40,15 +40,11 @@ module.exports = function (environment) {
   };
 
   if (environment === 'development') {
-    ENV.datastoreHost = 'http://dev.transit.land';
+    ENV.datastoreHost = 'https://transit.land';
   }
 
   if (environment === 'localhost') {
     ENV.datastoreHost = 'http://localhost:3000';
-  }
-
-  if (environment === 'development_production') {
-    ENV.datastoreHost = 'http://transit.land';
   }
 
   if (environment === 'test') {
