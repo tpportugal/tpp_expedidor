@@ -12,16 +12,16 @@
           <td>{{result.url}}</td>
           <td>
             {{#if result.onestopId}}
-              Already in Transitland!
+              Already in TPP!
             {{else}}
-              Not found in Transitland.
+              Not found in TPP.
             {{/if}}
           </td>
           <td>
             {{#if result.onestopId}}
               {{#link-to 'feeds.show' result.onestopId target="_blank"}}View in Dispatcher{{/link-to}}
             {{else}}
-              <a href="https://transit.land/feed-registry/feeds/new?feedUrl={{result.url}}" target="_blank">Add to Feed Registry</a>
+              <a href="https://tpp.pt/feed-registry/feeds/new?feedUrl={{result.url}}" target="_blank">Add to Feed Registry</a>
             {{/if}}
           </td>
         </tr>

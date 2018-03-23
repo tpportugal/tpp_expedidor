@@ -3,9 +3,9 @@ import Controller from '@ember/controller';
 
 /* The only purpose of this controller is to set default query parameters */
 export default Controller.extend({
-  lat: 37.78990,
-  lng: -122.39310,
-  zoom: 14,
+  lat: 39.3999,
+  lng: -8.2245,
+  zoom: 11,
   getChanges: function() {
     var entities = [];
     entities = entities.concat(this.store.peekAll('stop-station').filter(function(e) { return e.get('hasDirtyAttributes'); }));

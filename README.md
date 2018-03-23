@@ -1,6 +1,6 @@
-# Transitland Dispatcher
+# TPP Dispatcher
 
-Used to administer and monitor the [Transitland Datastore](https://github.com/transitland/transitland-datastore) back-end.
+Used to administer and monitor the [TPP Datastore](https://github.com/Rui-Santos/tpp-datastore) back-end.
 
 ## Prerequisites
 

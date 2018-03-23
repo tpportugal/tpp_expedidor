@@ -1,13 +1,13 @@
 {
   "name": "dispatcher",
   "version": "0.0.0",
-  "description": "Front-end to administer and monitor the Transitland Datastore",
+  "description": "Front-end to administer and monitor the TPP Datastore",
   "private": true,
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "https://github.com/transitland/dispatcher",
+  "repository": "https://github.com/Rui-Santos/dispatcher",
   "license": "MIT",
   "scripts": {
     "build": "ember build",
@@ -15,6 +15,12 @@
     "start": "ember serve",
     "test": "ember test"
   },
+  "dependencies": {
+    "ember-leaflet": "^3.0.12",
+    "ember-leaflet-draw": "^0.7.0",
+    "ember-leaflet-polyline-decorator": "transitland/ember-leaflet-polyline-decorator#master",
+    "leaflet": "^1.1.0"
+   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
     "d3": "4.12.2",
@@ -42,6 +48,7 @@
     "ember-data": "3.0.0-beta.1",
     "ember-export-application-global": "^2.0.0",
     "ember-font-awesome": "4.0.0-rc.2",
+    "ember-leaflet": "^3.0.12",
     "ember-load-initializers": "^1.0.0",
     "ember-moment": "^7.6.0",
     "ember-power-select": "2.0.0-beta.1",

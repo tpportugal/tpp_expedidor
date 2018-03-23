@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  url: "http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png",
+  url: "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png",
   options: {},
   draw: { polyline: false, polygon: false, rectangle: false, circle: false, marker: false },
   editing: false,

@@ -1,6 +1,6 @@
 {{#leaflet-map lat=lat lng=lng zoom=zoom onZoomend=(action "updateView") onDragend=(action "updateView") as |layers|}}
 
-  {{layers.tile url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
+  {{layers.tile url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
 
   {{#each stops as |stop|}}
 

@@ -44,7 +44,7 @@ export default Route.extend({
     // Stops
     let q = {
       bbox: bbox,
-      per_page: 1000,
+      per_page: 100,
       total: false,
       exclude: params.exclude
     }

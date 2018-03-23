@@ -7,12 +7,12 @@ module.exports = function (environment) {
     rootURL: '/',
     routerRootURL: '/',
     locationType: 'auto',
-    datastoreHost: 'https://transit.land',
+    datastoreHost: 'https://tpp.pt',
     // Valhalla
-    valhallaHost: 'https://valhalla.mapzen.com/route',
+    valhallaHost: 'https://routing.tpp.pt/route',
     valhallaApiKey: 'valhalla-xwXfg5J',
     valhallaRateLimit: 600,
-    AUTH_TOKEN_LOCALSTORAGE_KEY: 'transitland-dispatcher-auth-token',
+    AUTH_TOKEN_LOCALSTORAGE_KEY: 'tpp-dispatcher-auth-token',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -40,7 +40,7 @@ module.exports = function (environment) {
   };
 
   if (environment === 'development') {
-    ENV.datastoreHost = 'https://transit.land';
+    ENV.datastoreHost = 'https://tppgeo.cf';
   }
 
   if (environment === 'localhost') {
@@ -59,18 +59,18 @@ module.exports = function (environment) {
   }
 
   if (environment === 'staging') {
-    ENV.datastoreHost = 'https://dev.transit.land';
-    ENV.valhallaHost = 'https://valhalla.dev.mapzen.com/route';
+    ENV.datastoreHost = 'https://tpp.pt';
+    ENV.valhallaHost = 'https://routing.tpp.pt/route';
     ENV.valhallaApiKey = 'valhalla-tQaRSNc';
     // ENV.rootURL = '/dispatcher/';
     ENV.routerRootURL = '/dispatcher/';
-    ENV.apiProxyKey = 'transitland-YFO6jk8';
+    ENV.apiProxyKey = 'tpp-YFO6jk8';
   }
 
   if (environment === 'production') {
-    ENV.datastoreHost = 'https://transit.land';
+    ENV.datastoreHost = 'https://tppgeo.cf';
     ENV.routerRootURL = '/dispatcher/';
-    ENV.apiProxyKey = 'transitland-Cc6l8Fk';
+    ENV.apiProxyKey = 'tpp-Cc6l8Fk';
   }
 
   // https://github.com/jpadilla/ember-simple-auth-token

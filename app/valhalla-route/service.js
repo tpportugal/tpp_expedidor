@@ -6,7 +6,7 @@ export default Ember.Service.extend({
   rate_limit: ENV.valhallaRateLimit,
   api_key: ENV.valhallaApiKey,
   url: ENV.valhallaHost,
-  url_lrm: "http://valhalla.github.io/demos/routing/index.html#",
+  url_lrm: "https://valhalla.github.io/demos/routing/index.html#",
   run() {
     var job = this.get('queue').shift();
     return Ember.$.getJSON(job.url).then(function(trip){

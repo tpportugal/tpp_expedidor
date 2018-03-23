@@ -4,7 +4,6 @@ machine:
 
 dependencies:
   pre:
-    - sudo pip install -U awscli
     - npm install -g yarn
   override:
     - yarn
@@ -26,4 +25,3 @@ deployment:
     branch: master
     commands:
       - npx ember build --environment=production
-      - aws s3 sync ./dist s3://transitland-www/dispatcher/

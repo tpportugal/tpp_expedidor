@@ -7,7 +7,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      {{link-to 'Transitland Dispatcher' 'index' class="navbar-brand"}}
+      {{link-to 'TPP Dispatcher' 'index' class="navbar-brand"}}
     </div>
     <div class="collapse navbar-collapse" id="navbar-to-collapse">
       <ul class="nav navbar-nav">
@@ -26,15 +26,12 @@
         {{#link-to 'users' tagName='li' href=null}}
           {{#link-to 'users'}}Users{{/link-to}}
         {{/link-to}}
-        {{!--
-          NOTE: temporarily disabled, until Leaflet dependencies are updated
-          {{#link-to 'stations' tagName='li' href=null}}
-            {{#link-to 'stations'}}Stations{{/link-to}}
-          {{/link-to}}
-          {{#link-to 'issues' tagName='li' href=null}}
-            {{#link-to 'issues'}}Quality Issues{{/link-to}}
-          {{/link-to}}
-        --}}
+        {{#link-to 'stations' tagName='li' href=null}}
+          {{#link-to 'stations'}}Stations{{/link-to}}
+        {{/link-to}}
+        {{#link-to 'issues' tagName='li' href=null}}
+          {{#link-to 'issues'}}Quality Issues{{/link-to}}
+        {{/link-to}}
       </ul>
       {{current-user-menu}}
     </div>
