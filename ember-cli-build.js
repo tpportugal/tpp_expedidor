@@ -55,6 +55,9 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
+  // import locale for bootstrap-datepicker
+  app.import('node_modules/bootstrap-datepicker-locales/bootstrap-datepicker.pt.js');
+
   // import code and styles for JSON Editor
   // used by app/components/json-editor/component.js
   app.import('node_modules/jsoneditor/dist/jsoneditor.js');
