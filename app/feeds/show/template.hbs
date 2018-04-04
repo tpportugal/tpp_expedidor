@@ -4,13 +4,13 @@
   </div>
   <div class="col-md-6 text-right">
     {{feed-fetcher-controls feedFetchStarted="feedFetchStarted" feed=model.feed}}
-    {{#link-to 'feed-versions.upload' (query-params feed_onestop_id=model.feed.onestop_id) class="btn btn-primary"}}Fazer Upload de uma Versão de Feed{{/link-to}}
+    {{#link-to 'feed-versions.upload' (query-params feed_onestop_id=model.feed.onestop_id) class="btn btn-primary"}}Fazer Upload de uma Versão{{/link-to}}
   </div>
 </div>
 
 {{feed-form model=model.feed}}
 
-<h2>Operators In Feed</h2>
+<h2>Operadores na Feed</h2>
 <table class="table">
   <thead>
     <th>ID Onestop</th>
@@ -92,16 +92,16 @@
   Criar um problema com entidades da feed {{model.feed.onestop_id}}.
 {{/link-to}}</h4>
 
-<h2>Conjunto de alteração importados desta feed</h2>
+<h2>Changesets importados desta feed</h2>
 <ul>
   {{#each model.feed.changesets_imported_from_this_feed as |changeset|}}
     <li>
       {{#link-to 'changesets.show' changeset}}
-        Conjunto de alteração #{{changeset.id}}
+        Changeset #{{changeset.id}}
       {{/link-to}}
     </li>
   {{else}}
-    <p>Nenhum conjunto de alteração foi importado desta feed.</p>
+    <p>Nenhum changeset foi importado desta feed.</p>
   {{/each}}
 </ul>
 
@@ -110,19 +110,19 @@
 <table class="table">
   <tbody>
     <tr>
-      <td>Total de Versões da Feed</td>
+      <td>Total de Versões</td>
       <td>{{model.feedVersionUpdateStatistics.feed_versions_total}}</td>
     </tr>
     <tr>
-      <td>Tempo médio entre atualizações de Versão da Feed</td>
+      <td>Tempo médio entre atualizações de Versão</td>
       <td>{{model.feedVersionUpdateStatistics.fetched_at_frequency}} days</td>
     </tr>
     <tr>
-      <td>Tempo médio de duração de Versão da Feed</td>
+      <td>Tempo médio de duração de Versão</td>
       <td>{{to-fixed model.feedVersionUpdateStatistics.scheduled_service_duration_average 2}} dias</td>
     </tr>
     <tr>
-      <td>Sobreposição média entre Versões da Feed subsequentes</td>
+      <td>Sobreposição média entre Versões subsequentes</td>
       <td>{{to-fixed model.feedVersionUpdateStatistics.scheduled_service_overlap_average 2}} dias</td>
     </tr>
   </tbody>

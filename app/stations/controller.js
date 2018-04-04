@@ -35,14 +35,14 @@ export default Controller.extend({
           return changeset.apply();
         }).then(function() {
           flashMessages.add({
-            message: `Conjunto de alteração criado & aplicado`,
+            message: `Changeset criado & aplicado`,
             type: 'success',
             sticky: true
           });
           self.set('showChangeset', false);
         }).catch(function(error) {
           flashMessages.add({
-            message: `Erro(s) ao atualizar carga de alteração: ${error.message}`,
+            message: `Erro(s) ao atualizar a carga do changeset: ${error.message}`,
             type: 'danger',
             sticky: true
           });

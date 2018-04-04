@@ -26,7 +26,7 @@ export default Route.extend(AuthenticatedRouteMixin, {
         self.transitionTo('changesets.show', changeset);
       }).catch(function(error) {
         flashMessages.add({
-          message: `Erro(s) ao criar conjunto de alteração: ${error.message}`,
+          message: `Erro(s) ao criar changeset: ${error.message}`,
           type: 'danger',
           sticky: true
         });

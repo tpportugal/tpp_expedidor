@@ -1,5 +1,6 @@
 <div class="row">
-  <div class="col-sm-3 col-xs-6">
+
+  <div class="col-sm-3">
     <div class="input-group">
       <span class="input-group-addon">
         Válida em:
@@ -15,6 +16,7 @@
       }}
     </div>
   </div>
+
   <div class="col-sm-3 col-xs-6">
     <div class="input-group">
       <span class="input-group-addon">
@@ -31,6 +33,7 @@
       }}
     </div>
   </div>
+
   <div class="col-sm-3 col-xs-6">
     <div class="input-group">
       <span class="input-group-addon">
@@ -45,27 +48,29 @@
       </select>
     </div>
   </div>
+
   <div class="col-sm-3 col-xs-6">
     <div class="input-group">
-      {{x-toggle showLabels=true onLabel="pode ser atualizada" offLabel="" value=active_feed_version_update}}
+      {{x-toggle showLabels=true onLabel="atualizadas" offLabel="todas" value=active_feed_version_update}}
     </div>
   </div>
+
 </div>
 
-<!-- second row -->
 <div class="row">
   <div class="col-sm-3 col-xs-6">
     <div class="input-group">
       <span class="input-group-addon">
         Tag
       </span>
-      <input type="text" class="form-control" value={{tag_key}} oninput={{action (mut tag_key_input) value="target.value"}} />
-      <input type="text" class="form-control" value={{tag_value}} oninput={{action (mut tag_value_input) value="target.value"}} />
+      <input type="text" class="form-control" placeholder="Chave" value={{tag_key}} oninput={{action (mut tag_key_input) value="target.value"}} />
+      <input type="text" class="form-control" placeholder="Valor" value={{tag_value}} oninput={{action (mut tag_value_input) value="target.value"}} />
       <span class="input-group-addon">
         <button {{action "setTagKeyValue"}} class="btn btn-default">Filtrar</button>
       </span>
     </div>
   </div>
+
   <div class="col-sm-3 col-xs-6">
     <div class="input-group">
       <span class="input-group-addon">
@@ -78,6 +83,7 @@
       </select>
     </div>
   </div>
+
   <div class="col-sm-3 col-xs-6">
     <div class="input-group">
       <span class="input-group-addon">

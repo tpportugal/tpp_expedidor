@@ -1,6 +1,6 @@
 <div class="btn-group dropdown {{if dropDownExpanded "open"}}">
   <button type="button" {{action 'toggleDropDownExpanded'}} class="btn btn-warning dropdown-toggle" aria-haspopup="true" aria-expanded="{{dropDownExpanded}}">
-    Alterar esta Versão da Feed <span class="caret"></span>
+    Alterar Nível de Importação <span class="caret"></span>
   </button>
   <ul class="dropdown-menu dropdown-menu-right">
     <li>
@@ -37,9 +37,9 @@
     </li>
     <li role="separator" class="divider"></li>
     {{#if feedVersion.is_active_feed_version}}
-      <li><a><em>Já é a versão ativa da feed.</em></a></li>
+      <li><a><em>Já é a versão ativa.</em></a></li>
     {{else}}
-      <li><a {{action 'setAsActiveFeedVersion'}}>Marcar como Versão Ativa da Feed</a></li>
+      <li><a {{action 'setAsActiveFeedVersion'}}>Marcar como Versão Ativa</a></li>
     {{/if}}
     <li role="separator" class="divider"></li>
     {{#if feedVersion.import_level_at_least_level_two}}

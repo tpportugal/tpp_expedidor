@@ -20,12 +20,12 @@
   <dt>Licença de redistribuição</dt>
   <dd>{{model.license_redistribute}}</dd>
   {{#if model.license_attribution_text}}
-    <dt>Texto de atribuição da licença</dt>
+    <dt>Texto de atribuição</dt>
     <dd>{{model.license_attribution_text}}</dd>
   {{/if}}
-  <dt># de versões da feed</dt>
+  <dt># de versões</dt>
   <dd>{{model.feed_versions_count}}</dd>
-  <dt>Versão de feed ativa</dt>
+  <dt>Versão ativa</dt>
   <dd>
     {{#if model.active_feed_version}}
       {{#link-to 'feed-versions.show' model.active_feed_version}}{{model.active_feed_version.short_sha1}}{{/link-to}}
@@ -33,22 +33,22 @@
       <em>nenhuma</em>
     {{/if}}
   </dd>
-  <dt>Nível de importação da versão de feed ativa</dt>
+  <dt>Nível de importação</dt>
   <dd>{{number-as-pips model.import_level_of_active_feed_version 4}}</dd>
   <dt>Criada</dt>
   <dd>{{time-since-with-mouseover model.created_at}}</dd>
   <dt>Atualizada</dt>
   <dd>{{time-since-with-mouseover model.updated_at}}</dd>
   {{#if model.created_or_updated_in_changeset}}
-    <dt>Criada ou atualizada no</dt>
+    <dt>Criada ou atualizada pelo</dt>
     <dd>
       <h4>{{#link-to 'changesets.show' model.created_or_updated_in_changeset}}
-        conjunto de alteração #{{model.created_or_updated_in_changeset.id}}
+        changeset #{{model.created_or_updated_in_changeset.id}}
       {{/link-to}}</h4>
     </dd>
   {{/if}}
-  <dt>Última busca em</dt>
+  <dt>Buscada</dt>
   <dd>{{time-since-with-mouseover model.last_fetched_at}}</dd>
-  <dt>Última importação em</dt>
+  <dt>Importada</dt>
   <dd>{{time-since-with-mouseover model.last_imported_at}}</dd>
 </dl>

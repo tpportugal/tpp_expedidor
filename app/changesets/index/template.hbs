@@ -1,15 +1,15 @@
 <div class="row">
   <div class="col-xs-6">
-    <h2>{{model.meta.total}} Conjunto(s) de Alteração {{if applied "Aplicado(s)" "Não Aplicado(s)"}}</h2>
+    <h2>{{model.meta.total}} Changeset(s) {{if applied "Aplicado(s)" "Não Aplicado(s)"}}</h2>
   </div>
   <div class="col-xs-6 text-right">
-    {{#link-to 'changesets.new' class="btn btn-primary" }}Novo Conjunto de Alteração{{/link-to}}
+    {{#link-to 'changesets.new' class="btn btn-primary" }}Criar Changeset{{/link-to}}
   </div>
 </div>
 
-{{#collapsable-panel title="Filtrar conjuntos de alteração" panelClass="panel-primary" show=true}}
+{{#collapsable-panel title="Filtrar Changesets" panelClass="panel-primary" show=true}}
   <div class="btn-toolbar" role="toolbar">
-    {{x-toggle showLabels=true onLabel="já aplicado" offLabel="ainda não aplicado" value=applied}}
+    {{x-toggle showLabels=true onLabel="aplicados" offLabel="não aplicados" value=applied}}
   </div>
 {{/collapsable-panel}}
 

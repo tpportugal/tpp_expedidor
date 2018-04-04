@@ -17,7 +17,7 @@ export default Ember.Component.extend(SelectableModelComponent, {
       });
       Ember.RSVP.allSettled(importPromises).then( () => {
         flashMessages.add({
-          message: 'A importação da(s) versão(ões) mais recente(s) da(s) feed(s) foi agendada com sucesso!',
+          message: `A importação da(s) versão(ões) mais recente(s) da(s) feed(s) foi agendada com sucesso!`,
           type: 'success',
           sticky: true
         });

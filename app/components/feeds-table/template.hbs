@@ -5,10 +5,10 @@
       <div class="panel-body">
         <div class="row">
           <div class="col-md-6">
-            {{feed-fetcher-controls feeds=selectedModels buttonText="Buscar Fetch selected selecionadasfeed(s)"}}
+            {{feed-fetcher-controls feeds=selectedModels buttonText="Buscar feed(s) selecionada(s)"}}
           </div>
           <div class="col-md-6">
-            Importar a mais recente versão da(s) feed(s) no:
+            Importar a versão mais recente no:
             <div class="btn-group" role="group" aria-label="Agendar importação:">
               <button type="button" class="btn btn-warning" title="operadores, paragens, rotas" {{action "enqueueSelectedFeedsForImport" 1}}>Nível 1</button>
               <button type="button" class="btn btn-warning" title="operadores, paragens, rotas, horários" {{action "enqueueSelectedFeedsForImport" 2}}>Nível 2</button>
@@ -38,14 +38,14 @@
           {{/if}}
         {{/if}}
       </th>
-      <th>Onestop ID</th>
-      <th>Name</th>
-      <th># de Versões da Feed</th>
+      <th>ID Onestop</th>
+      <th>Nome</th>
+      <th># de Versões</th>
       <th>Última Busca</th>
       <th>Estado da Busca {{fa-icon "exclamation-triangle" size=2 classNames="text-danger" title='Estados de erro na busca poderão ser temporários, pois as feeds estão a ser buscadas continuamente.'}}</th>
       <th>Estado da Importação</th>
       <th>Última Importação</th>
-      <th>Nível da Importação da Versão Ativa da Feed</th>
+      <th>Nível da Importação da Versão Ativa</th>
     </tr>
   </thead>
   <tbody>

@@ -24,11 +24,11 @@
 {{/if}}
 <h3>Detalhes</h3>
 <p>{{issue.details}}</p>
-<h3>Criado a</h3>
+<h3>Criado</h3>
 <p>{{time-since-with-mouseover issue.created_at}}</p>
-<h3>Atualizado a</h3>
+<h3>Atualizado</h3>
 <p>{{time-since-with-mouseover issue.updated_at}}</p>
-<h3>Criado pelo conjunto de alteração</h3>
+<h3>Criado pelo changeset</h3>
 {{#if issue.created_by_changeset_id}}
   {{issue.created_by_changeset_id}}
 {{else}}

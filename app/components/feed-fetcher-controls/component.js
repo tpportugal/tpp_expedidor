@@ -24,7 +24,7 @@ export default Ember.Component.extend({
       adapter.ajax(url, 'post', params)
         .then( () => {
           flashMessages.add({
-            message: 'Iniciando busca de feed(s)!',
+            message: `Iniciando busca de feed(s)!`,
             type: 'success',
             sticky: true
           });

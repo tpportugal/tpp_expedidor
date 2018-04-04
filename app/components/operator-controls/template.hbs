@@ -58,6 +58,7 @@
       </span>
       <select class="form-control" onchange={{action (mut without_feed) value="target.value"}}>
         <option value=""></option>
+        <option value="false" selected={{eq without_feed "true"}}>Não</option>
         <option value="true" selected={{eq without_feed "true"}}>Sim</option>
       </select>
     </div>
@@ -67,14 +68,15 @@
 <div class="row">
   <div class="col-sm-3">
     <div class="input-group">
-      <input type="text" class="form-control" placeholder="Chave da Tag" value={{tag_key}} oninput={{action (mut tag_key_input) value="target.value"}} />
-      <span class="input-group-addon" style="border-left: 0; border-right: 0;">:</span>
-      <input type="text" class="form-control" placeholder="Valor da Tag" value={{tag_value}} oninput={{action (mut tag_value_input) value="target.value"}} />
+      <span class="input-group-addon">
+        Tag
+      </span>
+      <input type="text" class="form-control" placeholder="Chave" value={{tag_key}} oninput={{action (mut tag_key_input) value="target.value"}} />
+      <input type="text" class="form-control" placeholder="Valor" value={{tag_value}} oninput={{action (mut tag_value_input) value="target.value"}} />
       <span class="input-group-addon">
         <button {{action "setTagKeyValue"}} class="">Filtrar</button>
       </span>
     </div>
   </div>
-
 
 </div>

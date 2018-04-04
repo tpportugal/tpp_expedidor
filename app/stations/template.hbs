@@ -1,5 +1,5 @@
 {{#if showChangeset}}
-  {{#modal-dialog title='Conjunto de Mudança' ok='saveChangeset' close='hideChangeset' okText='Aplicar Conjunto de Alteração'}}
+  {{#modal-dialog title='Changeset' ok='saveChangeset' close='hideChangeset' okText='Aplicar'}}
     {{changeset-form changeset=model.changeset users=model.users }}
   {{/modal-dialog}}
 {{/if}}
@@ -34,7 +34,7 @@
     </select>
 
     <button {{action "setBounds"}} class="btn btn-primary">Atualizar</button>
-    <button {{action "showChangeset"}} class="btn btn-primary">Conjunto de Alteração</button>
+    <button {{action "showChangeset"}} class="btn btn-primary">Changeset</button>
 
   </div>
 

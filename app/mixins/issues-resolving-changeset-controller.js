@@ -33,7 +33,7 @@ export default Ember.Mixin.create({
       else if (response.status === 'error') {
         flashMessages.clearMessages();
         flashMessages.add({
-          message: 'Erro ao resolver problema ' + resolvingIssue.id + '. ' + response.errors + '. Clique para fechar.',
+          message: 'Erro ao resolver o problema ' + resolvingIssue.id + '. ' + response.errors + '. Clique para fechar.',
           type: 'danger',
           sticky: true
         });
@@ -46,7 +46,7 @@ export default Ember.Mixin.create({
     }).catch(function(e){
       flashMessages.clearMessages();
       flashMessages.add({
-        message: 'Erro ao resolver problema ' + resolvingIssue.id + '. ' + e.errors[0].message + '. Clique para fechar.',
+        message: 'Erro ao resolver o problema ' + resolvingIssue.id + '. ' + e.errors[0].message + '. Clique para fechar.',
         type: 'danger',
         sticky: true
       });
@@ -66,7 +66,7 @@ export default Ember.Mixin.create({
         }).then(function(response) {
           self.set('applyingSpinner', false);
           self.set('showChangeset', false);
-          flashMessages.info('Aplicando conjunto de alteração para resolver problema ' + self.model.selectedIssue.id);
+          flashMessages.info('A aplicar changeset para resolver o problema ' + self.model.selectedIssue.id);
           var applicationAdapter = self.store.adapterFor('changeset');
           var modelUrl = applicationAdapter.buildURL('changeset', self.get('model.changeset.id'));
           var applyUrl = modelUrl + '/apply_async';
