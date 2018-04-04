@@ -7,7 +7,7 @@ export default Route.extend({
   },
   model: function(params) {
     params['imported_from_feed'] = this.get('feed_onestop_id');
-    params = params + '&per_page=5000';
+    params['per_page'] = '5000';
     return Ember.RSVP.hash({
       stops: this.store.query('stop', params),
       route_stop_patterns: this.store.query('route_stop_pattern', params)
