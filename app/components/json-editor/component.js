@@ -172,7 +172,7 @@ export default Ember.Component.extend({
   Only applicable for
   modes 'text' and 'code'
   */
-  indentation: 4,
+  indentation: 2,
 
   /**
   Editor observer.

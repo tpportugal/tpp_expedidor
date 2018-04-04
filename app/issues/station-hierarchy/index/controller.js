@@ -2,8 +2,8 @@ import Ember from 'ember';
 import { computed } from '@ember/object';
 import { isPresent } from '@ember/utils';
 import Controller from '@ember/controller';
-import IssuesController from 'dispatcher/mixins/issues-controller';
-import PaginatedSortableController from 'dispatcher/mixins/paginated-sortable-controller';
+import IssuesController from 'tpp-dispatcher/mixins/issues-controller';
+import PaginatedSortableController from 'tpp-dispatcher/mixins/paginated-sortable-controller';
 
 export default Controller.extend(IssuesController, PaginatedSortableController, {
   rootRoute: 'issues.station-hierarchy',

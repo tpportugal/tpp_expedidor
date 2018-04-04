@@ -1,14 +1,14 @@
-<h2>{{link-to 'Changesets' 'changesets'}} / {{#link-to 'changesets.show' model.changeset}}Changeset #{{model.changeset.id}}{{/link-to}} / Editing Payload #{{model.id}}</h2>
+<h2>{{link-to 'Conjuntos de Alteração' 'changesets'}} / {{#link-to 'changesets.show' model.changeset}}Conjunto de Alteração #{{model.changeset.id}}{{/link-to}} / Editando Carga #{{model.id}}</h2>
 
 <dl class="dl-horizontal">
-  <dt>Created</dt>
+  <dt>Criado</dt>
   <dd>{{model.created_at}}</dd>
-  <dt>Updated</dt>
+  <dt>Atualizado</dt>
   <dd>{{model.updated_at}}</dd>
 </dl>
 
 {{json-editor json=model.payload mode='code'}}
 
-{{#link-to 'changesets.show' model.changeset class="btn btn-default"}}Cancel{{/link-to}}
-<a class="btn btn-danger" {{action 'delete' model}}>Delete this Payload</a>
-<input type="button" {{action 'update'}} value="Update" class="btn btn-primary pull-right">
+{{#link-to 'changesets.show' model.changeset class="btn btn-default"}}Cancelar{{/link-to}}
+<a class="btn btn-danger" {{action 'delete' model}}>Apagar esta Carga</a>
+<input type="button" {{action 'update'}} value="Atualizar" class="btn btn-primary pull-right">

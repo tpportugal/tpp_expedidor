@@ -1,19 +1,19 @@
 import Ember from 'ember';
 import DS from 'ember-data';
 
-import EntityWithActivityModel from 'dispatcher/entity-with-activity/model';
+import EntityWithActivityModel from 'tpp-dispatcher/entity-with-activity/model';
 
 export default EntityWithActivityModel.extend({
-	created_or_updated_in_changeset: DS.belongsTo('changeset', { async: true }),
-	onestop_id: Ember.computed.alias('id'),
-	name: DS.attr('string'),
-	created_at: DS.attr('date'),
-	updated_at: DS.attr('date'),
-	geometry: DS.attr(),
-	geometry_reversegeo: DS.attr(),
+  created_or_updated_in_changeset: DS.belongsTo('changeset', { async: true }),
+  onestop_id: Ember.computed.alias('id'),
+  name: DS.attr('string'),
+  created_at: DS.attr('date'),
+  updated_at: DS.attr('date'),
+  geometry: DS.attr(),
+  geometry_reversegeo: DS.attr(),
   geometry_centroid: DS.attr(),
-	tags: DS.attr(),
-	issues: DS.hasMany('issue'),
+  tags: DS.attr(),
+  issues: DS.hasMany('issue'),
   timezone: DS.attr('string'),
   coordinates: Ember.computed('geometry', 'geometry_reversegeo', function () {
     let c = this.get('geometry');

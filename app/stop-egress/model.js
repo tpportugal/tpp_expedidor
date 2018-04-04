@@ -1,6 +1,6 @@
 import { computed } from '@ember/object';
 import DS from 'ember-data';
-import Stop from 'dispatcher/stop/model';
+import Stop from 'tpp-dispatcher/stop/model';
 
 export default Stop.extend({
   parent_stop: DS.belongsTo('stop-station', { modelFor: 'stop-station' }),

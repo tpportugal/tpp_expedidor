@@ -1,6 +1,6 @@
 <h2>{{model.meta.total}} Feeds</h2>
 
-{{#collapsable-panel title="Filter Feeds" panelClass="panel-primary" show=true}}
+{{#collapsable-panel title="Filtrar Feeds" panelClass="panel-primary" show=true}}
   {{feed-controls
       active_feed_version_update=active_feed_version_update
       active_feed_version_expired=active_feed_version_expired
@@ -14,8 +14,8 @@
 
 <table class="table table-hover">
   <thead>
-    <th>Origin</th>
-    <th>Destination</th>
+    <th>Origem</th>
+    <th>Destino</th>
     {{#each departure_date_times as |departure_date_time|}}
       <th>{{departure_date_time}}</th>
     {{/each}}

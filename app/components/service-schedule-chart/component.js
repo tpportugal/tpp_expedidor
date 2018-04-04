@@ -66,7 +66,7 @@ export default Ember.Component.extend({
         .attr("x", width + 15)
         .attr("y", 0)
         .style("font", "12px sans-serif")
-        .text("No data");
+        .text("Sem dados");
     }
 
     // Axes
@@ -115,7 +115,7 @@ export default Ember.Component.extend({
         .attr("y", 6)
         .attr("dy", "0.71em")
         .attr("text-anchor", "end")
-        .text("Service (hours)");
+        .text("Serviço (horas)");
 
     // Draw series
     var seriesLine = g.selectAll(".series")

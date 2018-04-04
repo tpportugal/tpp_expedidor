@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import ENV from 'dispatcher/config/environment';
+import ENV from 'tpp-dispatcher/config/environment';
 
 export default Ember.Service.extend({
   queue: [],

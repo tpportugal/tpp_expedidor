@@ -1,11 +1,11 @@
 <table class="table table-hover">
   <thead>
-    <th>Onestop ID</th>
-    <th>Name</th>
-    <th>Country</th>
-    <th>State/Province</th>
-    <th>Metro</th>
-    <th>Links</th>
+    <th>ID Onestop</th>
+    <th>Nome</th>
+    <th>País</th>
+    <th>Distrito/Região</th>
+    <th>Concelho</th>
+    <th>Ligações</th>
   </thead>
   <tbody>
     {{#each operators as |operator|}}
@@ -16,10 +16,10 @@
         <td>{{operator.state}}</td>
         <td>{{operator.metro}}</td>
         <td><a href="https://tpp.pt/feed-registry/operators/{{operator.onestop_id}}">
-        {{fa-icon "external-link"}} View in Feed Registry</a></td>
+        {{fa-icon "external-link"}} Ver no Registo de Feeds</a></td>
       </tr>
     {{else}}
-      <p>No operators.</p>
+      <p>Nenhum operador.</p>
     {{/each}}
   </tbody>
 </table>

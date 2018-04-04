@@ -1,19 +1,19 @@
 {{#if session.isAuthenticated}}
   {{#if anyModelsSelected}}
     <div class="panel panel-primary">
-      <div class="panel-heading">Run Commands on Selected Feeds</div>
+      <div class="panel-heading">Correr Comandos na(s) Feed(s) Selecionada(s)</div>
       <div class="panel-body">
         <div class="row">
           <div class="col-md-6">
-            {{feed-fetcher-controls feeds=selectedModels buttonText="Fetch selected feed(s)"}}
+            {{feed-fetcher-controls feeds=selectedModels buttonText="Buscar Fetch selected selecionadasfeed(s)"}}
           </div>
           <div class="col-md-6">
-            Import latest version of feed(s) at:
-            <div class="btn-group" role="group" aria-label="Enqueue import:">
-              <button type="button" class="btn btn-warning" title="operators, stops, routes" {{action "enqueueSelectedFeedsForImport" 1}}>Level 1</button>
-              <button type="button" class="btn btn-warning" title="operators, stops, routes, schedules" {{action "enqueueSelectedFeedsForImport" 2}}>Level 2</button>
-              <button type="button" class="btn btn-warning" title="operators, stops, routes, schedules, Valhalla dev" {{action "enqueueSelectedFeedsForImport" 3}}>Level 3</button>
-              <button type="button" class="btn btn-warning" title="operators, stops, routes, schedules, Valhalla dev, Valhalla prod" {{action "enqueueSelectedFeedsForImport" 4}}>Level 4</button>
+            Importar a mais recente versão da(s) feed(s) no:
+            <div class="btn-group" role="group" aria-label="Agendar importação:">
+              <button type="button" class="btn btn-warning" title="operadores, paragens, rotas" {{action "enqueueSelectedFeedsForImport" 1}}>Nível 1</button>
+              <button type="button" class="btn btn-warning" title="operadores, paragens, rotas, horários" {{action "enqueueSelectedFeedsForImport" 2}}>Nível 2</button>
+              <button type="button" class="btn btn-warning" title="operadores, paragens, rotas, horários, Valhalla dev" {{action "enqueueSelectedFeedsForImport" 3}}>Nível 3</button>
+              <button type="button" class="btn btn-warning" title="operadores, paragens, rotas, horários, Valhalla dev, Valhalla prod" {{action "enqueueSelectedFeedsForImport" 4}}>Nível 4</button>
             </div>
           </div>
         </div>
@@ -40,12 +40,12 @@
       </th>
       <th>Onestop ID</th>
       <th>Name</th>
-      <th># of Feed Versions</th>
-      <th>Last Fetched</th>
-      <th>Fetch Status {{fa-icon "exclamation-triangle" size=2 classNames="text-danger" title='Fetch error status may be transient as feeds are continuously refetched'}}</th>
-      <th>Import Status</th>
-      <th>Last Imported</th>
-      <th>Import Level of Active Feed Version</th>
+      <th># de Versões da Feed</th>
+      <th>Última Busca</th>
+      <th>Estado da Busca {{fa-icon "exclamation-triangle" size=2 classNames="text-danger" title='Estados de erro na busca poderão ser temporários, pois as feeds estão a ser buscadas continuamente.'}}</th>
+      <th>Estado da Importação</th>
+      <th>Última Importação</th>
+      <th>Nível da Importação da Versão Ativa da Feed</th>
     </tr>
   </thead>
   <tbody>

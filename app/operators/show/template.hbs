@@ -1,11 +1,11 @@
-<h2>{{link-to 'Operators' 'operators'}} / {{model.onestop_id}}</h2>
+<h2>{{link-to 'Operadores' 'operators'}} / {{model.onestop_id}}</h2>
 
 <dl class="dl-horizontal">
-  <dt>Name</dt>
+  <dt>Nome</dt>
   <dd>{{model.name}}</dd>
-  <dt>Short name</dt>
+  <dt>Sigla</dt>
   <dd>{{model.short_name}}</dd>
-  <dt>Represented in Feeds</dt>
+  <dt>Representado nas Feeds</dt>
   <dd>
     <ul>
       {{#each model.feeds as |feed|}}
@@ -13,21 +13,21 @@
       {{/each}}
     </ul>
   </dd>
-  <dt>Country</dt>
+  <dt>País</dt>
   <dd>
     {{model.country}}
     {{#link-to 'operators' (query-params country=model.country state="null" metro="null" tag_key="null" tag_value="null")}}
       {{fa-icon "search-plus"}}
     {{/link-to}}
   </dd>
-  <dt>State</dt>
+  <dt>Distrito/Região</dt>
   <dd>
     {{model.state}}
     {{#link-to 'operators' (query-params country="null" state=model.state metro="null" tag_key="null" tag_value="null")}}
       {{fa-icon "search-plus"}}
     {{/link-to}}
   </dd>
-  <dt>Metro</dt>
+  <dt>Concelho</dt>
   <dd>
     {{model.metro}}
     {{#link-to 'operators' (query-params country="null" state="null" metro=model.metro tag_key="null" tag_value="null")}}
@@ -40,7 +40,7 @@
       {{key}}: {{value}} <br />
     {{/each-in}}
   </dd>
-  <dt>Links</dt>
+  <dt>Ligações</dt>
   <dd><a href="https://tpp.pt/feed-registry/operators/{{model.onestop_id}}">
-        {{fa-icon "external-link"}} View in TPP Feed Registry</a></dd>
+        {{fa-icon "external-link"}} Ver no Registo de Feeds TPP</a></dd>
 </dl>

@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-9">
     <div class="form-group">
-      <label>Issue Type</label>
+      <label>Tipo de Problema</label>
       {{#power-select options=model.issueTypes placeholder="" searchField="display" selected=issue_type onchange=(action "typeChanged") allowClear=true as |issueType|}}
         {{issueType}}
       {{/power-select}}

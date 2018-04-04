@@ -2,7 +2,7 @@
 
 module.exports = function (environment) {
   let ENV = {
-    modulePrefix: 'dispatcher',
+    modulePrefix: 'tpp-dispatcher',
     environment: environment,
     rootURL: '/',
     routerRootURL: '/',
@@ -23,7 +23,9 @@ module.exports = function (environment) {
         Date: false
       }
     },
-
+    moment: {
+      includeLocales: ['pt']
+    },
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
@@ -59,7 +61,7 @@ module.exports = function (environment) {
   }
 
   if (environment === 'staging') {
-    ENV.datastoreHost = 'https://tpp.pt';
+    ENV.datastoreHost = 'https://tppgeo.cf';
     ENV.valhallaHost = 'https://routing.tpp.pt/route';
     ENV.valhallaApiKey = 'valhalla-tQaRSNc';
     // ENV.rootURL = '/dispatcher/';

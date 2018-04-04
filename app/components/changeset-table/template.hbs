@@ -1,11 +1,11 @@
 <table class="table table-hover">
   <thead>
-    <th>Changeset ID</th>
-    <th>Last updated</th>
-    <th>Applied?</th>
-    <th>Notes</th>
+    <th>ID do Conjunto de Alteração</th>
+    <th>Última atualização</th>
+    <th>Aplicado?</th>
+    <th>Notas</th>
     {{#if showUserColumn}}
-      <th>User</th>
+      <th>Utilizador</th>
     {{/if}}
   </thead>
   <tbody>
@@ -28,7 +28,7 @@
         {{/if}}
       </tr>
     {{else}}
-      <p>No changesets.</p>
+      <p>Sem conjuntos de alteração.</p>
     {{/each}}
   </tbody>
 </table>

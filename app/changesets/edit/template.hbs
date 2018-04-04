@@ -1,7 +1,7 @@
-<h2>{{link-to 'Changesets' 'changesets'}} / Editing Changeset #{{model.changeset.id}}</h2>
+<h2>{{link-to 'Conjuntos de Alteração' 'changesets'}} / Editando Conjunto de Alteração #{{model.changeset.id}}</h2>
 
 {{changeset-form changeset=model.changeset users=model.users}}
 
-{{#link-to 'changesets.show' model.changeset class="btn btn-default"}}Cancel{{/link-to}}
-<input type="button" {{action 'delete'}} value="Delete Changeset" class="btn btn-danger">
-<input type="button" {{action 'update'}} value="Update Changeset" class="btn btn-primary pull-right">
+{{#link-to 'changesets.show' model.changeset class="btn btn-default"}}Cancelar{{/link-to}}
+<input type="button" {{action 'delete'}} value="Apagar Conjunto de Alteração" class="btn btn-danger">
+<input type="button" {{action 'update'}} value="Atualizar Conjunto de Alteração" class="btn btn-primary pull-right">

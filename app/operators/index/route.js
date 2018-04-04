@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import Route from '@ember/routing/route';
-import PaginatedSortableRoute from 'dispatcher/mixins/paginated-sortable-route';
+import PaginatedSortableRoute from 'tpp-dispatcher/mixins/paginated-sortable-route';
 import config from '../../config/environment';
 
 export default Route.extend(PaginatedSortableRoute, {

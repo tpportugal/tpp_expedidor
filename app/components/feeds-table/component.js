@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import SelectableModelComponent from 'dispatcher/mixins/selectable-model-component';
+import SelectableModelComponent from 'tpp-dispatcher/mixins/selectable-model-component';
 import { inject as service } from '@ember/service';
 
 export default Ember.Component.extend(SelectableModelComponent, {
@@ -17,13 +17,13 @@ export default Ember.Component.extend(SelectableModelComponent, {
       });
       Ember.RSVP.allSettled(importPromises).then( () => {
         flashMessages.add({
-          message: 'Successfully enqueued latest versions of feed(s) for import!',
+          message: 'A importação da(s) versão(ões) mais recente(s) da(s) feed(s) foi agendada com sucesso!',
           type: 'success',
           sticky: true
         });
       }).catch( (e) => {
         flashMessages.add({
-          message: `Error enqueuing feed(s) for import: ${e.message}`,
+          message: `Erro ao agendar importação da(s) feed(s): ${e.message}`,
           type: 'danger',
           sticky: true
         });

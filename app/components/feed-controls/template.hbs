@@ -2,7 +2,7 @@
   <div class="col-sm-3 col-xs-6">
     <div class="input-group">
       <span class="input-group-addon">
-        Valid on:
+        Válida em:
       </span>
       {{bootstrap-datepicker
         class="form-control"
@@ -18,7 +18,7 @@
   <div class="col-sm-3 col-xs-6">
     <div class="input-group">
       <span class="input-group-addon">
-        Expired on:
+        Expirada em:
       </span>
       {{bootstrap-datepicker
         class="form-control"
@@ -34,20 +34,20 @@
   <div class="col-sm-3 col-xs-6">
     <div class="input-group">
       <span class="input-group-addon">
-        Import level:
+        Nível de Importação:
       </span>
       <select class="form-control" onchange={{action (mut active_feed_version_import_level) value="target.value"}}>
         <option value=""></option>
-        <option value="1" selected={{eq active_feed_version_import_level "1"}}>Operator, stop, routes (1)</option>
-        <option value="2" selected={{eq active_feed_version_import_level "2"}}>Schedule (2)</option>
-        <option value="3" selected={{eq active_feed_version_import_level "3"}}>Valhalla Dev (3)</option>
-        <option value="4" selected={{eq active_feed_version_import_level "4"}}>Valhalla Prod (4)</option>
+        <option value="1" selected={{eq active_feed_version_import_level "1"}}>Operador, paragens, rotas (1)</option>
+        <option value="2" selected={{eq active_feed_version_import_level "2"}}>Horários, inclui nível 1 (2)</option>
+        <option value="3" selected={{eq active_feed_version_import_level "3"}}>Valhalla Routing Dev (3)</option>
+        <option value="4" selected={{eq active_feed_version_import_level "4"}}>Valhalla Routing Prod (4)</option>
       </select>
     </div>
   </div>
   <div class="col-sm-3 col-xs-6">
     <div class="input-group">
-      {{x-toggle showLabels=true onLabel="can be updated" offLabel="" value=active_feed_version_update}}
+      {{x-toggle showLabels=true onLabel="pode ser atualizada" offLabel="" value=active_feed_version_update}}
     </div>
   </div>
 </div>
@@ -62,32 +62,32 @@
       <input type="text" class="form-control" value={{tag_key}} oninput={{action (mut tag_key_input) value="target.value"}} />
       <input type="text" class="form-control" value={{tag_value}} oninput={{action (mut tag_value_input) value="target.value"}} />
       <span class="input-group-addon">
-        <button {{action "setTagKeyValue"}} class="btn btn-default">Filter</button>
+        <button {{action "setTagKeyValue"}} class="btn btn-default">Filtrar</button>
       </span>
     </div>
   </div>
   <div class="col-sm-3 col-xs-6">
     <div class="input-group">
       <span class="input-group-addon">
-        Fetch exception:
+        Problema na busca:
       </span>
       <select class="form-control" onchange={{action (mut latest_fetch_exception) value="target.value"}}>
         <option value=""></option>
-        <option value="true" selected={{eq latest_fetch_exception "true"}}>True</option>
-        <option value="false" selected={{eq latest_fetch_exception "false"}}>False</option>
+        <option value="true" selected={{eq latest_fetch_exception "true"}}>Sim</option>
+        <option value="false" selected={{eq latest_fetch_exception "false"}}>Não</option>
       </select>
     </div>
   </div>
   <div class="col-sm-3 col-xs-6">
     <div class="input-group">
       <span class="input-group-addon">
-        Latest import:
+        Última importação:
       </span>
       <select class="form-control" onchange={{action (mut latest_feed_version_import_status) value="target.value"}}>
         <option value=""></option>
-        <option value="true" selected={{eq latest_feed_version_import_status "true"}}>Succeeded</option>
-        <option value="false" selected={{eq latest_feed_version_import_status "false"}}>Failed</option>
-        <option value="null" selected={{eq latest_feed_version_import_status "null"}}>In Progress</option>
+        <option value="true" selected={{eq latest_feed_version_import_status "true"}}>Sucedeu</option>
+        <option value="false" selected={{eq latest_feed_version_import_status "false"}}>Falhou</option>
+        <option value="null" selected={{eq latest_feed_version_import_status "null"}}>Em Progresso</option>
       </select>
     </div>
   </div>

@@ -1,9 +1,9 @@
 <form {{action 'authenticate' on='submit'}} class="form">
-  <label for="identification">E-mail</label>
-  {{input id='identification' placeholder='E-mail' value=identification}}
-  <label for="password">Password</label>
-  {{input id='password' placeholder='Password' type='password' value=password}}
-  <button type="submit" class="btn btn-primary">Sign In</button>
+  <label for="identification">Email</label>
+  {{input id='identification' placeholder='Email' value=identification}}
+  <label for="password">Palavra Passe</label>
+  {{input id='password' placeholder='Palavra Passe' type='password' value=password}}
+  <button type="submit" class="btn btn-primary">Iniciar Sessão</button>
  {{#if errorMessage}}
     <p>{{errorMessage}}</p>
   {{/if}}

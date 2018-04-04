@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import Controller from '@ember/controller';
-import IssuesController from 'dispatcher/mixins/issues-controller';
-import PaginatedSortableController from 'dispatcher/mixins/paginated-sortable-controller';
+import IssuesController from 'tpp-dispatcher/mixins/issues-controller';
+import PaginatedSortableController from 'tpp-dispatcher/mixins/paginated-sortable-controller';
 import { computed } from '@ember/object';
 import { isPresent } from '@ember/utils';
 

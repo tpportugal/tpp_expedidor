@@ -1,17 +1,17 @@
 <div class="form-group">
-  <label for="name">Name</label>
+  <label for="name">Nome</label>
   {{input id="name" value=user.name class="form-control"}}
 </div>
 <div class="form-group">
-  <label for="email">E-mail</label>
+  <label for="email">Email</label>
   {{input id="email" value=user.email class="form-control"}}
 </div>
 <div class="form-group">
-  <label for="affiliation">Affiliation</label>
+  <label for="affiliation">Afiliação</label>
   {{input id="affiliation" value=user.affiliation class="form-control"}}
 </div>
 <div class="form-group">
-  <label>User Type</label>
+  <label>Tipo de utilizador</label>
   {{#power-select options=userTypes searchField="display" selected=user.user_type onchange=(action (mut user.user_type)) onfocus=(action "handleFocus") allowClear=true as |userType|}}
     {{underscored-string-to-title-case userType}}
   {{/power-select}}

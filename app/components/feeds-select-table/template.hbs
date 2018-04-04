@@ -1,11 +1,11 @@
 <div class="list-group">
   {{#if (eq '' selectedFeed)}}
     <button type="button" class="list-group-item active" {{action "feedClicked" null}}>
-      All
+      Todas
     </button>
   {{else}}
   <button type="button" class="list-group-item" {{action "feedClicked" null}}>
-    All
+    Todas
   </button>
   {{/if}}
   {{#each feeds as |feed|}}

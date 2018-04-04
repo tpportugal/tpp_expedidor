@@ -1,6 +1,6 @@
 import { computed } from '@ember/object';
 import DS from 'ember-data';
-import Stop from 'dispatcher/stop/model';
+import Stop from 'tpp-dispatcher/stop/model';
 
 function next_fragment(entities, separator) {
   var ids = entities.map(function(i) {return i.id.split(separator)[1]; });
@@ -39,7 +39,7 @@ export default Stop.extend({
         id: this.id + separator + fragment,
         timezone: this.get('timezone'),
         geometry: this.get('geometry_centroid'),
-        name: 'New Platform'
+        name: 'Nova Platforma'
       }
     );
   },
@@ -51,7 +51,7 @@ export default Stop.extend({
         id: this.id + separator + fragment,
         timezone: this.get('timezone'),
         geometry: this.get('geometry_centroid'),
-        name: 'New Egress'
+        name: 'Nova Saída'
       }
     );
   }

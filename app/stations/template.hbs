@@ -1,40 +1,40 @@
 {{#if showChangeset}}
-  {{#modal-dialog title='Changeset' ok='saveChangeset' close='hideChangeset' okText='Apply Changeset'}}
+  {{#modal-dialog title='Conjunto de Mudança' ok='saveChangeset' close='hideChangeset' okText='Aplicar Conjunto de Alteração'}}
     {{changeset-form changeset=model.changeset users=model.users }}
   {{/modal-dialog}}
 {{/if}}
 
 <div class="row">
   <div class="col-xs-4">
-    <h2>Stations</h2>
+    <h2>Paragens</h2>
   </div>
 
   <div class="col-xs-8 text-right">
 
     <select class="form-control" style="display:inline;width: 150px;" onchange={{action (mut exclude) value="target.value"}}>
       <option value=""></option>
-      <option value="generated" selected={{eq exclude "generated"}}>Excl. generated platforms and egresses</option>
+      <option value="generated" selected={{eq exclude "generated"}}>Excl. platformas e saídas geradas</option>
     </select>
 
     <select class="form-control" style="display:inline;width: 150px;" onchange={{action (mut min_platforms) value="target.value"}}>
       <option value=""></option>
-      <option value="0" selected={{eq min_platforms ""}}>All stops</option>
-      <option value="1" selected={{eq min_platforms "1"}}>1+ Platform</option>
-      <option value="2" selected={{eq min_platforms "2"}}>2+ Platforms</option>
-      <option value="3" selected={{eq min_platforms "3"}}>3+ Platforms</option>
+      <option value="0" selected={{eq min_platforms ""}}>Todas as paragens</option>
+      <option value="1" selected={{eq min_platforms "1"}}>1+ Platforma</option>
+      <option value="2" selected={{eq min_platforms "2"}}>2+ Platformas</option>
+      <option value="3" selected={{eq min_platforms "3"}}>3+ Platformas</option>
     </select>
 
 
     <select class="form-control" style="display:inline;width: 150px;" onchange={{action (mut min_egresses) value="target.value"}}>
       <option value=""></option>
-      <option value="0" selected={{eq min_egresses ""}}>All stops</option>
-      <option value="1" selected={{eq min_egresses "1"}}>1+ Egress</option>
-      <option value="2" selected={{eq min_egresses "2"}}>2+ Egresses</option>
-      <option value="3" selected={{eq min_egresses "3"}}>3+ Egresses</option>
+      <option value="0" selected={{eq min_egresses ""}}>Todas as paragens</option>
+      <option value="1" selected={{eq min_egresses "1"}}>1+ Saída</option>
+      <option value="2" selected={{eq min_egresses "2"}}>2+ Saídas</option>
+      <option value="3" selected={{eq min_egresses "3"}}>3+ Saídas</option>
     </select>
 
-    <button {{action "setBounds"}} class="btn btn-primary">Refresh</button>
-    <button {{action "showChangeset"}} class="btn btn-primary">Changeset</button>
+    <button {{action "setBounds"}} class="btn btn-primary">Atualizar</button>
+    <button {{action "showChangeset"}} class="btn btn-primary">Conjunto de Alteração</button>
 
   </div>
 

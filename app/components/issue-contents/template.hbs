@@ -2,12 +2,12 @@
 <b>{{issue.issue_type}}</b>
 <p>{{issue.computeTypeDescription}}</p>
 {{#if showEntities}}
-  <h3>Entities</h3>
+  <h3>Entidades</h3>
   <table class="table">
     <thead>
-      <th>Entity ID</th>
-      <th>Attribute Blame</th>
-      <th>Attribute Value</th>
+      <th>ID da Entidade</th>
+      <th>Atributo Culpado</th>
+      <th>Valor do Atributo</th>
     </thead>
     <tbody>
       {{#each issue.entities_with_issues as |entity_with_issue|}}
@@ -17,20 +17,20 @@
           <td>{{get entity_with_issue.entity entity_with_issue.entity_attribute}}</td>
         </tr>
       {{else}}
-        <p>No entities.</p>
+        <p>Nenhuma entidade.</p>
       {{/each}}
     </tbody>
   </table>
 {{/if}}
-<h3>Details</h3>
+<h3>Detalhes</h3>
 <p>{{issue.details}}</p>
-<h3>Time created</h3>
+<h3>Criado a</h3>
 <p>{{time-since-with-mouseover issue.created_at}}</p>
-<h3>Time updated</h3>
+<h3>Atualizado a</h3>
 <p>{{time-since-with-mouseover issue.updated_at}}</p>
-<h3>Created by changeset</h3>
+<h3>Criado pelo conjunto de alteração</h3>
 {{#if issue.created_by_changeset_id}}
   {{issue.created_by_changeset_id}}
 {{else}}
-  None.
+  Nenhum.
 {{/if}}

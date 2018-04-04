@@ -3,11 +3,11 @@
     <h2>{{model.meta.total}} Feeds</h2>
   </div>
   <div class="col-xs-6 text-right">
-    {{#link-to 'feeds.bulk-add' class="btn btn-default"}}Bulk Add Feeds{{/link-to}}
+    {{#link-to 'feeds.bulk-add' class="btn btn-default"}}Adicionar Feeds em Massa{{/link-to}}
   </div>
 </div>
 
-{{#collapsable-panel title="Filter Feeds" panelClass="panel-primary" show=true}}
+{{#collapsable-panel title="Filtrar Feeds" panelClass="panel-primary" show=true}}
   {{feed-controls
       active_feed_version_update=active_feed_version_update
       active_feed_version_expired=active_feed_version_expired

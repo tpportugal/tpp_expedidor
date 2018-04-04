@@ -1,5 +1,5 @@
 {
-  "name": "dispatcher",
+  "name": "tpp-dispatcher",
   "version": "0.0.0",
   "description": "Front-end to administer and monitor the TPP Datastore",
   "private": true,

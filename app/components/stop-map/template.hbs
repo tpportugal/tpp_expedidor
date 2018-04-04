@@ -1,6 +1,7 @@
 {{#leaflet-map lat=lat lng=lng zoom=zoom onZoomend=(action "updateView") onDragend=(action "updateView") as |layers|}}
 
-  {{layers.tile url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
+  <!--{{layers.tile url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}-->
+  {{layers.tile url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"}}
 
   {{#each stops as |stop|}}
 
@@ -62,11 +63,11 @@
     {{/each}}
 
     {{#layers.polygon locations=stop.stationPlatformLines color="#ff4c4c" as |polygon|}}
-      {{#polygon.popup}}Platforms{{/polygon.popup}}
+      {{#polygon.popup}}Platformas{{/polygon.popup}}
     {{/layers.polygon}}
 
     {{#layers.polygon locations=stop.stationEgressLines color="#6666e1" as |polygon|}}
-      {{#polygon.popup}}Egresses{{/polygon.popup}}
+      {{#polygon.popup}}Saídas{{/polygon.popup}}
     {{/layers.polygon}}
 
   {{/each}}

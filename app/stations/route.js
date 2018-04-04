@@ -38,13 +38,13 @@ export default Route.extend({
     // Changeset
     let changeset = this.store.createRecord('changeset', {
       user: this.get('currentUser.user'),
-      notes: 'Station editor:'
+      notes: 'Editor de Paragens:'
     });
     changeset.get('change_payloads').createRecord();
     // Stops
     let q = {
       bbox: bbox,
-      per_page: 100,
+      per_page: 500,
       total: false,
       exclude: params.exclude
     }

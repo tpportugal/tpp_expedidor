@@ -26,14 +26,14 @@ export default EmberUploader.FileField.extend({
         feed_onestop_id: feed_onestop_id
       }).then(data => {
         flashMessages.add({
-          message: 'Feed version successfully uploaded!',
+          message: 'Versão da feed enviada com sucesso!',
           type: 'success',
           sticky: true
         });
         // TODO: transition to the feed version page
       }, error => {
         flashMessages.add({
-          message: 'Error uploading feed version: ' + JSON.stringify(error),
+          message: 'Erro ao enviar versão da feed: ' + JSON.stringify(error),
           type: 'danger',
           sticky: true
         });

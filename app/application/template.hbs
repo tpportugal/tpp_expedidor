@@ -2,35 +2,35 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-to-collapse" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
+        <span class="sr-only">Alternar navegação</span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      {{link-to 'TPP Dispatcher' 'index' class="navbar-brand"}}
+      {{link-to 'Expedidor TPP' 'index' class="navbar-brand"}}
     </div>
     <div class="collapse navbar-collapse" id="navbar-to-collapse">
       <ul class="nav navbar-nav">
         {{#link-to 'index' tagName='li' href=null}}
-          {{#link-to 'index'}}Activity{{/link-to}}
+          {{#link-to 'index'}}Actividade{{/link-to}}
         {{/link-to}}
         {{#link-to 'feeds' tagName='li' href=null}}
           {{#link-to 'feeds'}}Feeds{{/link-to}}
         {{/link-to}}
         {{#link-to 'operators' tagName='li' href=null}}
-          {{#link-to 'operators'}}Operators{{/link-to}}
+          {{#link-to 'operators'}}Operadores{{/link-to}}
         {{/link-to}}
         {{#link-to 'changesets' tagName='li' href=null}}
-          {{#link-to 'changesets'}}Changesets{{/link-to}}
+          {{#link-to 'changesets'}}Conj. Alteração{{/link-to}}
         {{/link-to}}
         {{#link-to 'users' tagName='li' href=null}}
-          {{#link-to 'users'}}Users{{/link-to}}
+          {{#link-to 'users'}}Utilizadores{{/link-to}}
         {{/link-to}}
         {{#link-to 'stations' tagName='li' href=null}}
-          {{#link-to 'stations'}}Stations{{/link-to}}
+          {{#link-to 'stations'}}Paragens{{/link-to}}
         {{/link-to}}
         {{#link-to 'issues' tagName='li' href=null}}
-          {{#link-to 'issues'}}Quality Issues{{/link-to}}
+          {{#link-to 'issues'}}Prob. Qualidade{{/link-to}}
         {{/link-to}}
       </ul>
       {{current-user-menu}}

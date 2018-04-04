@@ -7,7 +7,7 @@ export default Ember.Component.extend({
       this.toggleProperty('dropDownExpanded');
     },
     setAsActiveFeedVersion: function() {
-      alert('TODO: make this work on the Datastore back-end!');
+      alert('TODO: fazer com que isto funcione no Banco de Dados!');
     },
     changeImportLevel: function(importLevel) {
       var self = this;
@@ -16,14 +16,14 @@ export default Ember.Component.extend({
       feedVersion.set('import_level', importLevel);
       feedVersion.save().then(function() {
         flashMessages.add({
-          message: "Import level updated on feed version!",
+          message: "Nível de importação atualizado na versão da feed!",
           type: 'success',
           sticky: true
         });
         // TODO: force a reload of the feed model
       }).catch(function(error) {
         flashMessages.add({
-          message: `Error(s) updating import level on feed version: ${error.message}`,
+          message: `Erro(s) ao atualizar nível de importação na versão da feed: ${error.message}`,
           type: 'danger',
           sticky: true
         });
@@ -37,13 +37,13 @@ export default Ember.Component.extend({
       this.model.enqueue(importLevel)
       .then( () => {
         flashMessages.add({
-          message: 'Successfully enqueued feed version for import!',
+          message: 'Importação da versão da feed agendada com sucesso!',
           type: 'success',
           sticky: true
         });
       }).catch( (e) => {
         flashMessages.add({
-          message: `Error enqueuing feed version for import: ${e.message}`,
+          message: `Erro ao agendar importação da versão da feed: ${e.message}`,
           type: 'danger',
           sticky: true
         });

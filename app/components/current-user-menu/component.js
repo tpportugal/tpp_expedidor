@@ -9,7 +9,7 @@ export default Ember.Component.extend({
   actions: {
     signOut() {
       const flashMessages = Ember.get(this, 'flashMessages');
-      flashMessages.success("Signed out.");
+      flashMessages.success("Sessão terminada.");
       this.get('session').invalidate();
     }
   }

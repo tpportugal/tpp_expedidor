@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import DS from 'ember-data';
-import EntityWithActivityModel from 'dispatcher/entity-with-activity/model';
+import EntityWithActivityModel from 'tpp-dispatcher/entity-with-activity/model';
 
 export default EntityWithActivityModel.extend({
   feed_versions: DS.hasMany('feed-version', { async: true }),

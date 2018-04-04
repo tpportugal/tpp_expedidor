@@ -12,11 +12,11 @@ export default Ember.Mixin.create({
         self.set('closeMessage.show', false);
         self.postCloseTransition();
       }).catch(function(error){
-        self.set('closeMessage', {show: true, error: true, message: 'Error closing issue ' + self.model.selectedIssue.id + '. ' + error.message});
+        self.set('closeMessage', {show: true, error: true, message: 'Erro ao fechar problema ' + self.model.selectedIssue.id + '. ' + error.message});
       });
     },
     closeDialog: function() {
-      this.set('closeMessage', {show: true, message: 'Close issue ' + this.model.selectedIssue.id });
+      this.set('closeMessage', {show: true, message: 'Fechar problema ' + this.model.selectedIssue.id });
     }
   }
 });

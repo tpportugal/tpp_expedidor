@@ -18,14 +18,14 @@ export default Route.extend(AuthenticatedRouteMixin, {
       const flashMessages = Ember.get(this, 'flashMessages');
       changeset.destroyRecord().then(() => {
         flashMessages.add({
-          message: "Changeset deleted!",
+          message: "Conjunto de alteração apagado!",
           type: 'success',
           sticky: true
         });
         self.transitionTo('changesets');
       }).catch(function(error) {
         flashMessages.add({
-          message: `Error(s) deleting changeset: ${error.message}`,
+          message: `Erro(s) ao apagar conjunto de alteração: ${error.message}`,
           type: 'danger',
           sticky: true
         });
@@ -37,14 +37,14 @@ export default Route.extend(AuthenticatedRouteMixin, {
       let changeset = self.currentModel.changeset;
       changeset.save().then(function() {
         flashMessages.add({
-          message: "Changeset updated!",
+          message: "Conjunto de alteração atualizado!",
           type: 'success',
           sticky: true
         });
         self.transitionTo('changesets.show', changeset);
       }).catch(function(error) {
         flashMessages.add({
-          message: `Error(s) updating changeset: ${error.message}`,
+          message: `Erro(s) ao atualizar conjunto de alteração: ${error.message}`,
           type: 'danger',
           sticky: true
         });

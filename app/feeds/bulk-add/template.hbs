@@ -1,10 +1,10 @@
-<h2>{{#link-to 'feeds'}}Feeds{{/link-to}} / Bulk Add</h2>
+<h2>{{#link-to 'feeds'}}Feeds{{/link-to}} / Adicionar em Massa</h2>
 {{#if outputResults}}
   <table class="table table-striped">
     <thead>
       <th>URL</th>
-      <th>Status</th>
-      <th>Actions</th>
+      <th>Estado</th>
+      <th>Ações</th>
     </thead>
     <tbody>
       {{#each outputResults as |result|}}
@@ -12,26 +12,26 @@
           <td>{{result.url}}</td>
           <td>
             {{#if result.onestopId}}
-              Already in TPP!
+              Já existe no TPP!
             {{else}}
-              Not found in TPP.
+              Nãa encontrada no TPP.
             {{/if}}
           </td>
           <td>
             {{#if result.onestopId}}
-              {{#link-to 'feeds.show' result.onestopId target="_blank"}}View in Dispatcher{{/link-to}}
+              {{#link-to 'feeds.show' result.onestopId target="_blank"}}Ver no Expedidor{{/link-to}}
             {{else}}
-              <a href="https://tpp.pt/feed-registry/feeds/new?feedUrl={{result.url}}" target="_blank">Add to Feed Registry</a>
+              <a href="https://tpp.pt/feed-registry/feeds/new?feedUrl={{result.url}}" target="_blank">Adicionar ao Registo de Feeds</a>
             {{/if}}
           </td>
         </tr>
       {{/each}}
     </tbody>
   </table>
-  <button {{action "clear"}} class="btn btn-default">{{fa-icon icon="long-arrow-left"}} Clear or Edit URLs</button>
+  <button {{action "clear"}} class="btn btn-default">{{fa-icon icon="long-arrow-left"}} Apagar ou Editar URLs</button>
 {{else}}
-  <p>Enter a list of feed URLs below, separated by line breaks.</p>
+  <p>Introduza a lista de URLs das feeds abaixo, separados por quebras de linha.</p>
   {{textarea class="form-control" value=inputUrls cols=100 rows=6}}
-  <button {{action "add"}} class="btn btn-primary">Check and Add URLs</button>
+  <button {{action "add"}} class="btn btn-primary">Verificar e Adicionar URLs</button>
 {{/if}}
 

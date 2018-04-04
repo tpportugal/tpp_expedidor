@@ -5,7 +5,7 @@ import Controller from '@ember/controller';
 export default Controller.extend({
   lat: 39.3999,
   lng: -8.2245,
-  zoom: 11,
+  zoom: 12,
   getChanges: function() {
     var entities = [];
     entities = entities.concat(this.store.peekAll('stop-station').filter(function(e) { return e.get('hasDirtyAttributes'); }));
@@ -35,14 +35,14 @@ export default Controller.extend({
           return changeset.apply();
         }).then(function() {
           flashMessages.add({
-            message: `Changeset created & applied`,
+            message: `Conjunto de alteração criado & aplicado`,
             type: 'success',
             sticky: true
           });
           self.set('showChangeset', false);
         }).catch(function(error) {
           flashMessages.add({
-            message: `Error(s) updating change payload: ${error.message}`,
+            message: `Erro(s) ao atualizar carga de alteração: ${error.message}`,
             type: 'danger',
             sticky: true
           });

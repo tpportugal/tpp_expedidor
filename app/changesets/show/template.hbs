@@ -1,36 +1,36 @@
-<h2>{{link-to 'Changesets' 'changesets'}} / Changeset #{{model.id}}</h2>
+<h2>{{link-to 'Conjuntos de Alteração' 'changesets'}} / Conjunto de Alteração #{{model.id}}</h2>
 
 <dl class="dl-horizontal">
-  <dt>Notes</dt>
+  <dt>Notas</dt>
   <dd>{{model.notes}}</dd>
-  <dt>Applied</dt>
+  <dt>Aplicado</dt>
   <dd>
     {{#if model.applied}}
       <span style="color: green;">
-        {{fa-icon icon="check-square-o" title="This changeset has been applied."}}
+        {{fa-icon icon="check-square-o" title="Este conjunto de alteração foi aplicado."}}
       </span>
     {{else}}
-      {{fa-icon icon="square-o" title="This changeset has not been applied."}}
+      {{fa-icon icon="square-o" title="Este conjunto de alteração não foi aplicado."}}
     {{/if}}
   </dd>
-  <dt>Created</dt>
+  <dt>Criado</dt>
   <dd>{{time-since-with-mouseover model.created_at}}</dd>
-  <dt>Updated</dt>
+  <dt>Atualizado</dt>
   <dd>{{time-since-with-mouseover model.updated_at}}</dd>
   {{#if model.user}}
-    <dt>Author</dt>
+    <dt>Autor</dt>
     <dd>
       {{#link-to 'users.show' model.user}}{{model.user.name}} {{model.user.email}}{{/link-to}}
     </dd>
   {{/if}}
   {{#if model.imported_from_feed}}
-    <dt>Imported from Feed</dt>
+    <dt>Importado da Feed</dt>
     <dd>
       {{#link-to 'feeds.show' model.imported_from_feed}}{{model.imported_from_feed.onestop_id}}{{/link-to}}
     </dd>
   {{/if}}
   {{#if model.imported_from_feed_version}}
-    <dt>Imported from Feed Version</dt>
+    <dt>Importado a Versão da Feed</dt>
     <dd>
       {{#link-to 'feeds.show' model.imported_from_feed}}{{model.imported_from_feed_version.sha1}}{{/link-to}}
     </dd>
@@ -38,12 +38,12 @@
 </dl>
 
 {{#unless model.applied }}
-  {{#link-to 'changesets.edit' model.id class="btn btn-primary" }}Edit changeset{{/link-to}}
-  <input type="button" class="btn btn-danger" {{action 'apply'}} value="Apply changeset">
+  {{#link-to 'changesets.edit' model.id class="btn btn-primary" }}Editar conjunto de alteração{{/link-to}}
+  <input type="button" class="btn btn-danger" {{action 'apply'}} value="Aplicar conjunto de alteração">
 {{/unless}}
 
 {{#if model.feeds_created_or_updated}}
-  <h2>Feeds created/updated by this changeset</h2>
+  <h2>Feeds criadas/atualiazadas por este conjunto de alteração</h2>
   <ul>
     {{#each model.feeds_created_or_updated as |feed|}}
       <li>
@@ -54,5 +54,5 @@
 {{/if}}
 
 {{#if model.change_payloads}}
-  <h2>Change Payloads</h2> {{change-payloads-list changeset=model}}
+  <h2>Carga de Alteração</h2> {{change-payloads-list changeset=model}}
 {{/if}}

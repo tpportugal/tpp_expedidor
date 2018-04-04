@@ -1,9 +1,9 @@
 import DS from 'ember-data';
-import ENV from 'dispatcher/config/environment';
+import ENV from 'tpp-dispatcher/config/environment';
 import DataAdapterMixin from 'ember-simple-auth/mixins/data-adapter-mixin';
 import { pluralize } from 'ember-inflector';
 import { decamelize, underscore } from '@ember/string';
-import PromiseThrottle from 'dispatcher/application/promise-throttle';
+import PromiseThrottle from 'tpp-dispatcher/application/promise-throttle';
 import { Promise } from 'rsvp';
 
 export default DS.RESTAdapter.extend(DataAdapterMixin, {

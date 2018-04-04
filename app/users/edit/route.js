@@ -12,14 +12,14 @@ export default Route.extend({
       var user = self.currentModel;
       user.save().then(function() {
         flashMessages.add({
-          message: "User updated!",
+          message: `Utilizador atualizado!`,
           type: 'success',
           sticky: true
         });
         self.transitionTo('users.show', user);
       }).catch(function(error) {
         flashMessages.add({
-          message: `Error(s) updating user: ${error.message}`,
+          message: `Erro(s) ao atualizar utilizador: ${error.message}`,
           type: 'danger',
           sticky: true
         });

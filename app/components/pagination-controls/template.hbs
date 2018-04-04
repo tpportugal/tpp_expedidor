@@ -2,19 +2,19 @@
   <div class="col-sm-4">
     {{#if hasPreviousPage}}
         {{#link-to route (query-params offset=previousOffset) class="btn btn-default"}}
-          <span aria-hidden="true">&larr;</span> Previous
+          <span aria-hidden="true">&larr;</span> Anterior
         {{/link-to}}
     {{/if}}
   </div>
   <div class="col-sm-4">
     {{#power-select options=perPageOptions selected=perPage onchange=(action (mut perPage)) as |perPageOption|}}
-      <strong>{{perPageOption}}</strong> per page
+      <strong>{{perPageOption}}</strong> por página
     {{/power-select}}
   </div>
   <div class="col-sm-4 text-right">
     {{#if hasNextPage}}
       {{#link-to route (query-params offset=nextOffset) class="btn btn-default"}}
-        Next <span aria-hidden="true">&rarr;</span>
+        Próxima <span aria-hidden="true">&rarr;</span>
       {{/link-to}}
     {{/if}}
   </div>

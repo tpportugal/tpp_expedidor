@@ -1,31 +1,31 @@
 {{#if showIssue}}
-  {{#modal-dialog title='New Issue' ok='saveIssue' close='hideIssue' okText='Save Issue'}}
+  {{#modal-dialog title='New Issue' ok='saveIssue' close='hideIssue' okText='Salvar Problema'}}
     {{json-editor json=createdIssue mode='view'}}
   {{/modal-dialog}}
 {{/if}}
 
 <div class="form-group">
-  <label>Entities</label>
-  {{#power-select-multiple options=entities placeholder="Select Onestop Ids" selected=selectedEntities onchange=(action "handleEntityChanged") onFocus=(action "handleEntityFocus") as |onestop_id|}}
+  <label>Entidades</label>
+  {{#power-select-multiple options=entities placeholder="Selecione IDs Onestop" selected=selectedEntities onchange=(action "handleEntityChanged") onFocus=(action "handleEntityFocus") as |onestop_id|}}
     {{onestop_id}}
   {{/power-select-multiple}}
 </div>
 <div class="form-group">
-  <label>Issue Type</label>
+  <label>Tipo de Problema</label>
   {{#power-select options=issueTypes searchField="display" selected=issue_type onchange=(action (mut issue_type)) onfocus=(action "handleType") allowClear=true as |issueType|}}
     {{issueType}}
   {{/power-select}}
 </div>
 <div class="form-group">
-  <label>Attribute Choices</label>
+  <label>Escolher Atributo</label>
   {{#power-select options=attributes searchField="display" selected=selectedAttribute onchange=(action (mut selectedAttribute)) onfocus=(action "handleAttribute") allowClear=true as |attribute|}}
     {{attribute}}
   {{/power-select}}
 </div>
 <div class="form-group">
-  <label for="name">Details</label>
+  <label for="name">Detalhes</label>
   {{input id="details" value="" focus-out=(action "inputChanged") class="form-control"}}
 </div>
 <div class="form-group">
-  <button type="button" class="btn btn-primary" {{action "createIssue"}}>Create</button>
+  <button type="button" class="btn btn-primary" {{action "createIssue"}}>Criar</button>
 </div>

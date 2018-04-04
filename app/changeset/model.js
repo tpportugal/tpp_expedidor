@@ -1,5 +1,5 @@
 import DS from 'ember-data';
-import EntityWithActivityModel from 'dispatcher/entity-with-activity/model';
+import EntityWithActivityModel from 'tpp-dispatcher/entity-with-activity/model';
 
 export default EntityWithActivityModel.extend({
   change_payloads: DS.hasMany('change-payload', { async: true }),

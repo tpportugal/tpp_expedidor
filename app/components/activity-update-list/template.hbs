@@ -1,19 +1,19 @@
 {{#if currentlyFiltering}}
   {{#if filterByChangesetId}}
     <p>
-      Showing activity related to changeset #{{filterByChangesetId}}
-      ({{#link-to 'index' (query-params changeset=null)}}clear filter{{/link-to}})
+      Mostrando actividade relacionada com o conjunto de alteração #{{filterByChangesetId}}
+      ({{#link-to 'index' (query-params changeset=null)}}limpar filtro{{/link-to}})
    </p>
   {{/if}}
   {{#if filterByFeedOnestopId}}
     <p>
-      Showing activity related to feed #{{filterByFeedOnestopId}}
-      ({{#link-to 'index' (query-params feed=null)}}clear filter{{/link-to}})
+      Mostrando actividade relacionada com a feed #{{filterByFeedOnestopId}}
+      ({{#link-to 'index' (query-params feed=null)}}limpar filtro{{/link-to}})
    </p>
   {{/if}}
 {{else}}
   <p>
-    Filter by changeset:
+    Filtrar por conjunto de alteração:
     <ul>
       {{#each possibleChangesetsToFilterBy as |changesetId|}}
         <li>{{#link-to 'index' (query-params changeset=changesetId)}}#{{changesetId}}{{/link-to}}</li>
@@ -21,7 +21,7 @@
     </ul>
    </p>
   <p>
-    Filter by feed:
+    Filtrar por feed:
     <ul>
       {{#each possibleFeedsToFilterBy as |feedOnestopId|}}
         <li>{{#link-to 'index' (query-params feed=feedOnestopId)}}{{feedOnestopId}}{{/link-to}}</li>
@@ -33,5 +33,5 @@
 {{#each activityUpdates as |activityUpdate|}}
   {{activity-update-list/activity-update-entry activityUpdate=activityUpdate}}
 {{else}}
-  <p>No activity updates.</p>
+  <p>Sem actividades de atualização.</p>
 {{/each}}

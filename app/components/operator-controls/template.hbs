@@ -3,7 +3,7 @@
   <div class="col-sm-3">
     <div class="input-group">
       <span class="input-group-addon">
-        Country:
+        País:
       </span>
       {{#power-select
         options=geographies.countries
@@ -20,7 +20,7 @@
   <div class="col-sm-3">
     <div class="input-group">
       <span class="input-group-addon">
-        State/Province:
+        Distrito/Região:
       </span>
       {{#power-select
         options=geographies.states
@@ -37,7 +37,7 @@
   <div class="col-sm-3">
     <div class="input-group">
       <span class="input-group-addon">
-        Metro:
+        Concelho:
       </span>
       {{#power-select
         options=geographies.metros
@@ -54,11 +54,11 @@
   <div class="col-sm-3">
     <div class="input-group">
       <span class="input-group-addon">
-        Without feed:
+        Sem feed:
       </span>
       <select class="form-control" onchange={{action (mut without_feed) value="target.value"}}>
         <option value=""></option>
-        <option value="true" selected={{eq without_feed "true"}}>True</option>
+        <option value="true" selected={{eq without_feed "true"}}>Sim</option>
       </select>
     </div>
   </div>
@@ -67,11 +67,11 @@
 <div class="row">
   <div class="col-sm-3">
     <div class="input-group">
-      <input type="text" class="form-control" placeholder="Tag key" value={{tag_key}} oninput={{action (mut tag_key_input) value="target.value"}} />
+      <input type="text" class="form-control" placeholder="Chave da Tag" value={{tag_key}} oninput={{action (mut tag_key_input) value="target.value"}} />
       <span class="input-group-addon" style="border-left: 0; border-right: 0;">:</span>
-      <input type="text" class="form-control" placeholder="Tag value" value={{tag_value}} oninput={{action (mut tag_value_input) value="target.value"}} />
+      <input type="text" class="form-control" placeholder="Valor da Tag" value={{tag_value}} oninput={{action (mut tag_value_input) value="target.value"}} />
       <span class="input-group-addon">
-        <button {{action "setTagKeyValue"}} class="">Filter</button>
+        <button {{action "setTagKeyValue"}} class="">Filtrar</button>
       </span>
     </div>
   </div>

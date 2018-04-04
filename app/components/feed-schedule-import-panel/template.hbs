@@ -1,17 +1,17 @@
-{{#collapsable-panel title="Feed Schedule Import" panelClass=isSuccessful}}
+{{#collapsable-panel title="Agendamento de Importação de Feed" panelClass=isSuccessful}}
   <dl class="dl-horizontal">
-    <dt>Created at</dt>
+    <dt>Criada a</dt>
     <dd>{{feedScheduleImport.created_at}}</dd>
-    <dt>Updated at</dt>
+    <dt>Atualizada a</dt>
     <dd>{{feedScheduleImport.updated_at}}</dd>
   </dl>
   {{#if feedScheduleImport.import_log}}
-    {{#collapsable-panel title="Import Log"}}
+    {{#collapsable-panel title="Registo de Importação"}}
       <pre>{{feedScheduleImport.import_log}}</pre>
     {{/collapsable-panel}}
   {{/if}}
   {{#if feedScheduleImport.exception_log}}
-    {{#collapsable-panel title="Exception Log" panelClass="panel-danger"}}
+    {{#collapsable-panel title="Registo de Problema" panelClass="panel-danger"}}
       <pre>{{feedScheduleImport.exception_log}}</pre>
     {{/collapsable-panel}}
   {{/if}}

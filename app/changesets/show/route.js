@@ -12,14 +12,14 @@ export default Route.extend({
       var changeset = self.currentModel;
       changeset.apply().then(() => {
         flashMessages.add({
-          message: "Changeset applied!",
+          message: "Conjunto de alteração aplicado!",
           type: 'success',
           sticky: true
         });
         changeset.reload();
       }).catch((error) => {
         flashMessages.add({
-          message: `Error(s) applying changeset: ${error.message}`,
+          message: `Erro(s) ao aplicar conjunto de alteração: ${error.message}`,
           type: 'danger',
           sticky: true
         });

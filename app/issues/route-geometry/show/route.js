@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import { inject as service } from '@ember/service';
 import Route from '@ember/routing/route';
-import IssuesRoute from 'dispatcher/mixins/issues-route';
+import IssuesRoute from 'tpp-dispatcher/mixins/issues-route';
 
 export default Route.extend(IssuesRoute, {
   currentUser: service(),
@@ -20,7 +20,7 @@ export default Route.extend(IssuesRoute, {
 
     let changeset = self.store.createRecord('changeset', {
       user: self.get('currentUser.user'),
-      notes: 'Issue resolution:'
+      notes: 'Resolução do problema:'
     });
 
     changeset.get('change_payloads').createRecord();
@@ -98,11 +98,11 @@ export default Route.extend(IssuesRoute, {
         model.issueRouteStopPatterns.forEach(function(rsp){
           // Distance calc issue details come with a full array of stop distances along the RSP
           if (model.selectedIssue.get('issue_type') == 'distance_calculation_inaccurate') {
-            let re = 'Distances: \\[.+\\]';
+            let re = 'Distâncias: \\[.+\\]';
             let match = model.selectedIssue.get('details').match(re);
             if (match) {
               rsp.set('stop_distances', JSON.parse(match[0].replace('Distances: ', '')));
-              model.selectedIssue.set('details', model.selectedIssue.get('details').replace(/Distances: \[.+\]/, ''));
+              model.selectedIssue.set('details', model.selectedIssue.get('details').replace(/Distâncias: \[.+\]/, ''));
             }
           }
 
@@ -122,7 +122,7 @@ export default Route.extend(IssuesRoute, {
       });
     }).catch((error) => {
       flashMessages.add({
-        message: `Error(s): ${error.message}`,
+        message: `Erro(s): ${error.message}`,
         type: 'danger',
         sticky: true
       });

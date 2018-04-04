@@ -1,7 +1,7 @@
 import Controller from '@ember/controller';
-import IssuesController from 'dispatcher/mixins/issues-controller';
-import IssuesResolvingChangesetController from 'dispatcher/mixins/issues-resolving-changeset-controller';
-import IssuesCloseController from 'dispatcher/mixins/issues-close-controller';
+import IssuesController from 'tpp-dispatcher/mixins/issues-controller';
+import IssuesResolvingChangesetController from 'tpp-dispatcher/mixins/issues-resolving-changeset-controller';
+import IssuesCloseController from 'tpp-dispatcher/mixins/issues-close-controller';
 
 export default Controller.extend(IssuesController,
                                        IssuesResolvingChangesetController,

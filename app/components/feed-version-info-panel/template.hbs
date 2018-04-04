@@ -1,16 +1,16 @@
 {{#if model.json.error}}
-<h4>There was an error processing this Feed Version</h4>
+<h4>Houve um erro a processar esta Versão da Feed</h4>
 <p>
   {{model.json.error}}
 </p>
 
 {{else}}
-  
+
   <h4>
-    Files in the Archive
+    Ficheiros no Arquivo
     {{#component "fa-icon" "question-circle"}}
       {{#popover-on-component}}
-        <p>This is a list of all files in the <code>.zip</code> archive, including files that are optional or outside of the GTFS spec.</p>
+        <p>Esta é uma lista de todos os ficheiros no arquivo <code>.zip</code>, incluindo ficheiros que são opcionais ou fora da especificação GTFS.</p>
       {{/popover-on-component}}
     {{/component}}
   </h4>
@@ -21,10 +21,10 @@
   </ul>
 
   <h4>
-    File Content Summaries
+    Sumários do Conteúdo dos Ficheiros
     {{#component "fa-icon" "question-circle"}}
       {{#popover-on-component}}
-        <p>These tables summarize the contents of <code>.txt</code> files that are included in the GTFS spec. Files that are not whitelisted by the <a href="https://github.com/Rui-Santos/tpp-gtfs">TPP GTFS wrapper library</a> are not parsed (for security and performance reasons). Within whitelisted files, all columns are parsed, even columns that are option or outside of the GTFS spec.</p>
+        <p>Estas tabelas sumarizam os conteúdos dos ficheiros <code>.txt</code> que estão incluídos na especificação GTFS. Ficheiros que não estão aprovados pela <a href="https://github.com/Rui-Santos/tpp-gtfs">TPP GTFS lib</a> não são lidos (por razões de segurança e de desempenho). Dentro dos ficheiros aprovados, todas as colunas são lidas, mesmo colunas que sejam opcionais ou fora da especificação GTFS.</p>
       {{/popover-on-component}}
     {{/component}}
   </h4>
@@ -34,19 +34,19 @@
         <h4>
           {{key}}
           <small class="pull-right">
-            <a href="{{links-to-gtfs-spec-and-best-practices filename=key destination="spec"}}" target="_blank">{{fa-icon "external-link"}} GTFS spec about {{key}}</a>
+            <a href="{{links-to-gtfs-spec-and-best-practices filename=key destination="spec"}}" target="_blank">{{fa-icon "external-link"}} Especificação GTFS acerca de {{key}}</a>
             &nbsp;
-            <a href="{{links-to-gtfs-spec-and-best-practices filename=key destination="bestPractices"}}" target="_blank">{{fa-icon "external-link"}} GTFS Best Practices about {{key}}</a>
+            <a href="{{links-to-gtfs-spec-and-best-practices filename=key destination="bestPractices"}}" target="_blank">{{fa-icon "external-link"}} Melhores Práticas GTFS acerca de {{key}}</a>
           </small>
         </h4>
       </caption>
       <thead>
         <tr>
-          <th>Column heading</th>
-          <th># of total rows</th>
-          <th># of unique row values</th>
-          <th>Minimum row value</th>
-          <th>Maximum row value</th>
+          <th>Nome da Coluna</th>
+          <th># total de fileiras</th>
+          <th># de valores únicos nas linhas</th>
+          <th>Valor mínimo nas linhas</th>
+          <th>Valor máximo nas linhas</th>
         </tr>
       </thead>
       <tbody>

@@ -1,9 +1,9 @@
 <dl class="dl-horizontal">
-  <dt>Name</dt>
+  <dt>Nome</dt>
   <dd>{{model.name}}</dd>
   <dt>URL</dt>
   <dd>{{model.url}}</dd>
-  <dt>Feed format</dt>
+  <dt>Formato da Feed</dt>
   <dd>{{model.feed_format}}</dd>
   <dt>Tags</dt>
   <dd>
@@ -11,44 +11,44 @@
       {{key}}: {{value}} <br />
     {{/each-in}}
   </dd>
-  <dt>License name and/or URL</dt>
+  <dt>Nome da licença e/ou URL</dt>
   <dd>{{model.license_name}} {{model.license_url}}</dd>
-  <dt>License use without attribution</dt>
+  <dt>Licença de utilização sem atribuição</dt>
   <dd>{{model.license_use_without_attribution}}</dd>
-  <dt>License created derived product</dt>
+  <dt>Licença de criação de produtos derivados</dt>
   <dd>{{model.license_create_derived_product}}</dd>
-  <dt>License redistribute</dt>
+  <dt>Licença de redistribuição</dt>
   <dd>{{model.license_redistribute}}</dd>
   {{#if model.license_attribution_text}}
-    <dt>License attribution text</dt>
+    <dt>Texto de atribuição da licença</dt>
     <dd>{{model.license_attribution_text}}</dd>
   {{/if}}
-  <dt># of feed versions</dt>
+  <dt># de versões da feed</dt>
   <dd>{{model.feed_versions_count}}</dd>
-  <dt>Active feed version</dt>
+  <dt>Versão de feed ativa</dt>
   <dd>
     {{#if model.active_feed_version}}
       {{#link-to 'feed-versions.show' model.active_feed_version}}{{model.active_feed_version.short_sha1}}{{/link-to}}
     {{else}}
-      <em>none</em>
+      <em>nenhuma</em>
     {{/if}}
   </dd>
-  <dt>Import level of active feed version</dt>
+  <dt>Nível de importação da versão de feed ativa</dt>
   <dd>{{number-as-pips model.import_level_of_active_feed_version 4}}</dd>
-  <dt>Created</dt>
+  <dt>Criada</dt>
   <dd>{{time-since-with-mouseover model.created_at}}</dd>
-  <dt>Updated</dt>
+  <dt>Atualizada</dt>
   <dd>{{time-since-with-mouseover model.updated_at}}</dd>
   {{#if model.created_or_updated_in_changeset}}
-    <dt>Created or updated in</dt>
+    <dt>Criada ou atualizada no</dt>
     <dd>
       <h4>{{#link-to 'changesets.show' model.created_or_updated_in_changeset}}
-        changeset #{{model.created_or_updated_in_changeset.id}}
+        conjunto de alteração #{{model.created_or_updated_in_changeset.id}}
       {{/link-to}}</h4>
     </dd>
   {{/if}}
-  <dt>Last fetched at</dt>
+  <dt>Última busca em</dt>
   <dd>{{time-since-with-mouseover model.last_fetched_at}}</dd>
-  <dt>Last imported at</dt>
+  <dt>Última importação em</dt>
   <dd>{{time-since-with-mouseover model.last_imported_at}}</dd>
 </dl>

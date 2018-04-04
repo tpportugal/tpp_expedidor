@@ -1,16 +1,16 @@
-<h2>{{link-to 'Users' 'users'}} / {{model.name}}</h2>
+<h2>{{link-to 'Utilizadores' 'users'}} / {{model.name}}</h2>
 
 <dl class="dl-horizontal">
-  <dt>E-mail</dt>
+  <dt>Email</dt>
   <dd>{{model.email}}</dd>
-  <dt>Affiliation</dt>
+  <dt>Afiliação</dt>
   <dd>{{model.affiliation}}</dd>
-  <dt>User Type</dt>
+  <dt>Tipo de Utilizador</dt>
   <dd>{{model.user_type}}</dd>
 </dl>
 
-{{#link-to 'users.edit' model class="btn btn-primary" }}Edit{{/link-to}}
+{{#link-to 'users.edit' model class="btn btn-primary" }}Editar{{/link-to}}
 
-<h2>Changesets by User</h2>
+<h2>Conjuntos de Alteração pelo Utilizador</h2>
 
 {{changeset-table changesets=model.changesets showUserColumn=false}}

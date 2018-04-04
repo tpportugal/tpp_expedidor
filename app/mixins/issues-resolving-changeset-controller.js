@@ -9,7 +9,7 @@ export default Ember.Mixin.create({
   emptyChangeset: function() {
     let changeset = this.store.createRecord('changeset', {
       user: this.get('currentUser.user'),
-      notes: 'Issue resolution:'
+      notes: 'Resolução do problema:'
     });
     changeset.get('change_payloads').createRecord();
     this.set('model.changeset', changeset);
@@ -21,7 +21,7 @@ export default Ember.Mixin.create({
       if (response.status === 'complete') {
         flashMessages.clearMessages();
         flashMessages.add({
-          message: 'Successfully resolved issue ' + resolvingIssue.id + '. Click to close.',
+          message: 'Problema ' + resolvingIssue.id + ' resolvido com sucesso. Clique para fechar.',
           type: 'success',
           sticky: true
         });
@@ -33,7 +33,7 @@ export default Ember.Mixin.create({
       else if (response.status === 'error') {
         flashMessages.clearMessages();
         flashMessages.add({
-          message: 'Error resolving issue ' + resolvingIssue.id + '. ' + response.errors + '. Click to close.',
+          message: 'Erro ao resolver problema ' + resolvingIssue.id + '. ' + response.errors + '. Clique para fechar.',
           type: 'danger',
           sticky: true
         });
@@ -46,7 +46,7 @@ export default Ember.Mixin.create({
     }).catch(function(e){
       flashMessages.clearMessages();
       flashMessages.add({
-        message: 'Error resolving issue ' + resolvingIssue.id + '. ' + e.errors[0].message + '. Click to close.',
+        message: 'Erro ao resolver problema ' + resolvingIssue.id + '. ' + e.errors[0].message + '. Clique para fechar.',
         type: 'danger',
         sticky: true
       });
@@ -66,7 +66,7 @@ export default Ember.Mixin.create({
         }).then(function(response) {
           self.set('applyingSpinner', false);
           self.set('showChangeset', false);
-          flashMessages.info('Applying changeset to resolve issue ' + self.model.selectedIssue.id);
+          flashMessages.info('Aplicando conjunto de alteração para resolver problema ' + self.model.selectedIssue.id);
           var applicationAdapter = self.store.adapterFor('changeset');
           var modelUrl = applicationAdapter.buildURL('changeset', self.get('model.changeset.id'));
           var applyUrl = modelUrl + '/apply_async';

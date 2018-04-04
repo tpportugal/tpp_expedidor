@@ -1,5 +1,5 @@
 import Route from '@ember/routing/route';
-import IssuesRoute from 'dispatcher/mixins/issues-route';
+import IssuesRoute from 'tpp-dispatcher/mixins/issues-route';
 import { inject as service } from '@ember/service';
 
 export default Route.extend(IssuesRoute, {
@@ -9,7 +9,7 @@ export default Route.extend(IssuesRoute, {
     this.store.unloadAll('change_payload');
     let changeset = this.store.createRecord('changeset', {
       user: this.get('currentUser.user'),
-      notes: 'Issue resolution:'
+      notes: 'Resolução do problema:'
     });
     changeset.get('change_payloads').createRecord();
     let users = this.store.query('user', { per_page: false });

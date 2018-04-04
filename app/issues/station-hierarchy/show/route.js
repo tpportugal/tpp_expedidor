@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import { inject as service } from '@ember/service';
 import Route from '@ember/routing/route';
-import IssuesRoute from 'dispatcher/mixins/issues-route';
+import IssuesRoute from 'tpp-dispatcher/mixins/issues-route';
 
 export default Route.extend(IssuesRoute, {
   currentUser: service(),

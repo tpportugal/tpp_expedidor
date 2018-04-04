@@ -4,13 +4,13 @@ export default Ember.Service.extend({
   typeDescription: function(issue_type) {
     switch (issue_type) {
       case 'feed_fetch_invalid_url':
-        return 'The host as specified may not exist or there may have been a network issue during fetch.';
+        return 'O hospedeiro, como especificado, pode não existir ou pode ter havido um problema de rede durante a busca.';
       case 'feed_fetch_invalid_source':
-        return 'GTFS feed does not contain the required files, or there was an unknown problem with fetching.';
+        return 'A Feed GTFS não contém todos os ficheiros necessários, ou houve um problema desconhecido com a busca.';
       case 'feed_fetch_invalid_response':
-        return 'The host responded, but the GTFS feed could not be found or retrieved.';
+        return 'O hospedeiro respondeu, mas a feed GTFS não foi encontrada ou recuperada.';
       case 'feed_fetch_invalid_zip':
-        return 'Feed zip structure is not supported.';
+        return 'A estrutura do ficheiro zip não é suportada.';
     }
   },
 });
