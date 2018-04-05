@@ -1,12 +1,13 @@
-import Ember from 'ember';
-const { run, get } = Ember;
-
+import { run } from '@ember/runloop';
+import { get } from '@ember/object';
+import Component from '@ember/component';
 import { select } from 'd3-selection';
 import { min, max } from 'd3-array';
 import { line } from 'd3-shape';
 import { scaleTime, scaleLinear, scaleOrdinal, schemeCategory10 } from 'd3-scale';
 import { isoParse } from 'd3-time-format';
 import { axisBottom, axisLeft } from 'd3-axis';
+import $ from 'jquery';
 
 function parseModel(model) {
   let data = model.get('feed_version_infos').filterBy('type','FeedVersionInfoStatistics').get('firstObject.json');
@@ -24,7 +25,7 @@ function parseModel(model) {
 
 // https://github.com/brzpegasus/ember-d3/blob/master/tests/dummy/app/components/simple-circles.js
 // https://bl.ocks.org/mbostock/3884955
-export default Ember.Component.extend({
+export default Component.extend({
   tagName: 'svg',
   classNames: ['service-schedule-chart-svg'],
   width: 720,

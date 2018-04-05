@@ -1,4 +1,3 @@
-import Ember from 'ember';
 import { computed } from '@ember/object';
 import { isPresent } from '@ember/utils';
 import Controller from '@ember/controller';

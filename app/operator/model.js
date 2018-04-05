@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import { alias } from '@ember/object/computed';
 import DS from 'ember-data';
 
 var Operator = DS.Model.extend({
@@ -8,7 +8,7 @@ var Operator = DS.Model.extend({
   identifiers: DS.attr(),
   name: DS.attr('string'),
   short_name: DS.attr('string'),
-  onestop_id: Ember.computed.alias('id'),
+  onestop_id: alias('id'),
   country: DS.attr('string'),
   state: DS.attr('string'),
   metro: DS.attr('string'),

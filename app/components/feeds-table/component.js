@@ -1,8 +1,11 @@
-import Ember from 'ember';
-import SelectableModelComponent from 'tpp-dispatcher/mixins/selectable-model-component';
+import Component from '@ember/component';
+import { get } from '@ember/object';
+import { allSettled } from 'rsvp';
 import { inject as service } from '@ember/service';
+import SelectableModelComponent from 'tpp-dispatcher/mixins/selectable-model-component';
 
-export default Ember.Component.extend(SelectableModelComponent, {
+
+export default Component.extend(SelectableModelComponent, {
   session: service(),
   classNames: ['table-responsive'],
   getSelectableModels: function() {
@@ -11,11 +14,11 @@ export default Ember.Component.extend(SelectableModelComponent, {
   selectableModelDefault: false,
   actions: {
     enqueueSelectedFeedsForImport: function(importLevel) {
-      const flashMessages = Ember.get(this, 'flashMessages');
+      const flashMessages = get(this, 'flashMessages');
       let importPromises = this.get('selectedFeeds').map(function(feed) {
         return feed.content.enqueue(importLevel);
       });
-      Ember.RSVP.allSettled(importPromises).then( () => {
+      allSettled(importPromises).then( () => {
         flashMessages.add({
           message: `A importação da(s) versão(ões) mais recente(s) da(s) feed(s) foi agendada com sucesso!`,
           type: 'success',

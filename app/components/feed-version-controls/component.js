@@ -1,6 +1,7 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { get } from '@ember/object';
 
-export default Ember.Component.extend({
+export default Component.extend({
   dropDownExpanded: false,
   actions: {
     toggleDropDownExpanded: function() {
@@ -12,7 +13,7 @@ export default Ember.Component.extend({
     changeImportLevel: function(importLevel) {
       var self = this;
       var feedVersion = this.get('feedVersion');
-      const flashMessages = Ember.get(this, 'flashMessages');
+      const flashMessages = get(this, 'flashMessages');
       feedVersion.set('import_level', importLevel);
       feedVersion.save().then(function() {
         flashMessages.add({
@@ -33,7 +34,7 @@ export default Ember.Component.extend({
     },
     enqueue: function(importLevel) {
       var self = this;
-      const flashMessages = Ember.get(this, 'flashMessages');
+      const flashMessages = get(this, 'flashMessages');
       this.model.enqueue(importLevel)
       .then( () => {
         flashMessages.add({

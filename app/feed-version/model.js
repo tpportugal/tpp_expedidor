@@ -1,5 +1,8 @@
 import DS from 'ember-data';
-import Ember from 'ember';
+import { alias } from '@ember/object/computed';
+import { equal } from '@ember/object/computed';
+import { gte } from '@ember/object/computed';
+import { computed } from '@ember/object';
 
 export default DS.Model.extend({
   feed: DS.belongsTo('feed', { async: true }),
@@ -24,14 +27,14 @@ export default DS.Model.extend({
   download_url: DS.attr('string'),
   feedvalidator_url: DS.attr('string'),
 
-  sha1: Ember.computed.alias('id'),
-  import_level_at_least_level_one: Ember.computed.gte('import_level', 1),
-  import_level_is_level_two: Ember.computed.equal('import_level', 2),
-  import_level_at_least_level_two: Ember.computed.gte('import_level', 2),
-  import_level_at_least_level_three: Ember.computed.gte('import_level', 3),
-  import_level_at_least_level_four: Ember.computed.gte('import_level', 4),
+  sha1: alias('id'),
+  import_level_at_least_level_one: gte('import_level', 1),
+  import_level_is_level_two: equal('import_level', 2),
+  import_level_at_least_level_two: gte('import_level', 2),
+  import_level_at_least_level_three: gte('import_level', 3),
+  import_level_at_least_level_four: gte('import_level', 4),
 
-  short_sha1: Ember.computed('sha1', function() {
+  short_sha1: computed('sha1', function() {
     return this.id.slice(0,8) + "…";
   }),
 

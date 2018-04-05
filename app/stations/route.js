@@ -1,5 +1,5 @@
-import Ember from 'ember';
 import Route from '@ember/routing/route';
+import { hash } from 'rsvp';
 import { inject as service } from '@ember/service';
 
 export default Route.extend({
@@ -54,7 +54,7 @@ export default Route.extend({
     if (min_egresses > 0) {
       q.min_egresses = min_egresses
     }
-    return Ember.RSVP.hash({
+    return hash({
       changeset: changeset,
       stops: this.store.query('stop-station', q)
     });

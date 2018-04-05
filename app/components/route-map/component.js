@@ -1,6 +1,9 @@
 import Ember from 'ember';
+import L from 'ember-leaflet';
+import Component from '@ember/component';
 
-export default Ember.Component.extend({
+
+export default Component.extend({
   // url: "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png",
   url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
   options: {},

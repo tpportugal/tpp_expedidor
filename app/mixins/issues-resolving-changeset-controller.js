@@ -1,7 +1,9 @@
-import Ember from 'ember';
+import Mixin from '@ember/object/mixin';
+import { get } from '@ember/object';
+import { later } from '@ember/runloop';
 import { inject as service } from '@ember/service';
 
-export default Ember.Mixin.create({
+export default Mixin.create({
   currentUser: service(),
   getChanges: function() {
 
@@ -16,7 +18,7 @@ export default Ember.Mixin.create({
   },
   pollChangesetApply: function(resolvingIssue, url, applicationAdapter) {
     var self = this;
-    const flashMessages = Ember.get(this, 'flashMessages');
+    const flashMessages = get(this, 'flashMessages');
     applicationAdapter.ajax(url, 'post').then(function(response){
       if (response.status === 'complete') {
         flashMessages.clearMessages();
@@ -28,7 +30,7 @@ export default Ember.Mixin.create({
         self.postSuccessTransition();
       }
       else if (response.status === 'queued') {
-        Ember.run.later(self.pollChangesetApply.bind(self, resolvingIssue, url, applicationAdapter), 2000);
+        later(self.pollChangesetApply.bind(self, resolvingIssue, url, applicationAdapter), 2000);
       }
       else if (response.status === 'error') {
         flashMessages.clearMessages();
@@ -41,7 +43,7 @@ export default Ember.Mixin.create({
         self.emptyChangeset();
       }
       else {
-        Ember.run.later(self.pollChangesetApply.bind(self, resolvingIssue, url, applicationAdapter), 2000);
+        later(self.pollChangesetApply.bind(self, resolvingIssue, url, applicationAdapter), 2000);
       }
     }).catch(function(e){
       flashMessages.clearMessages();
@@ -57,7 +59,7 @@ export default Ember.Mixin.create({
 
   actions: {
     saveChangeset: function() {
-      const flashMessages = Ember.get(this, 'flashMessages');
+      const flashMessages = get(this, 'flashMessages');
       var self = this;
       return self.model.changeset.save()
         .then(function(changeset) {

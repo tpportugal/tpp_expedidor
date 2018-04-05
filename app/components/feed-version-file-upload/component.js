@@ -1,7 +1,8 @@
-import Ember from 'ember';
 import EmberUploader from 'ember-uploader';
 import config from '../../config/environment';
 import { inject as service } from '@ember/service';
+import { isEmpty } from '@ember/utils';
+import { get } from '@ember/object';
 
 export default EmberUploader.FileField.extend({
   session: service(),
@@ -19,8 +20,8 @@ export default EmberUploader.FileField.extend({
       });
     });
 
-    if (!Ember.isEmpty(files)) {
-      const flashMessages = Ember.get(this, 'flashMessages');
+    if (!isEmpty(files)) {
+      const flashMessages = get(this, 'flashMessages');
       const feed_onestop_id = this.get('feed_onestop_id');
       uploader.upload(files[0], {
         feed_onestop_id: feed_onestop_id

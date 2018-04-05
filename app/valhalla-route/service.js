@@ -1,7 +1,10 @@
-import Ember from 'ember';
+import { later } from '@ember/runloop';
+import { throttle } from '@ember/runloop';
+import Service from '@ember/service';
+import $ from 'jquery';
 import ENV from 'tpp-dispatcher/config/environment';
 
-export default Ember.Service.extend({
+export default Service.extend({
   queue: [],
   rate_limit: ENV.valhallaRateLimit,
   api_key: ENV.valhallaApiKey,
@@ -9,7 +12,7 @@ export default Ember.Service.extend({
   url_lrm: "https://valhalla.github.io/demos/routing/index.html#",
   run() {
     var job = this.get('queue').shift();
-    return Ember.$.getJSON(job.url).then(function(trip){
+    return $.getJSON(job.url).then(function(trip){
       job.success(trip);
     }, function(failure) {
       job.failure(failure);
@@ -17,12 +20,12 @@ export default Ember.Service.extend({
   },
   poll() {
     // Run the throttled function
-    Ember.run.throttle(this, this.run, this.get('rate_limit'));
+    throttle(this, this.run, this.get('rate_limit'));
     // Return if no items left to process
     if (this.get('queue').length) {
       // Re-poll
       var self = this;
-      Ember.run.later(function() {
+      later(function() {
         self.poll();
       }, this.get('rate_limit'));
     }
@@ -38,14 +41,14 @@ export default Ember.Service.extend({
     return job;
   },
   empty() {
-    console.log('empty queue');
+    // console.log('empty queue');
     this.get('queue').setObjects([]);
   },
   // Get Valhalla Route
   get_url(params) {
     var api_key = this.get('api_key');
     var url = this.get('url');
-    return url + "?" + Ember.$.param({json: JSON.stringify(params), api_key: api_key});
+    return url + "?" + $.param({json: JSON.stringify(params), api_key: api_key});
   },
   get_url_lrm(params) {
     return this.get('url_lrm') + $.param({

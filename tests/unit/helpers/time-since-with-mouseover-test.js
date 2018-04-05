@@ -1,4 +1,4 @@
-import { timeSinceWithMouseover } from 'dispatcher/helpers/time-since-with-mouseover';
+import { timeSinceWithMouseover } from 'tpp-dispatcher/components/time-since-with-mouseover/component';
 import { module, test } from 'qunit';
 
 module('Unit | Helper | time since with mouseover');

@@ -1,8 +1,8 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import { inject as service } from '@ember/service';
 import { computed } from '@ember/object';
 
-export default Ember.Component.extend({
+export default Component.extend({
   valhalla_route: service('valhalla-route'),
   tagName: 'td',
   classNameBindings: ['failure:danger', 'success:success'],
@@ -26,7 +26,7 @@ export default Ember.Component.extend({
     var destination = this.get('destination');
     var departure_date_time = this.get('departure_date_time');
     if (!this.get('origin') || !this.get('destination')) {
-      console.log("Problem with origin/destination: skipping");
+      // console.log("Problem with origin/destination: skipping");
       return;
     }
     var valhalla = this.get('valhalla_route');

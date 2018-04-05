@@ -1,7 +1,9 @@
 import Ember from 'ember';
-import config from '../../../config/environment';
+import L from 'ember-leaflet';
+import Component from '@ember/component';
+// import config from '../../../config/environment';
 
-export default Ember.Component.extend({
+export default Component.extend({
   onestop_id: '',
   markerStopIcon: L.icon({
     iconUrl: '/assets/images/station.png',

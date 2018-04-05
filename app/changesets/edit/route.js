@@ -1,12 +1,13 @@
-import Ember from 'ember';
 import Route from '@ember/routing/route';
+import { get } from '@ember/object';
+import { hash } from 'rsvp';
 import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
 
 export default Route.extend(AuthenticatedRouteMixin, {
   model: function(params) {
     let changeset = this.store.find('changeset', params['changeset_id']);
     let users = this.store.query('user', { per_page: false });
-    return Ember.RSVP.hash({
+    return hash({
       changeset: changeset,
       users: users
     });
@@ -15,7 +16,7 @@ export default Route.extend(AuthenticatedRouteMixin, {
     delete: function() {
       let self = this;
       let changeset = self.currentModel.changeset;
-      const flashMessages = Ember.get(this, 'flashMessages');
+      const flashMessages = get(this, 'flashMessages');
       changeset.destroyRecord().then(() => {
         flashMessages.add({
           message: "Changeset apagado!",
@@ -32,7 +33,7 @@ export default Route.extend(AuthenticatedRouteMixin, {
       });
     },
     update: function() {
-      const flashMessages = Ember.get(this, 'flashMessages');
+      const flashMessages = get(this, 'flashMessages');
       let self = this;
       let changeset = self.currentModel.changeset;
       changeset.save().then(function() {

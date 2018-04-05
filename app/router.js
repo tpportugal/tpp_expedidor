@@ -4,9 +4,9 @@ import config from './config/environment';
 const Router = EmberRouter.extend({
   location: config.locationType,
   rootURL: config.routerRootURL,
-  scrollToTop: function() {
+  didTransition() {
     window.scrollTo(0, 0);
-  }.on('didTransition')
+  }
 });
 
 Router.map(function() {

@@ -1,5 +1,5 @@
 
-import { linksToGtfsSpecAndBestPractices } from 'dispatcher/helpers/links-to-gtfs-spec-and-best-practices';
+import { linksToGtfsSpecAndBestPractices } from 'tpp-dispatcher/helpers/links-to-gtfs-spec-and-best-practices';
 import { module, test } from 'qunit';
 
 module('Unit | Helper | links to gtfs spec and best practices');

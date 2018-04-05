@@ -1,4 +1,6 @@
 import Ember from 'ember';
+import L from 'ember-leaflet';
+import { hash } from 'rsvp';
 import { inject as service } from '@ember/service';
 import Route from '@ember/routing/route';
 import IssuesRoute from 'tpp-dispatcher/mixins/issues-route';
@@ -34,7 +36,7 @@ export default Route.extend(IssuesRoute, {
           return new L.latLng(stop.get('coordinates'));
         }));
         let latLng = bounds.getCenter();
-        return Ember.RSVP.hash({
+        return hash({
           selectedIssue: selectedIssue,
           changeset: changeset,
           lat: latLng.lat,

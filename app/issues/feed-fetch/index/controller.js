@@ -1,4 +1,3 @@
-import Ember from 'ember';
 import Controller from '@ember/controller';
 import IssuesController from 'tpp-dispatcher/mixins/issues-controller';
 import PaginatedSortableController from 'tpp-dispatcher/mixins/paginated-sortable-controller';

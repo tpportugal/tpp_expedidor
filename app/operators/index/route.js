@@ -1,4 +1,5 @@
-import Ember from 'ember';
+import $ from 'jquery';
+import { hash } from 'rsvp';
 import Route from '@ember/routing/route';
 import PaginatedSortableRoute from 'tpp-dispatcher/mixins/paginated-sortable-route';
 import config from '../../config/environment';
@@ -25,7 +26,7 @@ export default Route.extend(PaginatedSortableRoute, {
     }
   },
   model: function(params) {
-    let geographies = Ember.$.get(config.datastoreHost + '/api/v1/operators/aggregate').then(function(response) {
+    let geographies = $.get(config.datastoreHost + '/api/v1/operators/aggregate').then(function(response) {
         return {
           countries: Object.keys(response.country),
           states: Object.keys(response.state),
@@ -33,7 +34,7 @@ export default Route.extend(PaginatedSortableRoute, {
         }
       });
     let operators = this.store.query('operator', params);
-    return Ember.RSVP.hash({
+    return hash({
       geographies: geographies,
       operators: operators
     });

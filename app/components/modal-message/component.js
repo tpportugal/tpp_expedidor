@@ -1,9 +1,9 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 
-export default Ember.Component.extend({
-  show: function() {
+export default Component.extend({
+  didInsertElement() {
     this.$('.modal').modal().on('hidden.bs.modal', function() {
       this.sendAction('close');
     }.bind(this));
-  }.on('didInsertElement')
+  }
 });

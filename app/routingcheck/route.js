@@ -1,5 +1,5 @@
-import Ember from 'ember';
 import Route from '@ember/routing/route';
+import { all } from 'rsvp';
 import { inject as service } from '@ember/service';
 import PaginatedSortableRoute from 'tpp-dispatcher/mixins/paginated-sortable-route';
 import FeedParamsRoute from 'tpp-dispatcher/mixins/feed-params-route';
@@ -48,7 +48,7 @@ export default Route.extend(FeedParamsRoute, PaginatedSortableRoute, {
       var rsp_count_promises = feeds.map(function(feed) {
         var feed_onestop_id = feed.id;
         var active_feed_version = feed.get('active_feed_version').get('id');
-        console.log('route_count_promises:', feed_onestop_id, active_feed_version);
+        // onsole.log('route_count_promises:', feed_onestop_id, active_feed_version);
         return self.store.query('route-stop-pattern', {
           imported_from_feed: feed_onestop_id,
           imported_from_feed_version: active_feed_version,
@@ -56,7 +56,7 @@ export default Route.extend(FeedParamsRoute, PaginatedSortableRoute, {
           total: true
         });
       });
-      return Ember.RSVP.all(rsp_count_promises);
+      return all(rsp_count_promises);
 
     }).then(function(rsp_count_results) {
       // Sample routes from the total routes for each feed
@@ -66,11 +66,11 @@ export default Route.extend(FeedParamsRoute, PaginatedSortableRoute, {
         var rsp_sample = [];
         for (var i=0; i < rsp_count.meta.total; i++) { rsp_sample.push(i); }
         if (rsp_count.meta.total === 0) {
-          console.log("No rsps!");
+          // console.log("No rsps!");
           rsp_sample.push(0);
         }
         return shuffle_sample(rsp_sample, 2).map(function(rsp_offset) {
-          console.log('rsp_promises:', feed_onestop_id, feed_version_sha1, rsp_offset);
+          // console.log('rsp_promises:', feed_onestop_id, feed_version_sha1, rsp_offset);
           return self.store.query('route-stop-pattern', {
             imported_from_feed: feed_onestop_id,
             imported_from_feed_version: feed_version_sha1,
@@ -80,14 +80,14 @@ export default Route.extend(FeedParamsRoute, PaginatedSortableRoute, {
           });
         });
       });
-      return Ember.RSVP.all([].concat.apply([], rsp_promises));
+      return all([].concat.apply([], rsp_promises));
 
     }).then(function(rsp_results) {
       // Sample stops from each route
       var stop_promises = rsp_results.map(function(rsp_result) {
         var rsp = rsp_result.get('firstObject');
         if (!rsp) {
-          console.log("No rsp! Selecting first two stops in feed.");
+          // console.log("No rsp! Selecting first two stops in feed.");
           return self.store.query('stop', {
             imported_from_feed: rsp_result.query.imported_from_feed,
             imported_from_feed_version: rsp_result.query.imported_from_feed_version,
@@ -95,13 +95,13 @@ export default Route.extend(FeedParamsRoute, PaginatedSortableRoute, {
           });
         }
         var stop_pattern_sample = stop_endpoints(rsp.get('stop_pattern'));
-        console.log('stop_pattern', rsp.id, stop_pattern_sample);
+        // console.log('stop_pattern', rsp.id, stop_pattern_sample);
         return self.store.query('stop', {
           imported_from_feed: rsp_result.query.imported_from_feed,
           onestop_id: stop_pattern_sample.join(',')
         });
       });
-      return Ember.RSVP.all([].concat.apply([], stop_promises));
+      return all([].concat.apply([], stop_promises));
 
     }).then(function(stop_results) {
       // Aggregate back to feed

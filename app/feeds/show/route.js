@@ -1,5 +1,5 @@
-import Ember from 'ember';
 import Route from '@ember/routing/route';
+import { hash } from 'rsvp';
 
 export default Route.extend({
   queryParams: {
@@ -21,7 +21,7 @@ export default Route.extend({
     let feedVersionUpdateStatistics = adapter.ajax(adapter.urlForFindRecord(params['feed_id'], 'feeds') + '/feed_version_update_statistics');
 
     let self = this;
-    return Ember.RSVP.hash({
+    return hash({
       feed: feed,
       feedVersions: feedVersions,
       routeGeometryIssues: routeGeometryIssues,
@@ -30,7 +30,7 @@ export default Route.extend({
     }).then(function (model) {
       let i = model.feedVersions.map(function(i){return i.id});
       let feedVersionInfoStatistics = (i.length == 0 ? [] : self.store.query('feed-version-info', {'feed_version_sha1': i.join(','), type: 'FeedVersionInfoStatistics', per_page: false} ));
-      return Ember.RSVP.hash({
+      return hash({
         feed: model.feed,
         feedVersions: model.feedVersions,
         routeGeometryIssues: routeGeometryIssues,

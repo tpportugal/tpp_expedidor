@@ -1,5 +1,5 @@
 
-import { toFixed } from 'dispatcher/helpers/to-fixed';
+import { toFixed } from 'tpp-dispatcher/helpers/to-fixed';
 import { module, test } from 'qunit';
 
 module('Unit | Helper | to fixed');

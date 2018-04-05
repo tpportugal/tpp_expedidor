@@ -1,7 +1,7 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import { computed } from '@ember/object';
 
-export default Ember.Component.extend({
+export default Component.extend({
   color: computed(function(){
     return '#000';
   }),
