@@ -7,7 +7,7 @@
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "https://github.com/Rui-Santos/dispatcher",
+  "repository": "https://github.com/tpportugal/tpp_expedidor",
   "license": "MIT",
   "scripts": {
     "build": "ember build",
