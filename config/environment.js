@@ -70,7 +70,7 @@ module.exports = function (environment) {
   }
 
   if (environment === 'production') {
-    ENV.datastoreHost = 'https://tppgeo.cf';
+    ENV.datastoreHost = 'https://tpp.pt';
     ENV.routerRootURL = '/dispatcher/';
     ENV.apiProxyKey = 'tpp-Cc6l8Fk';
   }
