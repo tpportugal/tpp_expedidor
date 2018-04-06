@@ -1,5 +1,7 @@
 # TPP Dispatcher
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/0f2f2dca11cf4119804246b0d07f2dbf)](https://app.codacy.com/app/TPP/tpp_expedidor?utm_source=github.com&utm_medium=referral&utm_content=tpportugal/tpp_expedidor&utm_campaign=badger)
+
 Used to administer and monitor the [TPP Datastore](https://github.com/tpportugal/tpp_banco_de_dados) back-end.
 
 ## Prerequisites
