@@ -6,9 +6,9 @@ module.exports = function(defaults) {
   var prependUrl;
   // TODO: put assets on CloudFront CDN
   if (EmberApp.env() === 'staging') {
-    prependUrl = '/dispatcher/';
+    prependUrl = '/expedidor/';
   } else if (EmberApp.env() === 'production') {
-    prependUrl = '/dispatcher/';
+    prependUrl = '/expedidor/';
   }
 
   let app = new EmberApp(defaults, {
