@@ -65,13 +65,13 @@ module.exports = function (environment) {
     ENV.valhallaHost = 'https://routing.tpp.pt/route';
     ENV.valhallaApiKey = 'valhalla-tQaRSNc';
     // ENV.rootURL = '/dispatcher/';
-    ENV.routerRootURL = '/dispatcher/';
+    ENV.routerRootURL = '/expedidor/';
     ENV.apiProxyKey = 'tpp-YFO6jk8';
   }
 
   if (environment === 'production') {
     ENV.datastoreHost = 'https://tpp.pt';
-    ENV.routerRootURL = '/dispatcher/';
+    ENV.routerRootURL = '/expedidor/';
     ENV.apiProxyKey = 'tpp-Cc6l8Fk';
   }
 
