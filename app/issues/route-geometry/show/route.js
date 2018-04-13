@@ -101,7 +101,7 @@ export default Route.extend(IssuesRoute, {
             let re = 'Distâncias: \\[.+\\]';
             let match = model.selectedIssue.get('details').match(re);
             if (match) {
-              rsp.set('stop_distances', JSON.parse(match[0].replace('Distances: ', '')));
+              rsp.set('stop_distances', JSON.parse(match[0].replace('Distâncias: ', '')));
               model.selectedIssue.set('details', model.selectedIssue.get('details').replace(/Distâncias: \[.+\]/, ''));
             }
           }

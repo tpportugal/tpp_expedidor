@@ -1,11 +1,11 @@
 {{#if showChangeset}}
-  {{#modal-dialog title='Changeset' ok='saveChangeset' close='hideChangeset' okText='Apply Changeset'}}
+  {{#modal-dialog title='Changeset' ok='saveChangeset' close='hideChangeset' okText='Aplicar'}}
     {{changeset-form changeset=model.changeset users=model.users }}
   {{/modal-dialog}}
 {{/if}}
 
 {{#if closeMessage.show}}
-  {{#modal-dialog title='Closing Issue' ok='closeIssue' close='toggleCloseMessage' closeText='Cancel' okText='Ok'}}
+  {{#modal-dialog title='Closing Issue' ok='closeIssue' close='toggleCloseMessage' closeText='Cancelar' okText='Ok'}}
     <p>{{closeMessage.message}}</p>
   {{/modal-dialog}}
 {{/if}}
