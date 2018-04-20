@@ -62,7 +62,7 @@ module.exports = function (environment) {
 
   if (environment === 'staging') {
     ENV.datastoreHost = 'https://tppgeo.cf';
-    ENV.valhallaHost = 'https://routing.tpp.pt/route';
+    ENV.valhallaHost = 'https://valhalla.tppgeo.cf/route';
     ENV.valhallaApiKey = 'valhalla-tQaRSNc';
     // ENV.rootURL = '/dispatcher/';
     ENV.routerRootURL = '/expedidor/';
