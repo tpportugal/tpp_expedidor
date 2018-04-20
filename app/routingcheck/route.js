@@ -69,7 +69,7 @@ export default Route.extend(FeedParamsRoute, PaginatedSortableRoute, {
           console.log("No rsps!");
           rsp_sample.push(0);
         }
-        return shuffle_sample(rsp_sample, 2).map(function(rsp_offset) {
+        return shuffle_sample(rsp_sample, 5).map(function(rsp_offset) {
           console.log('rsp_promises:', feed_onestop_id, feed_version_sha1, rsp_offset);
           return self.store.query('route-stop-pattern', {
             imported_from_feed: feed_onestop_id,
