@@ -18,7 +18,7 @@ export default Ember.Mixin.create({
     var self = this;
     const flashMessages = Ember.get(this, 'flashMessages');
     applicationAdapter.ajax(url, 'post').then(function(response){
-      if (response.status === 'complete') {
+      if (response.status === 'completo') {
         flashMessages.clearMessages();
         flashMessages.add({
           message: 'Problema ' + resolvingIssue.id + ' resolvido com sucesso. Clique para fechar.',
@@ -27,10 +27,10 @@ export default Ember.Mixin.create({
         });
         self.postSuccessTransition();
       }
-      else if (response.status === 'queued') {
+      else if (response.status === 'agendado') {
         Ember.run.later(self.pollChangesetApply.bind(self, resolvingIssue, url, applicationAdapter), 2000);
       }
-      else if (response.status === 'error') {
+      else if (response.status === 'erro') {
         flashMessages.clearMessages();
         flashMessages.add({
           message: 'Erro ao resolver o problema ' + resolvingIssue.id + '. ' + response.errors + '. Clique para fechar.',

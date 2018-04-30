@@ -62,6 +62,9 @@ export default Ember.Service.extend({
         {lon: origin_coords[0], lat: origin_coords[1], type: 'break'},
         {lon: destination_coords[0], lat: destination_coords[1], type: 'break'}
       ],
+      directions_options: {
+        language: 'pt-PT'
+      },
       costing: 'multimodal',
       costing_options: {
         transit: {
