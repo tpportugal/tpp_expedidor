@@ -20,11 +20,11 @@ module.exports = function(defaults) {
     },
     // http://ember-cli.com/user-guide/#source-maps
     sourcemaps: {
-      // enabled: EmberApp.env() !== 'production'
+      enabled: EmberApp.env() !== 'production'
     },
     // https://github.com/aexmachina/ember-cli-sass#usage
     sassOptions: {
-      // sourceMap: EmberApp.env() !== 'production'
+      sourceMap: EmberApp.env() !== 'production'
     },
     // http://ember-cli.com/user-guide/#fingerprinting-and-cdn-urls
     fingerprint: {

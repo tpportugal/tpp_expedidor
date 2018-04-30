@@ -10,6 +10,7 @@ export default Route.extend({
     params['per_page'] = '5000';
     return Ember.RSVP.hash({
       stops: this.store.query('stop', params),
+      routes: this.store.query('route', params),
       route_stop_patterns: this.store.query('route_stop_pattern', params)
     });
   },

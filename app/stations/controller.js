@@ -5,7 +5,7 @@ import Controller from '@ember/controller';
 export default Controller.extend({
   lat: 39.3999,
   lng: -8.2245,
-  zoom: 12,
+  zoom: 8,
   getChanges: function() {
     var entities = [];
     entities = entities.concat(this.store.peekAll('stop-station').filter(function(e) { return e.get('hasDirtyAttributes'); }));
