@@ -51,7 +51,7 @@
 
   <div class="col-sm-3 col-xs-6">
     <div class="input-group">
-      {{x-toggle showLabels=true onLabel="atualizadas" offLabel="todas" value=active_feed_version_update}}
+      {{x-toggle showLabels=true onLabel="atualizadas" offLabel="todas" onToggle=(action (mut active_feed_version_update)) value=active_feed_version_update}}
     </div>
   </div>
 

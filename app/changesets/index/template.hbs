@@ -9,7 +9,7 @@
 
 {{#collapsable-panel title="Filtrar Changesets" panelClass="panel-primary" show=true}}
   <div class="btn-toolbar" role="toolbar">
-    {{x-toggle showLabels=true onLabel="aplicados" offLabel="não aplicados" value=applied}}
+    {{x-toggle showLabels=true onLabel="aplicados" offLabel="não aplicados" onToggle=(action (mut applied)) value=applied}}
   </div>
 {{/collapsable-panel}}
 

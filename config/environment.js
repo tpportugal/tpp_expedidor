@@ -32,13 +32,14 @@ module.exports = function (environment) {
     }
   };
 
-  ENV['ember-cli-toggle'] = {
-    includedThemes: ['default'],
+  ENV['ember-toggle'] = {
+    includedThemes: ['default', 'flip', 'light'],
+    excludeBaseStyles: false,
     defaultShowLabels: true,
     defaultTheme: 'default',
     defaultSize: 'medium',
-    defaultOff: 'False',
-    defaultOn: 'True'
+    defaultOffLabel: 'False',
+    defaultOnLabel: 'True'
   };
 
   if (environment === 'development') {

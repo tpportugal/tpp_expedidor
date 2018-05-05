@@ -3244,7 +3244,7 @@ ember-get-config@0.2.1:
     broccoli-file-creator "^1.1.1"
     ember-cli-babel "^5.1.6"
 
-ember-get-config@^0.2.3:
+ember-get-config@^0.2.3, ember-get-config@^0.2.4:
   version "0.2.4"
   resolved "https://registry.yarnpkg.com/ember-get-config/-/ember-get-config-0.2.4.tgz#118492a2a03d73e46004ed777928942021fe1ecd"
   dependencies:
@@ -3273,14 +3273,15 @@ ember-getowner-polyfill@^2.0.1, ember-getowner-polyfill@^2.2.0:
     ember-cli-version-checker "^2.1.0"
     ember-factory-for-polyfill "^1.3.1"
 
-ember-hammertime@^1.2.4:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/ember-hammertime/-/ember-hammertime-1.3.0.tgz#8d709b8dac90a82fc1428c2a91010509cba82d01"
+ember-hammertime@^1.4.1:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/ember-hammertime/-/ember-hammertime-1.5.0.tgz#205a9b4afd83e580b37e86b69cd79ebfa34b3bfa"
   dependencies:
     broccoli-funnel "^2.0.1"
     broccoli-merge-trees "^2.0.0"
     broccoli-stew "^1.5.0"
-    ember-cli-babel "^6.8.2"
+    ember-cli-babel "^6.6.0"
+    ember-get-config "^0.2.4"
     hammer-timejs "^1.1.0"
 
 ember-hash-helper-polyfill@^0.1.1:
@@ -3508,14 +3509,14 @@ ember-text-measurer@^0.4.0:
   dependencies:
     ember-cli-babel "^6.8.2"
 
-ember-toggle@^5.2.1:
-  version "5.2.1"
-  resolved "https://registry.yarnpkg.com/ember-toggle/-/ember-toggle-5.2.1.tgz#225130a5413590a0fc3d670b4562dd508b6d6fa4"
+ember-toggle@^5.2.2:
+  version "5.2.2"
+  resolved "https://registry.yarnpkg.com/ember-toggle/-/ember-toggle-5.2.2.tgz#d09450fdc53e078e04e855bdfe19aadaa9c149d9"
   dependencies:
     ember-cli-babel "^6.6.0"
     ember-cli-htmlbars "^2.0.1"
     ember-gestures "^0.4.8"
-    ember-hammertime "^1.2.4"
+    ember-hammertime "^1.4.1"
     ember-runtime-enumerable-includes-polyfill "^2.0.0"
 
 ember-tooltips@~2.9.2:
