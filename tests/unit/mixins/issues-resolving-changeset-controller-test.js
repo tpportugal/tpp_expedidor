@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import IssuesResolvingChangesetControllerMixin from 'dispatcher/mixins/issues-resolving-changeset-controller';
+import IssuesResolvingChangesetControllerMixin from '../../../mixins/issues-resolving-changeset-controller';
 import { module, test } from 'qunit';
 import Object from '@ember/object';
 

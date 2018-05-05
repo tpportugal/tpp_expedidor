@@ -1,4 +1,4 @@
-import { numberAsPips } from 'dispatcher/helpers/number-as-pips';
+import { numberAsPips } from '../../../helpers/number-as-pips';
 import { module, test } from 'qunit';
 
 module('Unit | Helper | number as pips');

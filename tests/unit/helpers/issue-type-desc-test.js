@@ -1,4 +1,4 @@
-import { issueTypeDesc } from 'dispatcher/helpers/issue-type-desc';
+import { issueTypeDesc } from '../../../helpers/issue-type-desc';
 import { module, test } from 'qunit';
 
 module('Unit | Helper | issue type desc');

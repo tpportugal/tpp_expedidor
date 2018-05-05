@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import IssuesCloseControllerMixin from 'dispatcher/mixins/issues-close-controller';
+import IssuesCloseControllerMixin from '../../../mixins/issues-close-controller';
 import { module, test } from 'qunit';
 import Object from '@ember/object';
 
