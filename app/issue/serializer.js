@@ -3,8 +3,9 @@ import ApplicationSerializer from '../application/serializer';
 
 export default ApplicationSerializer.extend(DS.EmbeddedRecordsMixin, {
   primaryKey: 'id',
-
   attrs: {
-    entities_with_issues: { embedded: 'always' }
+    entities_with_issues: {
+      embedded: 'always'
+    }
   }
 });
