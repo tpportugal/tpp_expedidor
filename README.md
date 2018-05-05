@@ -19,6 +19,7 @@ You will need the following things properly installed on your computer.
 
 * `git clone https://github.com/tpportugal/tpp_expedidor.git`
 * `cd tpp_expedidor`
+* `yarn install`
 * `./build.sh`
 
 ## Running / Development
