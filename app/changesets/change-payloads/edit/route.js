@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import { get } from '@ember/object';
 import Route from '@ember/routing/route';
 import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
 
@@ -11,7 +11,7 @@ export default Route.extend(AuthenticatedRouteMixin, {
       var self = this;
       var model = self.currentModel;
       var changeset = model.get('changeset');
-      const flashMessages = Ember.get(this, 'flashMessages');
+      const flashMessages = get(this, 'flashMessages');
       model.destroyRecord().then(() => {
         flashMessages.add({
           message: 'Carga do changeset apagada!',
@@ -31,7 +31,7 @@ export default Route.extend(AuthenticatedRouteMixin, {
       var self = this;
       var model = self.currentModel;
       var changeset = model.get('changeset');
-      const flashMessages = Ember.get(this, 'flashMessages');
+      const flashMessages = get(this, 'flashMessages');
       model.set('payload', JSON.parse(model.get('stringified_payload')));
       model.save().then(function() {
         flashMessages.add({

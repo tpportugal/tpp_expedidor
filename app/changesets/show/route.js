@@ -1,5 +1,5 @@
-import Ember from 'ember';
 import Route from '@ember/routing/route';
+import { get } from '@ember/object';
 
 export default Route.extend({
   model: function(params) {
@@ -7,7 +7,7 @@ export default Route.extend({
   },
   actions: {
     apply: function() {
-      const flashMessages = Ember.get(this, 'flashMessages');
+      const flashMessages = get(this, 'flashMessages');
       var self = this;
       var changeset = self.currentModel;
       changeset.apply().then(() => {

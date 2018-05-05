@@ -1,5 +1,4 @@
 import DS from "ember-data";
-import Ember from "ember";
 import { underscore } from '@ember/string';
 import { isEmpty } from '@ember/utils';
 
