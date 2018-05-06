@@ -5385,9 +5385,9 @@ json5@^0.5.1:
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/json5/-/json5-0.5.1.tgz#1eade7acc012034ad84e2396767ead9fa5495821"
 
-jsoneditor@~5.13.2:
-  version "5.13.2"
-  resolved "https://registry.yarnpkg.com/jsoneditor/-/jsoneditor-5.13.2.tgz#10066c482b82cb571454f4b50a89f0d53d9b1429"
+jsoneditor@~5.15.2:
+  version "5.15.0"
+  resolved "https://registry.yarnpkg.com/jsoneditor/-/jsoneditor-5.15.0.tgz#dd8909f15ef14fb2b96f26505505cb6cba6cf4e7"
   dependencies:
     ajv "5.5.2"
     brace "0.11.0"

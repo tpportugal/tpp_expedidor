@@ -1,6 +1,5 @@
 import { computed } from '@ember/object';
-import { all } from 'rsvp';
-import { hash } from 'rsvp';
+import { all, hash  } from 'rsvp';
 import ArrayProxy from '@ember/array/proxy';
 import PromiseProxyMixin from '@ember/object/promise-proxy-mixin';
 import DS from 'ember-data';

@@ -60,7 +60,7 @@
     "ember-tooltips": "~2.9.2",
     "ember-uploader": "^1.2.3",
     "eslint-plugin-ember": "^5.0.0",
-    "jsoneditor": "~5.13.2",
+    "jsoneditor": "~5.15.0",
     "loader.js": "^4.2.3"
   },
   "engines": {

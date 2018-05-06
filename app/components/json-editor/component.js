@@ -1,9 +1,6 @@
 import Component from '@ember/component';
-import { computed } from '@ember/object';
-import { isEmpty } from '@ember/utils';
-import { observer } from '@ember/object';
-import { isEqual } from '@ember/utils';
-import { isPresent } from '@ember/utils';
+import { isEmpty, isEqual, isPresent } from '@ember/utils';
+import { computed, observer } from '@ember/object';
 /* global JSONEditor */
 
 // code copied from https://github.com/Glavin001/ember-jsoneditor
@@ -104,7 +101,7 @@ export default Component.extend({
   Callback method, triggered
   on change of contents
   */
-  onChange: function() {
+  change: function() {
     // console.log('JSON Editor changed!');
   },
 
@@ -113,7 +110,7 @@ export default Component.extend({
    Invoked with the error as first argument.
    The callback is only invoked for errors triggered by a users action.
   */
-  onError: function(error) {
+  error: function(error) {
     console.error('An error occured in JSON Editor component: ', error);
   },
 
@@ -195,7 +192,7 @@ export default Component.extend({
   */
   didInsertElement: function() {
     // console.log('didInsertElement', this, controller);
-    var controller = this.get('target');
+    var controller = this.get('targetObject');
     // Find the key on the controller for the data passed to this component
     // See http://stackoverflow.com/a/9907509/2578205
     var propertyKey;

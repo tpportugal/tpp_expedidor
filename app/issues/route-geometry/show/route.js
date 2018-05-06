@@ -1,6 +1,5 @@
 import { get } from '@ember/object';
-import { hash } from 'rsvp';
-import { Promise } from 'rsvp';
+import { hash , Promise } from 'rsvp';
 import { inject as service } from '@ember/service';
 import Route from '@ember/routing/route';
 import IssuesRoute from 'tpp-dispatcher/mixins/issues-route';
