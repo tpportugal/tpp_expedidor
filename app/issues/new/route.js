@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import { hash } from 'rsvp';
 import Route from '@ember/routing/route';
 
 export default Route.extend({
@@ -8,7 +8,7 @@ export default Route.extend({
   model: function(params) {
     params['imported_from_feed'] = this.get('feed_onestop_id');
     params['per_page'] = '5000';
-    return Ember.RSVP.hash({
+    return hash({
       stops: this.store.query('stop', params),
       routes: this.store.query('route', params),
       route_stop_patterns: this.store.query('route_stop_pattern', params)

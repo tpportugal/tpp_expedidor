@@ -1,7 +1,7 @@
-import Ember from 'ember';
-import config from '../../../config/environment';
+import Component from '@ember/component';
+/* global L */
 
-export default Ember.Component.extend({
+export default Component.extend({
   onestop_id: '',
   markerStopIcon: L.icon({
     iconUrl: '/assets/images/station.png',

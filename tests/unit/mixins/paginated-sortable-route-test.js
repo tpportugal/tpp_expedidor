@@ -1,4 +1,3 @@
-import Ember from 'ember';
 import PaginatedSortableRouteMixin from '../../../mixins/paginated-sortable-route';
 import { module, test } from 'qunit';
 import Object from '@ember/object';

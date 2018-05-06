@@ -1,11 +1,14 @@
+import Component from '@ember/component';
+import { computed } from '@ember/object';
+import { isEmpty } from '@ember/utils';
+import { observer } from '@ember/object';
+import { isEqual } from '@ember/utils';
+import { isPresent } from '@ember/utils';
 /* global JSONEditor */
 
 // code copied from https://github.com/Glavin001/ember-jsoneditor
 
-import Ember from 'ember';
-import { computed } from '@ember/object';
-
-export default Ember.Component.extend({
+export default Component.extend({
   /**
   Element tag name.
   */
@@ -26,11 +29,11 @@ export default Ember.Component.extend({
     var self = this;
     var editor = self.get('_editor');
     // console.log('editor', editor);
-    if (Ember.isEmpty(editor)) {
+    if (isEmpty(editor)) {
       // Empty, create it.
       var container = self.$().get(0);
       // console.log('container', self.$(), container);
-      if (Ember.isEmpty(container)) {
+      if (isEmpty(container)) {
         return undefined;
       } else {
         var options = self.get('options');
@@ -89,7 +92,7 @@ export default Ember.Component.extend({
   'tree' (default), 'view',
   'form', 'text', and 'code'.
   */
-  mode: 'tree',
+  mode: 'code',
 
   /**
   Create a box in the editor menu where the user can switch between the specified modes.
@@ -101,7 +104,7 @@ export default Ember.Component.extend({
   Callback method, triggered
   on change of contents
   */
-  change: function() {
+  onChange: function() {
     // console.log('JSON Editor changed!');
   },
 
@@ -110,7 +113,7 @@ export default Ember.Component.extend({
    Invoked with the error as first argument.
    The callback is only invoked for errors triggered by a users action.
   */
-  error: function(error) {
+  onError: function(error) {
     console.error('An error occured in JSON Editor component: ', error);
   },
 
@@ -128,7 +131,7 @@ export default Ember.Component.extend({
 
     var self = this.component;
     var editor = self.get('_editor');
-    if (Ember.isEmpty(editor)) {
+    if (isEmpty(editor)) {
       return;
     }
     try {
@@ -138,7 +141,7 @@ export default Ember.Component.extend({
       self.set('json', json);
       self.set('_updating', false);
       // Trigger Change event
-      if (!!self.change) {
+      if (!self.change) {
         self.change();
       }
     } catch (error) {
@@ -177,7 +180,7 @@ export default Ember.Component.extend({
   /**
   Editor observer.
   */
-  editorDidChange: Ember.observer('editor', function() {
+  editorDidChange: observer('editor', function() {
     // console.log('editorDidChange');
     var self = this;
     self.get('editor');
@@ -192,7 +195,7 @@ export default Ember.Component.extend({
   */
   didInsertElement: function() {
     // console.log('didInsertElement', this, controller);
-    var controller = this.get('targetObject');
+    var controller = this.get('target');
     // Find the key on the controller for the data passed to this component
     // See http://stackoverflow.com/a/9907509/2578205
     var propertyKey;
@@ -205,7 +208,7 @@ export default Ember.Component.extend({
              }
         }
     }
-    if (Ember.isEmpty(propertyKey)) {
+    if (isEmpty(propertyKey)) {
       // console.log('Could not find propertyKey', data);
     } else {
       // console.log('Found key!', propertyKey, data);
@@ -217,14 +220,14 @@ export default Ember.Component.extend({
   /**
   JSON observer.
   */
-  jsonDidChange: Ember.observer('json', function() {
+  jsonDidChange: observer('json', function() {
     // console.log('jsonDidChange');
     var self = this;
-    if (Ember.isEqual(self.get('_updating'), false)) {
+    if (isEqual(self.get('_updating'), false)) {
       var editor = self.get('editor');
       var json = self.get('json');
       editor.set(json);
-      if (Ember.isPresent(this.get('expand')) && this.get('expand') === 'all') {
+      if (isPresent(this.get('expand')) && this.get('expand') === 'all') {
         editor.expandAll();
       }
     }
@@ -233,7 +236,7 @@ export default Ember.Component.extend({
   /**
   Mode observer.
   */
-  modeDidChange: Ember.observer('mode', function() {
+  modeDidChange: observer('mode', function() {
     // console.log('modeDidChange');
     var self = this;
     var editor = self.get('editor');
@@ -244,7 +247,7 @@ export default Ember.Component.extend({
   /**
   Name observer.
   */
-  nameDidChange: Ember.observer('name', function() {
+  nameDidChange: observer('name', function() {
     // console.log('nameDidChange');
     var self = this;
     var editor = self.get('editor');

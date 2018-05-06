@@ -1,8 +1,8 @@
-import Ember from 'ember';
-import SelectableModelComponent from 'tpp-dispatcher/mixins/selectable-model-component';
+import Component from '@ember/component';
 import { inject as service } from '@ember/service';
+import SelectableModelComponent from 'tpp-dispatcher/mixins/selectable-model-component';
 
-export default Ember.Component.extend(SelectableModelComponent, {
+export default Component.extend(SelectableModelComponent, {
   session: service(),
   classNames: ['table-responsive'],
   sortKey: null,

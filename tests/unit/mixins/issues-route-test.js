@@ -1,4 +1,3 @@
-import Ember from 'ember';
 import IssuesRouteMixin from '../../../mixins/issues-route';
 import { module, test } from 'qunit';
 import Object from '@ember/object';

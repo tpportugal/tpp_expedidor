@@ -1,5 +1,5 @@
-import Ember from 'ember';
 import DS from 'ember-data';
+import { computed } from '@ember/object';
 import EntityWithActivityModel from 'tpp-dispatcher/entity-with-activity/model';
 
 export default EntityWithActivityModel.extend({
@@ -32,11 +32,11 @@ export default EntityWithActivityModel.extend({
   created_at: DS.attr('date'),
   updated_at: DS.attr('date'),
 
-  onestop_id: Ember.computed.alias('id'),
-  hasIssues: Ember.computed('issues', function() {
+  onestop_id: computed.alias('id'),
+  hasIssues: computed('issues', function() {
     return this.get('issues').get('length') > 0;
   }),
-  fetchStatusCssClass: Ember.computed('import_status', function() {
+  fetchStatusCssClass: computed('import_status', function() {
     if (this.get('issues').get('firstObject')) {
       return 'danger';
     }

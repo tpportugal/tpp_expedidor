@@ -1,7 +1,7 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import { computed } from '@ember/object';
 
-export default Ember.Component.extend({
+export default Component.extend({
   classNames: ['panel'],
   isSuccessful: computed('feedScheduleImport', function() {
     var success = this.get('feedScheduleImport').success;

@@ -1,5 +1,4 @@
 import Component from '@ember/component';
-import config from '../../config/environment';
 /* global L */
 
 var stopStationIcon = L.icon({

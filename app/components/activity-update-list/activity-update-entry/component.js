@@ -1,7 +1,7 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import { computed } from '@ember/object';
 
-export default Ember.Component.extend({
+export default Component.extend({
   tagName: 'li',
   classNames: ['list-group-item'],
   entityUrl: computed('activityUpdate', function() {

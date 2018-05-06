@@ -1,7 +1,7 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import { computed } from '@ember/object';
 
-export default Ember.Component.extend({
+export default Component.extend({
   tagName: 'ul',
   classNames: ['list-group'],
   currentlyFiltering: computed.or('filterByFeedOnestopId', 'filterByChangesetId'),

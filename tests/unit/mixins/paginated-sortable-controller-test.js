@@ -1,4 +1,3 @@
-import Ember from 'ember';
 import PaginatedSortableControllerMixin from '../../../mixins/paginated-sortable-controller';
 import { module, test } from 'qunit';
 import Object from '@ember/object';

@@ -1,4 +1,3 @@
-import Ember from 'ember';
 import IssuesControllerMixin from '../../../mixins/issues-controller';
 import { module, test } from 'qunit';
 import Object from '@ember/object';

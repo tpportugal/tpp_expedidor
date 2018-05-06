@@ -1,7 +1,9 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { get } from '@ember/object';
+import { isPresent } from '@ember/utils';
 import { inject as service } from '@ember/service';
 
-export default Ember.Component.extend({
+export default Component.extend({
   tagName: 'span',
   store: service(),
   buttonText: 'Buscar',
@@ -9,13 +11,13 @@ export default Ember.Component.extend({
     fetchFeeds: function() {
       var adapter = this.get('store').adapterFor('feed');
       var url = adapter.urlPrefix() + '/webhooks/feed_fetcher';
-      const flashMessages = Ember.get(this, 'flashMessages');
+      const flashMessages = get(this, 'flashMessages');
       var params = {};
-      if (Ember.isPresent(this.get("feed"))) {
+      if (isPresent(this.get("feed"))) {
         params["data"] = {
           feed_onestop_id: this.get("feed.onestop_id")
         };
-      } else if (Ember.isPresent(this.get("feeds"))) {
+      } else if (isPresent(this.get("feeds"))) {
         params["data"] = {
           feed_onestop_id: this.get("feeds").mapBy("onestop_id").join(",")
         };

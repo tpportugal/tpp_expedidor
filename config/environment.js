@@ -59,7 +59,7 @@ module.exports = function (environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     // Fixes Assertion Failed: You cannot use the same root element (DIV) multiple times in an Ember.Application
-    // ENV.APP.autoboot = false;
+    ENV.APP.autoboot = false;
 
     ENV.APP.rootElement = '#ember-testing';
   }

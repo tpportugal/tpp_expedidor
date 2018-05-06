@@ -1,11 +1,12 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import { computed } from '@ember/object';
+import { isPresent } from '@ember/utils';
 
-const TimeSinceWithMouseoverComponent = Ember.Component.extend({
+const TimeSinceWithMouseoverComponent = Component.extend({
   tagName: 'abbr',
   dateAsString: computed('date', function() {
     let date = this.get('date');
-    if (Ember.isPresent(date)) {
+    if (isPresent(date)) {
       return this.get('date').toString();
     }
   }),
