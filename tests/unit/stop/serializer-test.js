@@ -2,7 +2,7 @@ import { moduleForModel, test } from 'ember-qunit';
 
 moduleForModel('stop', 'Unit | Serializer | stop', {
   // Specify the other units that are required for this test.
-  needs: ['serializer:stop']
+  needs: ['serializer:stop', 'model:changeset', 'model:issue', 'model:activity-update']
 });
 
 // Replace this with your real tests.

@@ -1,6 +1,6 @@
-import Ember from 'ember';
+import Mixin from '@ember/object/mixin';
 
-export default Ember.Mixin.create({
+export default Mixin.create({
   queryParams: ['of_feed_entities', 'open', 'issue_type', 'per_page', 'of_entity', 'sort_key', 'sort_order'],
   issue_type: '',
   of_feed_entities: '',

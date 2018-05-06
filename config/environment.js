@@ -68,7 +68,7 @@ module.exports = function (environment) {
     ENV.datastoreHost = 'https://tppgeo.cf';
     ENV.valhallaHost = 'https://valhalla.tppgeo.cf/route';
     ENV.valhallaApiKey = 'valhalla-tQaRSNc';
-    // ENV.rootURL = '/dispatcher/';
+    // ENV.rootURL = '/expedidor/';
     ENV.routerRootURL = '/expedidor/';
     ENV.apiProxyKey = 'tpp-YFO6jk8';
   }

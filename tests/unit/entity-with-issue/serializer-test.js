@@ -2,7 +2,7 @@ import { moduleForModel, test } from 'ember-qunit';
 
 moduleForModel('entity-with-issue', 'Unit | Serializer | entity with issue', {
   // Specify the other units that are required for this test.
-  needs: ['serializer:entity-with-issue']
+  needs: ['serializer:entity-with-issue', 'model:issue']
 });
 
 // Replace this with your real tests.

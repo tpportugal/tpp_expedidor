@@ -2,7 +2,7 @@ import { moduleForModel, test } from 'ember-qunit';
 
 moduleForModel('operator', 'Unit | Serializer | operator', {
   // Specify the other units that are required for this test.
-  needs: ['serializer:operator']
+  needs: ['serializer:operator', 'model:feed']
 });
 
 // Replace this with your real tests.

@@ -1,3 +1,4 @@
+import { hash } from 'rsvp';
 import Route from '@ember/routing/route';
 import IssuesRoute from 'tpp-dispatcher/mixins/issues-route';
 import { inject as service } from '@ember/service';
@@ -17,7 +18,7 @@ export default Route.extend(IssuesRoute, {
     return self.store.findRecord('issue', params['issue_id'], { reload: true }).then(function(selectedIssue){
       let feed_id = selectedIssue.get('entities_with_issues').get('firstObject').get('onestop_id');
       let feed = self.store.findRecord('feed', feed_id);
-      return Ember.RSVP.hash({
+      return hash({
         selectedIssue: selectedIssue,
         feed: feed,
         changeset: changeset,

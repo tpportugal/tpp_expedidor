@@ -1,7 +1,11 @@
-import Ember from 'ember';
 import { computed } from '@ember/object';
+import { all } from 'rsvp';
+import { hash } from 'rsvp';
+import ArrayProxy from '@ember/array/proxy';
+import PromiseProxyMixin from '@ember/object/promise-proxy-mixin';
 import DS from 'ember-data';
 import EntityWithActivityModel from 'tpp-dispatcher/entity-with-activity/model';
+/* global L */
 
 export default EntityWithActivityModel.extend({
   created_or_updated_in_changeset: DS.belongsTo('changeset', { async: true }),
@@ -23,10 +27,10 @@ export default EntityWithActivityModel.extend({
   stopsWithDistances: computed('stop_pattern', function(){
     var self = this;
     var args = {};
-    args.promise =  Ember.RSVP.all(this.get('stop_pattern').map(function(stop_onestop_id, index){
-      return Ember.RSVP.hash({ stop: self.store.findRecord('stop', stop_onestop_id), distance: self.get('stop_distances')[index] });
+    args.promise =  all(this.get('stop_pattern').map(function(stop_onestop_id, index){
+      return hash({ stop: self.store.findRecord('stop', stop_onestop_id), distance: self.get('stop_distances')[index] });
     }));
-    return Ember.ArrayProxy.extend(Ember.PromiseProxyMixin).create(args);
+    return ArrayProxy.extend(PromiseProxyMixin).create(args);
   }),
   coordinates: computed('geometry', function(){
     return this.get('geometry').coordinates.map(function(coord){

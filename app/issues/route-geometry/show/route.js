@@ -1,7 +1,10 @@
-import Ember from 'ember';
+import { get } from '@ember/object';
+import { hash } from 'rsvp';
+import { Promise } from 'rsvp';
 import { inject as service } from '@ember/service';
 import Route from '@ember/routing/route';
 import IssuesRoute from 'tpp-dispatcher/mixins/issues-route';
+/* global L */
 
 export default Route.extend(IssuesRoute, {
   currentUser: service(),
@@ -15,7 +18,7 @@ export default Route.extend(IssuesRoute, {
     this.store.unloadAll('route-stop-pattern');
     // leave issues, so as to not have to repopulate issues table
 
-    const flashMessages = Ember.get(this, 'flashMessages');
+    const flashMessages = get(this, 'flashMessages');
     let self = this;
 
     let changeset = self.store.createRecord('changeset', {
@@ -25,15 +28,15 @@ export default Route.extend(IssuesRoute, {
 
     changeset.get('change_payloads').createRecord();
 
-    return Ember.RSVP.hash({
+    return hash({
       changeset: changeset
     }).then(function(model){
-      return Ember.RSVP.hash({
+      return hash({
         changeset: model.changeset,
         users: self.store.query('user', { per_page: false })
       });
     }).then(function(model){
-      return Ember.RSVP.hash({
+      return hash({
         changeset: model.changeset,
         users: model.users,
         selectedIssue: self.store.findRecord('issue', params['issue_id'], { reload: true })
@@ -47,7 +50,7 @@ export default Route.extend(IssuesRoute, {
       });
 
       let getStops = function(stopIds) {
-        return new Ember.RSVP.Promise(function(resolve, reject){
+        return new Promise(function(resolve, reject){
           if (stopIds.length > 0) {
             resolve(self.store.query('stop', {onestop_id: stopIds.join(',')}));
           }
@@ -58,7 +61,7 @@ export default Route.extend(IssuesRoute, {
         });
       }
 
-      return Ember.RSVP.hash({
+      return hash({
         changeset: model.changeset,
         users: model.users,
         selectedIssue: model.selectedIssue,
@@ -73,12 +76,12 @@ export default Route.extend(IssuesRoute, {
       });
 
       let getRSPs = function(rspIds) {
-        return new Ember.RSVP.Promise(function(resolve, reject){
+        return new Promise(function(resolve, reject){
           resolve(self.store.query('route-stop-pattern', {onestop_id: rspIds.join(',')}));
         });
       }
 
-      return Ember.RSVP.hash({
+      return hash({
         changeset: model.changeset,
         users: model.users,
         selectedIssue: model.selectedIssue,
@@ -112,7 +115,7 @@ export default Route.extend(IssuesRoute, {
         });
       }
 
-      return Ember.RSVP.hash({
+      return hash({
         changeset: model.changeset,
         users: model.users,
         selectedIssue: model.selectedIssue,

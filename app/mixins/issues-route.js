@@ -1,7 +1,8 @@
-import Ember from 'ember';
+import { hash } from 'rsvp';
+import Mixin from '@ember/object/mixin';
 import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
 
-export default Ember.Mixin.create(AuthenticatedRouteMixin, {
+export default Mixin.create(AuthenticatedRouteMixin, {
   queryParams: {
     issue_type: {
       refreshModel: true
@@ -18,7 +19,7 @@ export default Ember.Mixin.create(AuthenticatedRouteMixin, {
     let issue_categories_url = adapter.urlPrefix()+'/issues/categories';
     let promise = adapter.ajax(issue_categories_url, 'get', {});
 
-    return Ember.RSVP.hash({
+    return hash({
       issues: issues,
       issueTypes: promise.then(function(response){ return response[category]; })
     });

@@ -1,11 +1,12 @@
-import Ember from 'ember';
 import DS from 'ember-data';
+import { computed } from '@ember/object';
+import { alias } from '@ember/object/computed';
 
 import EntityWithActivityModel from 'tpp-dispatcher/entity-with-activity/model';
 
 export default EntityWithActivityModel.extend({
   created_or_updated_in_changeset: DS.belongsTo('changeset', { async: true }),
-  onestop_id: Ember.computed.alias('id'),
+  onestop_id: alias('id'),
   name: DS.attr('string'),
   created_at: DS.attr('date'),
   updated_at: DS.attr('date'),
@@ -15,7 +16,7 @@ export default EntityWithActivityModel.extend({
   tags: DS.attr(),
   issues: DS.hasMany('issue'),
   timezone: DS.attr('string'),
-  coordinates: Ember.computed('geometry', 'geometry_reversegeo', function () {
+  coordinates: computed('geometry', 'geometry_reversegeo', function () {
     let c = this.get('geometry');
     if (c.type == 'Point') {
       // return geometry

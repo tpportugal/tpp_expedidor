@@ -4,8 +4,8 @@ import IssuesResolvingChangesetController from 'tpp-dispatcher/mixins/issues-res
 import IssuesCloseController from 'tpp-dispatcher/mixins/issues-close-controller';
 
 export default Controller.extend(IssuesController,
-                                       IssuesResolvingChangesetController,
-                                       IssuesCloseController, {
+                                 IssuesResolvingChangesetController,
+                                 IssuesCloseController, {
   editableLeafletObjects: {
     // Some layers should not be editable, so this keeps track of those that are.
     // leaflet layer id -> onestop_id
@@ -42,7 +42,7 @@ export default Controller.extend(IssuesController,
       Object.keys(layers).forEach(function(id) {
         var editedLayer = layers[id];
         var onestop_id = this.get('editableLeafletObjects')[id];
-        if (onestop_id.match(/^s\-/)){
+        if (onestop_id.match(/^s-/)){
           if (this.get('model.issueStops')) {
             this.get('model.issueStops').forEach(function(stop){
               if (stop.get('onestop_id') === onestop_id) {
@@ -52,7 +52,7 @@ export default Controller.extend(IssuesController,
             });
           }
         }
-        else if (onestop_id.match(/^r\-/)) {
+        else if (onestop_id.match(/^r-/)) {
           this.get('model.issueRouteStopPatterns').forEach(function(rsp){
             if (rsp.get('onestop_id') === onestop_id) {
               let latlngs = editedLayer.getLatLngs();

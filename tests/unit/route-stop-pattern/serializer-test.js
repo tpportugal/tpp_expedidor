@@ -2,7 +2,7 @@ import { moduleForModel, test } from 'ember-qunit';
 
 moduleForModel('route-stop-pattern', 'Unit | Serializer | route stop pattern', {
   // Specify the other units that are required for this test.
-  needs: ['serializer:route-stop-pattern']
+  needs: ['serializer:route-stop-pattern', 'model:changeset', 'model:issue', 'model:activity-update']
 });
 
 // Replace this with your real tests.

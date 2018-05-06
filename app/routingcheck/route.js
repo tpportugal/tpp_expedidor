@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import { all } from 'rsvp';
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
 import PaginatedSortableRoute from 'tpp-dispatcher/mixins/paginated-sortable-route';
@@ -56,7 +56,7 @@ export default Route.extend(FeedParamsRoute, PaginatedSortableRoute, {
           total: true
         });
       });
-      return Ember.RSVP.all(rsp_count_promises);
+      return all(rsp_count_promises);
 
     }).then(function(rsp_count_results) {
       // Sample routes from the total routes for each feed
@@ -80,7 +80,7 @@ export default Route.extend(FeedParamsRoute, PaginatedSortableRoute, {
           });
         });
       });
-      return Ember.RSVP.all([].concat.apply([], rsp_promises));
+      return all([].concat.apply([], rsp_promises));
 
     }).then(function(rsp_results) {
       // Sample stops from each route
@@ -101,7 +101,7 @@ export default Route.extend(FeedParamsRoute, PaginatedSortableRoute, {
           onestop_id: stop_pattern_sample.join(',')
         });
       });
-      return Ember.RSVP.all([].concat.apply([], stop_promises));
+      return all([].concat.apply([], stop_promises));
 
     }).then(function(stop_results) {
       // Aggregate back to feed

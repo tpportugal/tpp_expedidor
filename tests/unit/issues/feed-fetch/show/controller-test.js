@@ -2,7 +2,7 @@ import { moduleFor, test } from 'ember-qunit';
 
 moduleFor('controller:issues/feed-fetch/show', 'Unit | Controller | issues/feed fetch/show', {
   // Specify the other units that are required for this test.
-  // needs: ['controller:foo']
+  needs: ['service:current-user']
 });
 
 // Replace this with your real tests.

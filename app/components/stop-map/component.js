@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import config from '../../config/environment';
 /* global L */
 
@@ -24,7 +24,7 @@ var stopEgressIcon = L.icon({
   popupAnchor: [0, -16]
 });
 
-export default Ember.Component.extend({
+export default Component.extend({
   stopPlatformIcon: stopPlatformIcon,
   stopEgressIcon: stopEgressIcon,
   stopStationIcon: stopStationIcon,

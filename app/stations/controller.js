@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import { get } from '@ember/object';
 import Controller from '@ember/controller';
 
 /* The only purpose of this controller is to set default query parameters */
@@ -28,7 +28,7 @@ export default Controller.extend({
       this.set('showChangeset', false);
     },
     saveChangeset: function() {
-      const flashMessages = Ember.get(this, 'flashMessages');
+      const flashMessages = get(this, 'flashMessages');
       var self = this;
       return this.model.changeset.save()
         .then(function(changeset) {

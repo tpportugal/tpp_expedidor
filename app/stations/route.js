@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import { hash } from 'rsvp';
 import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
 import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-route-mixin';
@@ -45,7 +45,7 @@ export default Route.extend(AuthenticatedRouteMixin, {
     // Stops
     let q = {
       bbox: bbox,
-      per_page: 500,
+      per_page: 100,
       total: false,
       exclude: params.exclude
     }
@@ -55,7 +55,7 @@ export default Route.extend(AuthenticatedRouteMixin, {
     if (min_egresses > 0) {
       q.min_egresses = min_egresses
     }
-    return Ember.RSVP.hash({
+    return hash({
       changeset: changeset,
       stops: this.store.query('stop-station', q)
     });
