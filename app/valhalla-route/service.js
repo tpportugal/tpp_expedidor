@@ -1,7 +1,6 @@
 import $ from 'jquery';
 import Service from '@ember/service';
-import { later } from '@ember/runloop';
-import { throttle } from '@ember/runloop';
+import { throttle , later } from '@ember/runloop';
 import ENV from 'tpp-dispatcher/config/environment';
 
 export default Service.extend({
