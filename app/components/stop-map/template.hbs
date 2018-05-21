@@ -1,15 +1,23 @@
-{{#leaflet-map lat=lat lng=lng zoom=zoom onZoomend=(action "updateView") onDragend=(action "updateView") as |layers|}}
-
-  <!--{{layers.tile url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}-->
-  {{layers.tile url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"}}
-
+{{#leaflet-map
+  lat=lat
+  lng=lng
+  zoom=zoom
+  onZoomend=(action "updateView")
+  onDragend=(action "updateView") as |layers|}}
+  {{#layer-group name="OSM Mapnik" baselayer=true default=true}}
+    {{tile-layer url=osmUrl}}
+  {{/layer-group}}
+  {{#layer-group name="Transportes" baselayer=true}}
+    {{tile-layer url=transitUrl}}
+  {{/layer-group}}
+  {{#layer-group name="Carto Light" baselayer=true}}
+    {{tile-layer url=cartoUrl}}
+  {{/layer-group}}
   {{#each stops as |stop|}}
-
     {{#if (not-eq stop.geometry.type 'Point')}}
       {{#layers.geojson geoJSON=stop.geometry}}
       {{/layers.geojson}}
     {{/if}}
-
     {{#layers.marker
       icon=stopStationIcon
       location=stop.coordinates
@@ -21,14 +29,11 @@
         {{stop-form stop=stop}}
       {{/marker.popup}}
     {{/layers.marker}}
-
     {{#each stop.stop_platforms as |stop_platform|}}
-
       {{#if (not-eq stop_platform.geometry.type 'Point')}}
         {{#layers.geojson geoJSON=stop_platform.geometry}}
         {{/layers.geojson}}
       {{/if}}
-
       {{#layers.marker
         icon=stopPlatformIcon
         location=stop_platform.coordinates
@@ -41,14 +46,11 @@
         {{/marker.popup}}
       {{/layers.marker}}
     {{/each}}
-
     {{#each stop.stop_egresses as |stop_egress|}}
-
       {{#if (not-eq stop_egress.geometry.type 'Point')}}
         {{#layers.geojson geoJSON=stop_egress.geometry}}
         {{/layers.geojson}}
       {{/if}}
-
       {{#layers.marker
         icon=stopEgressIcon
         location=stop_egress.coordinates
@@ -61,14 +63,12 @@
         {{/marker.popup}}
       {{/layers.marker}}
     {{/each}}
-
     {{#layers.polygon locations=stop.stationPlatformLines color="#ff4c4c" as |polygon|}}
       {{#polygon.popup}}Platformas{{/polygon.popup}}
     {{/layers.polygon}}
-
     {{#layers.polygon locations=stop.stationEgressLines color="#6666e1" as |polygon|}}
       {{#polygon.popup}}Saídas{{/polygon.popup}}
     {{/layers.polygon}}
-
   {{/each}}
+  {{layer-control handler=(action "layerControlEvent")}}
 {{/leaflet-map}}

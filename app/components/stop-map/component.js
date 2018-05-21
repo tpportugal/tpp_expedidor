@@ -1,4 +1,5 @@
 import Component from '@ember/component';
+import ENV from 'tpp-dispatcher/config/environment';
 /* global L */
 
 var stopStationIcon = L.icon({
@@ -24,6 +25,10 @@ var stopEgressIcon = L.icon({
 });
 
 export default Component.extend({
+  osmUrl: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+  transitUrl: "https://tile.thunderforest.com/transport/{z}/{x}/{y}.png?apikey="
+              + ENV.thunderforestApiKey,
+  cartoUrl: "http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png",
   stopPlatformIcon: stopPlatformIcon,
   stopEgressIcon: stopEgressIcon,
   stopStationIcon: stopStationIcon,
@@ -32,6 +37,8 @@ export default Component.extend({
   zoom: 0,
   bounds: null,
   actions: {
+    layerControlEvent(event){
+    },
     updateView(e) {
       let center = e.target.getCenter();
       var zoom = e.target.getZoom();
