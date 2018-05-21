@@ -7,7 +7,7 @@ export default DS.Model.extend({
   feed_version_imports: DS.hasMany('feed-version-import', { async: true }),
   feed_version_infos: DS.hasMany('feed-version-infos', { async: true }),
   changesets_imported_from_this_feed_version: DS.hasMany('changeset', { async: true, inverse: 'imported_from_feed_version' }),
-  issues: DS.hasMany('issue'),
+  issues: DS.hasMany('issue', { async: true }),
 
   md5: DS.attr('string'),
   earliest_calendar_date: DS.attr('date'),

@@ -9,13 +9,13 @@ export default Component.extend(SelectableModelComponent, {
   session: service(),
   classNames: ['table-responsive'],
   getSelectableModels: function() {
-    return this.get('feeds');
+    return get(this, 'feeds');
   },
   selectableModelDefault: false,
   actions: {
     enqueueSelectedFeedsForImport: function(importLevel) {
       const flashMessages = get(this, 'flashMessages');
-      let importPromises = this.get('selectedFeeds').map(function(feed) {
+      let importPromises = get(this, 'selectedFeeds').map(function(feed) {
         return feed.content.enqueue(importLevel);
       });
       allSettled(importPromises).then( () => {

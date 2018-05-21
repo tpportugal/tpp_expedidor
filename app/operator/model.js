@@ -2,9 +2,7 @@ import { alias } from '@ember/object/computed';
 import DS from 'ember-data';
 
 var Operator = DS.Model.extend({
-  feeds: DS.hasMany('feed', {
-    async: true
-  }),
+  feeds: DS.hasMany('feed', { async: true }),
   identifiers: DS.attr(),
   name: DS.attr('string'),
   short_name: DS.attr('string'),

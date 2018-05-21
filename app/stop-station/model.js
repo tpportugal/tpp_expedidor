@@ -16,9 +16,9 @@ function next_fragment(entities, separator) {
 
 export default Stop.extend({
   routes_serving_stop_and_platforms: DS.attr(),
-  stop_platforms: DS.hasMany('stop-platform', { modelFor: 'stop-platform', inverse: 'parent_stop'}),
-  stop_egresses:  DS.hasMany('stop-egress', { modelFor: 'stop-egress', inverse: 'parent_stop'}),
-  issues: DS.hasMany('issue'),
+  stop_platforms: DS.hasMany('stop-platform', { async:true, modelFor: 'stop-platform', inverse: 'parent_stop'}),
+  stop_egresses:  DS.hasMany('stop-egress', { async: true, modelFor: 'stop-egress', inverse: 'parent_stop'}),
+  issues: DS.hasMany('issue', { async: true }),
   stationPlatformLines: computed('coordinates', 'stop_platforms.@each.coordinates', function() {
     var origin = this.get('coordinates');
     return this.get('stop_platforms').map(function(stop_platform) {

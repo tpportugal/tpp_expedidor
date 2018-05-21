@@ -1,3 +1,4 @@
+import { get } from '@ember/object';
 import { computed } from '@ember/object';
 import DS from 'ember-data';
 
@@ -11,6 +12,6 @@ export default DS.Model.extend({
   created_at: DS.attr('date'),
   updated_at: DS.attr('date'),
   stringified_payload: computed('payload', function() {
-    return JSON.stringify(this.get('payload'));
+    return JSON.stringify(get(this, 'payload'));
   })
 });

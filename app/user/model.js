@@ -1,7 +1,7 @@
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  changesets: DS.hasMany('changeset'),
+  changesets: DS.hasMany('changeset', { async: true }),
 
   email: DS.attr('string'),
   name: DS.attr('string'),

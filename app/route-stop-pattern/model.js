@@ -19,7 +19,7 @@ export default EntityWithActivityModel.extend({
   updated_at: DS.attr('date'),
   geometry: DS.attr(),
   tags: DS.attr(),
-  issues: DS.hasMany('issue'),
+  issues: DS.hasMany('issue', { async: true }),
   patterns: [
     {offset: 0, repeat: 20, symbol: L.Symbol.arrowHead({pixelSize: 12, pathOptions: {fillOpacity: 1, weight: 0}})}
   ],

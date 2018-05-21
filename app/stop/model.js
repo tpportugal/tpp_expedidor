@@ -14,7 +14,7 @@ export default EntityWithActivityModel.extend({
   geometry_reversegeo: DS.attr(),
   geometry_centroid: DS.attr(),
   tags: DS.attr(),
-  issues: DS.hasMany('issue'),
+  issues: DS.hasMany('issue', { async: true }),
   timezone: DS.attr('string'),
   coordinates: computed('geometry', 'geometry_reversegeo', function () {
     let c = this.get('geometry');

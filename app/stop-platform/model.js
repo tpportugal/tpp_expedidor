@@ -13,7 +13,7 @@ export default Stop.extend({
       this.set('parent_stop', value);
     }
   }),
-  issues: DS.hasMany('issue'),
+  issues: DS.hasMany('issue', { async: true }),
   entityType: function() {
     return 'stopPlatform';
   },
