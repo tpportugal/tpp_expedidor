@@ -1,9 +1,9 @@
 import EmberRouter from '@ember/routing/router';
-import config from './config/environment';
+import ENV from 'tpp-dispatcher/config/environment';
 
 const Router = EmberRouter.extend({
-  location: config.locationType,
-  rootURL: config.routerRootURL,
+  location: ENV.locationType,
+  rootURL: ENV.routerRootURL,
   scrollToTop: function() {
     window.scrollTo(0, 0);
   }.on('didTransition')

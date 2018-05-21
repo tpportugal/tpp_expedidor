@@ -2,7 +2,7 @@ import $ from 'jquery';
 import { hash } from 'rsvp'
 import Route from '@ember/routing/route';
 import PaginatedSortableRoute from 'tpp-dispatcher/mixins/paginated-sortable-route';
-import config from '../../config/environment';
+import ENV from 'tpp-dispatcher/config/environment';
 
 export default Route.extend(PaginatedSortableRoute, {
   queryParams: {
@@ -26,7 +26,7 @@ export default Route.extend(PaginatedSortableRoute, {
     }
   },
   model: function(params) {
-    let geographies = $.get(config.datastoreHost + '/api/v1/operators/aggregate').then(function(response) {
+    let geographies = $.get(ENV.datastoreHost + '/v1/operators/aggregate').then(function(response) {
         return {
           countries: Object.keys(response.country),
           states: Object.keys(response.state),

@@ -15,11 +15,11 @@ export default DS.RESTAdapter.extend(DataAdapterMixin, {
   },
   authorizer: 'authorizer:token',
   host: ENV.datastoreHost,
-  namespace: 'api/v1',
+  namespace: 'v1',
   coalesceFindRequests: true,
   pathForType: function(type) {
     // model names should be underscored in URLs
-    // For example: /api/v1/feed_version_imports
+    // For example: /v1/feed_version_imports
     let decamelized = decamelize(type);
     let underscored = underscore(decamelized);
     return pluralize(underscored);

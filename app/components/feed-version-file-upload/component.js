@@ -1,4 +1,4 @@
-import config from '../../config/environment';
+import ENV from 'tpp-dispatcher/config/environment';
 import EmberUploader from 'ember-uploader';
 import { inject as service } from '@ember/service';
 import { isEmpty } from '@ember/utils';
@@ -10,7 +10,7 @@ export default EmberUploader.FileField.extend({
     let uploader;
     this.get('session').authorize('authorizer:token', (headerName, headerValue) => {
       uploader = EmberUploader.Uploader.create({
-        url: config.datastoreHost + '/api/v1/feed_versions',
+        url: ENV.datastoreHost + '/v1/feed_versions',
         paramNamespace: 'feed_version',
         ajaxSettings: {
           headers: {
