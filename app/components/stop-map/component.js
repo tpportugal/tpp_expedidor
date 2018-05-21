@@ -28,7 +28,7 @@ export default Component.extend({
   osmUrl: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
   transitUrl: "https://tile.thunderforest.com/transport/{z}/{x}/{y}.png?apikey="
               + ENV.thunderforestApiKey,
-  cartoUrl: "http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png",
+  cartoUrl: "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png",
   stopPlatformIcon: stopPlatformIcon,
   stopEgressIcon: stopEgressIcon,
   stopStationIcon: stopStationIcon,

@@ -70,7 +70,7 @@ module.exports = function (environment) {
     ENV.datastoreHost = 'https://tppgeo.cf';
     ENV.valhallaHost = 'https://valhalla.tppgeo.cf/route';
     ENV.valhallaApiKey = 'valhalla-tQaRSNc';
-    ENV.thunderforestApiKey = 'd5c4655cabc94aa489e4cc2e9349c5c7';
+    ENV.thunderforestApiKey = 'PLEASE_GET_YOUR_OWN_KEY@http://www.thunderforest.com/pricing/';
     // ENV.rootURL = '/expedidor/';
     ENV.routerRootURL = '/expedidor/';
     ENV.apiProxyKey = 'tpp-YFO6jk8';
@@ -80,7 +80,7 @@ module.exports = function (environment) {
     ENV.datastoreHost = 'https://api.tpp.pt';
     ENV.valhallaHost = 'https://routing.tpp.pt/route';
     ENV.valhallaApiKey = 'valhalla-tQaRSNc';
-    ENV.thunderforestApiKey = 'd5c4655cabc94aa489e4cc2e9349c5c7';
+    ENV.thunderforestApiKey = 'PLEASE_GET_YOUR_OWN_KEY@http://www.thunderforest.com/pricing/';
     ENV.routerRootURL = '/expedidor/';
     ENV.apiProxyKey = 'tpp-Cc6l8Fk';
   }
@@ -93,7 +93,7 @@ module.exports = function (environment) {
   };
 
   ENV['ember-simple-auth-token'] = {
-    serverTokenEndpoint: ENV.datastoreHost + '/api/v1/users/session',
+    serverTokenEndpoint: ENV.datastoreHost + '/v1/users/session',
     identificationField: 'email',
     passwordField: 'password',
     refreshAccessTokens: true,
