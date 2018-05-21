@@ -13,6 +13,12 @@
   {{#layer-group name="Carto Light" baselayer=true}}
     {{tile-layer url=cartoUrl}}
   {{/layer-group}}
+  {{#layer-group name="ArcGIS Aerial" baselayer=true}}
+    {{tile-layer url=arcgisAerialUrl}}
+  {{/layer-group}}
+  {{#layer-group name="Mapbox Aerial" baselayer=true}}
+    {{tile-layer url=mapboxAerialUrl}}
+  {{/layer-group}}
   {{#each stops as |stop|}}
     {{#if (not-eq stop.geometry.type 'Point')}}
       {{#layers.geojson geoJSON=stop.geometry}}

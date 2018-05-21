@@ -18,7 +18,6 @@
   "dependencies": {
     "ember-leaflet": "^3.0.12",
     "ember-leaflet-draw": "^0.7.0",
-    "ember-leaflet-layer-control": "canufeel/ember-leaflet-layer-control#master",
     "ember-leaflet-polyline-decorator": "transitland/ember-leaflet-polyline-decorator#master",
     "leaflet": "^1.1.0"
   },

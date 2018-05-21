@@ -14,6 +14,7 @@ module.exports = function (environment) {
     valhallaRateLimit: 600,
     // Thuderforest Maps
     thunderforestApiKey: 'PLEASE_GET_YOUR_OWN_KEY@http://www.thunderforest.com/pricing/',
+    mapboxApiKey: 'PLEASE_GET_YOUR_OWN_KEY@https://www.mapbox.com/signup/',
     AUTH_TOKEN_LOCALSTORAGE_KEY: 'tpp-dispatcher-auth-token',
     EmberENV: {
       FEATURES: {
@@ -45,7 +46,7 @@ module.exports = function (environment) {
   };
 
   if (environment === 'development') {
-    ENV.datastoreHost = 'https://tppgeo.cf';
+    ENV.datastoreHost = 'https://api.tppgeo.cf';
   }
 
   if (environment === 'localhost') {
@@ -67,10 +68,11 @@ module.exports = function (environment) {
   }
 
   if (environment === 'staging') {
-    ENV.datastoreHost = 'https://tppgeo.cf';
-    ENV.valhallaHost = 'https://valhalla.tppgeo.cf/route';
+    ENV.datastoreHost = 'https://api.tppgeo.cf';
+    ENV.valhallaHost = 'https://routing.tppgeo.cf/route';
     ENV.valhallaApiKey = 'valhalla-tQaRSNc';
     ENV.thunderforestApiKey = 'PLEASE_GET_YOUR_OWN_KEY@http://www.thunderforest.com/pricing/';
+    ENV.mapboxApiKey = 'PLEASE_GET_YOUR_OWN_KEY@https://www.mapbox.com/signup/';
     // ENV.rootURL = '/expedidor/';
     ENV.routerRootURL = '/expedidor/';
     ENV.apiProxyKey = 'tpp-YFO6jk8';
@@ -81,6 +83,7 @@ module.exports = function (environment) {
     ENV.valhallaHost = 'https://routing.tpp.pt/route';
     ENV.valhallaApiKey = 'valhalla-tQaRSNc';
     ENV.thunderforestApiKey = 'PLEASE_GET_YOUR_OWN_KEY@http://www.thunderforest.com/pricing/';
+    ENV.mapboxApiKey = 'PLEASE_GET_YOUR_OWN_KEY@https://www.mapbox.com/signup/';
     ENV.routerRootURL = '/expedidor/';
     ENV.apiProxyKey = 'tpp-Cc6l8Fk';
   }

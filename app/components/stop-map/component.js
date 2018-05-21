@@ -29,6 +29,9 @@ export default Component.extend({
   transitUrl: "https://tile.thunderforest.com/transport/{z}/{x}/{y}.png?apikey="
               + ENV.thunderforestApiKey,
   cartoUrl: "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png",
+  arcgisAerialUrl: "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+  mapboxAerialUrl: "https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v9/tiles/256/{z}/{x}/{y}?access_token="
+                   + ENV.mapboxApiKey,
   stopPlatformIcon: stopPlatformIcon,
   stopEgressIcon: stopEgressIcon,
   stopStationIcon: stopStationIcon,
