@@ -1,5 +1,6 @@
+import { alias } from '@ember/object/computed';
 import { computed } from '@ember/object';
-import { all, hash  } from 'rsvp';
+import { all, hash } from 'rsvp';
 import ArrayProxy from '@ember/array/proxy';
 import PromiseProxyMixin from '@ember/object/promise-proxy-mixin';
 import DS from 'ember-data';
@@ -14,7 +15,7 @@ export default EntityWithActivityModel.extend({
   stop_pattern: DS.attr(),
   color: DS.attr('string'),
   route_onestop_id: DS.attr('string', {readOnly: true}),
-  onestop_id: computed.alias('id'),
+  onestop_id: alias('id'),
   created_at: DS.attr('date'),
   updated_at: DS.attr('date'),
   geometry: DS.attr(),
@@ -38,7 +39,9 @@ export default EntityWithActivityModel.extend({
   }),
   setCoordinates: function(coords) {
     this.set('geometry', {type: 'LineString',
-                          coordinates: coords.map(function(c) { return c.map(function(n) { return parseFloat(n.toFixed(5));  } ) })
+                          coordinates: coords.map(function(c) {
+                            return c.map(function(n) { return parseFloat(n.toFixed(5));
+                          } ) })
     });
   },
   entityType: function() {

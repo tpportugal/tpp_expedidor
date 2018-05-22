@@ -1,8 +1,9 @@
+import { alias } from '@ember/object/computed';
 import { computed } from '@ember/object';
 import DS from 'ember-data';
 
 export default DS.Model.extend({
-  onestop_id: computed.alias('id'),
+  onestop_id: alias('id'),
   name: DS.attr('string'),
   vehicle_type: DS.attr('string'),
   created_at: DS.attr('date'),

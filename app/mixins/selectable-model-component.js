@@ -1,3 +1,4 @@
+import { notEmpty } from '@ember/object/computed';
 import Mixin from '@ember/object/mixin';
 import { computed } from '@ember/object';
 import ObjectProxy from '@ember/object/proxy';
@@ -19,7 +20,7 @@ export default Mixin.create({
   selectedModels: computed('selectableModels.@each.isSelected', function() {
     return this.get('selectableModels').filterBy('isSelected', true);
   }),
-  anyModelsSelected: computed.notEmpty('selectedModels'),
+  anyModelsSelected: notEmpty('selectedModels'),
   allModelsSelected: computed('selectedModels.[]', function() {
     return (this.get('selectedModels.length') === this.get('models.length')) && (this.get('models.length') > 0);
   }),

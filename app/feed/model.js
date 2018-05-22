@@ -1,3 +1,4 @@
+import { alias } from '@ember/object/computed';
 import DS from 'ember-data';
 import { computed } from '@ember/object';
 import EntityWithActivityModel from 'tpp-dispatcher/entity-with-activity/model';
@@ -30,7 +31,7 @@ export default EntityWithActivityModel.extend({
   created_at: DS.attr('date'),
   updated_at: DS.attr('date'),
 
-  onestop_id: computed.alias('id'),
+  onestop_id: alias('id'),
   hasIssues: computed('issues', function() {
     return this.get('issues').get('length') > 0;
   }),

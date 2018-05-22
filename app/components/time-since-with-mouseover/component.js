@@ -1,3 +1,4 @@
+import { alias } from '@ember/object/computed';
 import Component from '@ember/component';
 import { computed } from '@ember/object';
 import { isPresent } from '@ember/utils';
@@ -11,7 +12,7 @@ const TimeSinceWithMouseoverComponent = Component.extend({
     }
   }),
   attributeBindings: ['title'],
-  title: computed.alias('dateAsString')
+  title: alias('dateAsString')
 });
 
 TimeSinceWithMouseoverComponent.reopenClass({

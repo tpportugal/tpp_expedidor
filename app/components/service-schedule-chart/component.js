@@ -3,7 +3,12 @@ import { run } from '@ember/runloop';
 import { select } from 'd3-selection';
 import { min, max } from 'd3-array';
 import { line } from 'd3-shape';
-import { scaleTime, scaleLinear, scaleOrdinal, schemeCategory10 } from 'd3-scale';
+import {
+  scaleTime,
+  scaleLinear,
+  scaleOrdinal,
+  schemeCategory10
+} from 'd3-scale';
 import { isoParse } from 'd3-time-format';
 import { axisBottom, axisLeft } from 'd3-axis';
 import Component from '@ember/component';
