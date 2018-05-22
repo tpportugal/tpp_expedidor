@@ -13,8 +13,8 @@ module.exports = function (environment) {
     valhallaApiKey: 'valhalla-xwXfg5J',
     valhallaRateLimit: 600,
     // Thuderforest Maps
-    thunderforestApiKey: 'PLEASE_GET_YOUR_OWN_KEY@http://www.thunderforest.com/pricing/',
-    mapboxApiKey: 'PLEASE_GET_YOUR_OWN_KEY@https://www.mapbox.com/signup/',
+    thunderforestApiKey: 'GET_A_KEY@http://www.thunderforest.com/pricing/',
+    mapboxApiKey: 'GET_A_KEY@https://www.mapbox.com/signup/',
     AUTH_TOKEN_LOCALSTORAGE_KEY: 'tpp-dispatcher-auth-token',
     EmberENV: {
       FEATURES: {
@@ -67,25 +67,27 @@ module.exports = function (environment) {
     ENV.APP.rootElement = '#ember-testing';
   }
 
-  if (environment === 'staging') {
-    ENV.datastoreHost = 'https://api.tppgeo.cf';
-    ENV.valhallaHost = 'https://routing.tppgeo.cf/route';
-    ENV.valhallaApiKey = 'valhalla-tQaRSNc';
-    ENV.thunderforestApiKey = 'PLEASE_GET_YOUR_OWN_KEY@http://www.thunderforest.com/pricing/';
-    ENV.mapboxApiKey = 'PLEASE_GET_YOUR_OWN_KEY@https://www.mapbox.com/signup/';
-    // ENV.rootURL = '/expedidor/';
-    ENV.routerRootURL = '/expedidor/';
-    ENV.apiProxyKey = 'tpp-YFO6jk8';
-  }
-
   if (environment === 'production') {
-    ENV.datastoreHost = 'https://api.tpp.pt';
-    ENV.valhallaHost = 'https://routing.tpp.pt/route';
-    ENV.valhallaApiKey = 'valhalla-tQaRSNc';
-    ENV.thunderforestApiKey = 'PLEASE_GET_YOUR_OWN_KEY@http://www.thunderforest.com/pricing/';
-    ENV.mapboxApiKey = 'PLEASE_GET_YOUR_OWN_KEY@https://www.mapbox.com/signup/';
-    ENV.routerRootURL = '/expedidor/';
-    ENV.apiProxyKey = 'tpp-Cc6l8Fk';
+    if (process.env['BUILD'] === 'staging') {
+      // Production build for staging domain. Use BUILD=staging before ember build command
+      ENV.datastoreHost = 'https://api.tppgeo.cf';
+      ENV.valhallaHost = 'https://routing.tppgeo.cf/route';
+      ENV.valhallaApiKey = 'valhalla-tQaRSNc';
+      ENV.thunderforestApiKey = 'GET_A_KEY@http://www.thunderforest.com/pricing/';
+      ENV.mapboxApiKey = 'GET_A_KEY@https://www.mapbox.com/signup/';
+      // ENV.rootURL = '/expedidor/';
+      ENV.routerRootURL = '/expedidor/';
+      ENV.apiProxyKey = 'tpp-YFO6jk8';
+    } else {
+      // Production build for production domain.
+      ENV.datastoreHost = 'https://api.tpp.pt';
+      ENV.valhallaHost = 'https://routing.tpp.pt/route';
+      ENV.valhallaApiKey = 'valhalla-tQaRSNc';
+      ENV.thunderforestApiKey = 'GET_A_KEY@http://www.thunderforest.com/pricing/';
+      ENV.mapboxApiKey = 'GET_A_KEY@https://www.mapbox.com/signup/';
+      ENV.routerRootURL = '/expedidor/';
+      ENV.apiProxyKey = 'tpp-Cc6l8Fk';
+    }
   }
 
   // https://github.com/jpadilla/ember-simple-auth-token
