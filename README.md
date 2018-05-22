@@ -37,6 +37,11 @@ Make use of the many generators for code, try `ember help generate` for more det
 * `docker run --rm -p 8003:4200 tpportugal/tpp_expedidor:latest ember test`
 * `docker run --rm -p 8003:4200 tpportugal/tpp_expedidor:latest ember test --server`
 
+### Linting
+
+* `npm run lint:js`
+* `npm run lint:js -- --fix`
+
 ### Building
 
 * `docker run --rm -p 8003:4200 tpportugal/tpp_expedidor:latest ember build` (development)
