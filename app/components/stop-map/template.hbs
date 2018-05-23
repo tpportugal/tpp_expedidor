@@ -7,8 +7,11 @@
   {{#layer-group name="OSM Mapnik" baselayer=true default=true}}
     {{tile-layer url=osmUrl}}
   {{/layer-group}}
-  {{#layer-group name="Transportes" baselayer=true}}
-    {{tile-layer url=transitUrl}}
+  {{#layer-group name="Transit Light" baselayer=true}}
+    {{tile-layer url=transitLightUrl}}
+  {{/layer-group}}
+  {{#layer-group name="Transit Dark" baselayer=true}}
+    {{tile-layer url=transitDarkUrl}}
   {{/layer-group}}
   {{#layer-group name="Carto Light" baselayer=true}}
     {{tile-layer url=cartoUrl}}
@@ -18,6 +21,9 @@
   {{/layer-group}}
   {{#layer-group name="Mapbox Aerial" baselayer=true}}
     {{tile-layer url=mapboxAerialUrl}}
+  {{/layer-group}}
+  {{#layer-group name="Transit Overlay" overlay=true}}
+    {{tile-layer url=transitOverlayUrl}}
   {{/layer-group}}
   {{#each stops as |stop|}}
     {{#if (not-eq stop.geometry.type 'Point')}}
