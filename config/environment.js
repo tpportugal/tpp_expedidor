@@ -8,6 +8,7 @@ module.exports = function (environment) {
     routerRootURL: '/',
     locationType: 'auto',
     datastoreHost: 'https://api.tpp.pt',
+    feedRegistryHost: 'https://tpp.pt/registo-de-feeds',
     // Valhalla
     valhallaHost: 'https://routing.tpp.pt/route',
     valhallaApiKey: 'valhalla-xwXfg5J',
@@ -71,6 +72,7 @@ module.exports = function (environment) {
     if (process.env['BUILD'] === 'staging') {
       // Production build for staging domain. Use BUILD=staging before ember build command
       ENV.datastoreHost = 'https://api.tppgeo.cf';
+      ENV.feedRegistryHost = 'https://tppgeo.cf/registo-de-feeds';
       ENV.valhallaHost = 'https://routing.tppgeo.cf/route';
       ENV.valhallaApiKey = 'valhalla-tQaRSNc';
       ENV.thunderforestApiKey = 'GET_A_KEY@http://www.thunderforest.com/pricing/';
@@ -81,6 +83,7 @@ module.exports = function (environment) {
     } else {
       // Production build for production domain.
       ENV.datastoreHost = 'https://api.tpp.pt';
+      ENV.feedRegistryHost = 'https://tpp.pt/registo-de-feeds';
       ENV.valhallaHost = 'https://routing.tpp.pt/route';
       ENV.valhallaApiKey = 'valhalla-tQaRSNc';
       ENV.thunderforestApiKey = 'GET_A_KEY@http://www.thunderforest.com/pricing/';

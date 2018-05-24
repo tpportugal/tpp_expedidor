@@ -1,6 +1,6 @@
-import Component from '@ember/component';
+import Controller from '@ember/controller';
 import ENV from 'tpp-dispatcher/config/environment';
 
-export default Component.extend({
+export default Controller.extend({
   feedRegistryHost: ENV.feedRegistryHost
 });
