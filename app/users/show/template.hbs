@@ -6,10 +6,12 @@
   <dt>Afiliação</dt>
   <dd>{{model.affiliation}}</dd>
   <dt>Tipo de Utilizador</dt>
-  <dd>{{model.user_type}}</dd>
+  <dd>{{underscored-string-to-title-case model.user_type}}</dd>
 </dl>
 
-{{#link-to 'users.edit' model class="btn btn-primary" }}Editar{{/link-to}}
+{{#if (or currentUser.user.admin (eq currentUser.user.id model.id))}}
+  {{#link-to 'users.edit' model class="btn btn-primary" }}Editar{{/link-to}}
+{{/if}}
 
 <h2>Changesets pelo Utilizador</h2>
 
