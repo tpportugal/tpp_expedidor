@@ -60,6 +60,7 @@
     "ember-source": "~3.1.0",
     "ember-toggle": "^5.2.2",
     "ember-tooltips": "~2.9.2",
+    "ember-truth-helpers": "^2.0.0",
     "ember-uploader": "^1.2.3",
     "eslint-plugin-ember": "^5.0.0",
     "jsoneditor": "~5.15.0",

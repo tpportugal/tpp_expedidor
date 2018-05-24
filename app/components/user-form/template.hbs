@@ -16,3 +16,13 @@
     {{underscored-string-to-title-case userType}}
   {{/power-select}}
 </div>
+{{#if (or currentUser.user.admin (eq currentUser.user.id user.id))}}
+<div class="form-group">
+  <label for="password">Palavra Passe</label>
+  {{input type="password" id="password" value=user.password allowClear=true class="form-control"}}
+</div>
+<div class="form-group">
+  <label for="passwordConfirmation">Confirmar Palavra Passe</label>
+  {{input type="password" id="passwordConfirmation" value=user.password_confirmation allowClear=true class="form-control"}}
+</div>
+{{/if}}
