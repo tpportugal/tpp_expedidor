@@ -16,21 +16,21 @@
   <dt>País</dt>
   <dd>
     {{model.country}}
-    {{#link-to 'operators' (query-params country=model.country state="null" metro="null" tag_key="null" tag_value="null")}}
+    {{#link-to 'operators' (query-params country=model.country)}}
       {{fa-icon "search-plus"}}
     {{/link-to}}
   </dd>
   <dt>Distrito/Região</dt>
   <dd>
     {{model.state}}
-    {{#link-to 'operators' (query-params country="null" state=model.state metro="null" tag_key="null" tag_value="null")}}
+    {{#link-to 'operators' (query-params state=model.state)}}
       {{fa-icon "search-plus"}}
     {{/link-to}}
   </dd>
   <dt>Concelho</dt>
   <dd>
     {{model.metro}}
-    {{#link-to 'operators' (query-params country="null" state="null" metro=model.metro tag_key="null" tag_value="null")}}
+    {{#link-to 'operators' (query-params metro=model.metro)}}
       {{fa-icon "search-plus"}}
     {{/link-to}}
   </dd>
