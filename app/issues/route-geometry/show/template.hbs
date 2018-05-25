@@ -1,5 +1,5 @@
 {{#if showChangeset}}
-  {{#modal-dialog title='Changeset' ok='saveChangeset' close='hideChangeset' okText='Aplicar'}}
+  {{#modal-dialog title='Changeset' ok='saveChangeset' close='hideChangeset' okText='Criar' danger='applyChangeset' dangerText='Aplicar'}}
     {{changeset-form changeset=model.changeset users=model.users }}
   {{/modal-dialog}}
 {{/if}}

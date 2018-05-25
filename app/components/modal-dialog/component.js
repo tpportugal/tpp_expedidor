@@ -1,12 +1,18 @@
 import Component from '@ember/component';
+import { inject as service } from '@ember/service';
 
 export default Component.extend({
-  closeText: 'Close',
+  currentUser: service(),
+  closeText: 'Fechar',
   okText: 'OK',
   actions: {
     ok: function() {
       this.$('.modal').modal('hide');
       this.sendAction('ok');
+    },
+    danger: function() {
+      this.$('.modal').modal('hide');
+      this.sendAction('danger');
     }
   },
   show: function() {

@@ -7,7 +7,6 @@ export default Controller.extend({
   lat: 39.3999,
   lng: -8.2245,
   zoom: 8,
-  currentUser: service(),
   getChanges: function() {
     var entities = [];
     entities = entities.concat(this.store.peekAll('stop-station').filter(function(e) { return e.get('hasDirtyAttributes'); }));
