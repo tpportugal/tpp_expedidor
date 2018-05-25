@@ -37,9 +37,11 @@
   {{/if}}
 </dl>
 
-{{#unless model.applied }}
+{{#unless model.applied}}
   {{#link-to 'changesets.edit' model.id class="btn btn-primary" }}Editar{{/link-to}}
-  <input type="button" class="btn btn-danger" {{action 'apply'}} value="Aplicar">
+  {{#if currentUser.user.admin}}
+    <input type="button" class="btn btn-danger" {{action 'apply'}} value="Aplicar">
+  {{/if}}
 {{/unless}}
 
 {{#if model.feeds_created_or_updated}}
