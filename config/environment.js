@@ -4,8 +4,8 @@ module.exports = function (environment) {
   let ENV = {
     modulePrefix: 'tpp-dispatcher',
     environment: environment,
-    rootURL: '/',
-    routerRootURL: '/',
+    rootURL: '/expedidor/',
+    routerRootURL: '/expedidor/',
     locationType: 'auto',
     datastoreHost: 'https://api.tpp.pt',
     feedRegistryHost: 'https://tpp.pt/registo-de-feeds',
@@ -77,7 +77,7 @@ module.exports = function (environment) {
       ENV.valhallaApiKey = 'valhalla-tQaRSNc';
       ENV.thunderforestApiKey = 'GET_A_KEY@http://www.thunderforest.com/pricing/';
       ENV.mapboxApiKey = 'GET_A_KEY@https://www.mapbox.com/signup/';
-      // ENV.rootURL = '/expedidor/';
+      ENV.rootURL = '/expedidor/';
       ENV.routerRootURL = '/expedidor/';
       ENV.apiProxyKey = 'tpp-YFO6jk8';
     } else {
@@ -88,6 +88,7 @@ module.exports = function (environment) {
       ENV.valhallaApiKey = 'valhalla-tQaRSNc';
       ENV.thunderforestApiKey = 'GET_A_KEY@http://www.thunderforest.com/pricing/';
       ENV.mapboxApiKey = 'GET_A_KEY@https://www.mapbox.com/signup/';
+      ENV.rootURL = '/expedidor/';
       ENV.routerRootURL = '/expedidor/';
       ENV.apiProxyKey = 'tpp-Cc6l8Fk';
     }
