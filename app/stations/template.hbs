@@ -1,7 +1,13 @@
 {{#if showChangeset}}
-  {{#modal-dialog title='Changeset' ok='saveChangeset' close='hideChangeset' okText='Aplicar'}}
-    {{changeset-form changeset=model.changeset users=model.users }}
-  {{/modal-dialog}}
+  {{#if currentUser.user.admin}}
+    {{#modal-dialog title='Changeset' close='hideChangeset' closeText='Fechar' ok='applyChangeset' okText='Aplicar'}}
+      {{changeset-form changeset=model.changeset users=model.users }}
+    {{/modal-dialog}}
+  {{else}}
+    {{#modal-dialog title='Changeset'close='hideChangeset' closeText='Fechar' ok='saveChangeset' okText='Criar'}}
+      {{changeset-form changeset=model.changeset users=model.users }}
+    {{/modal-dialog}}
+  {{/if}}
 {{/if}}
 
 <div class="row">

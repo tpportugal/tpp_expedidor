@@ -48,6 +48,12 @@ module.exports = function (environment) {
 
   if (environment === 'development') {
     ENV.datastoreHost = 'https://api.tppgeo.cf';
+    ENV.feedRegistryHost = 'https://tppgeo.cf/registo-de-feeds';
+    ENV.valhallaHost = 'https://routing.tppgeo.cf/route';
+    ENV.valhallaApiKey = 'valhalla-tQaRSNc';
+    ENV.rootURL = '/';
+    ENV.routerRootURL = '/';
+    ENV.apiProxyKey = 'tpp-YFO6jk8';
   }
 
   if (environment === 'localhost') {
