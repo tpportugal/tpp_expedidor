@@ -41,7 +41,7 @@
 {{#each model.feed_version_infos as |modelInfo| }}
   {{#if (eq modelInfo.type "FeedVersionInfoStatistics")}}
     {{service-schedule-chart model=model}}
-    {{#collapsable-panel title="Arquivar ficheiros e conteúdo CSV" show=false}}
+    {{#collapsable-panel title="Ficheiros do arquivo e conteúdo do CSV" show=false}}
       {{feed-version-info-panel model=modelInfo}}
     {{/collapsable-panel}}
   {{/if}}
