@@ -13,6 +13,7 @@ export default Component.extend({
   mapboxAerialUrl: "https://api.mapbox.com/styles/v1/mapbox/satellite-streets-v9/tiles/256/{z}/{x}/{y}?access_token="
                    + ENV.mapboxApiKey,
   transitOverlayUrl: "http://openptmap.org/tiles/{z}/{x}/{y}.png",
+  openRailwayUrl: "https://{s}.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png",
   options: {},
   draw: { polyline: false, polygon: false, rectangle: false, circle: false, marker: false },
   editing: false,

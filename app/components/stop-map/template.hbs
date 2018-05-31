@@ -25,6 +25,9 @@
   {{#layer-group name="Transit Overlay" overlay=true}}
     {{tile-layer url=transitOverlayUrl}}
   {{/layer-group}}
+  {{#layer-group name="Railway Overlay" overlay=true}}
+    {{tile-layer url=openRailwayUrl}}
+  {{/layer-group}}
   {{#each stops as |stop|}}
     {{#if (not-eq stop.geometry.type 'Point')}}
       {{#layers.geojson geoJSON=stop.geometry}}
